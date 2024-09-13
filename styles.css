@@ -1,0 +1,33 @@
+/* Set up the dark purple and blue background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2c003e, #001f54);
+    height: 200vh; /* Make sure there's enough space for scrolling */
+}
+
+/* Portal container centered on the screen */
+.portal-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Initial portal style (a circle that grows as you scroll) */
+.portal {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(135,25,255,1) 0%, rgba(25,183,255,1) 100%);
+    box-shadow: 0 0 20px 5px rgba(25, 183, 255, 0.7);
+}
+
+/* Add some content after the portal */
+.content {
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
