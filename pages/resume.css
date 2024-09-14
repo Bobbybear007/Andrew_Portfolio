@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply flexbox to the entire body */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: linear-gradient(180deg, #003877 0%, #200066 100%); /* Light at the top, darker at bottom */
+    color: #333;
+    flex: 1;
+}
+
+/* Load custom font */
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Hero Section */
+.hero {
+    height: 50vh; /* Smaller height than the home hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1e1e2d00; /* Dark background */
+}
+  
+/* Gradient Text for the Hero Section */
+.hero h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0057e7, #8a2be2, #ff009d); /* Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin: 0;
+}
+
+/* Resume Section */
+.resume {
+    padding: 120px 20px 60px; /* Added top padding to prevent overlap with navbar */
+    text-align: left;
+    color: #fff;
+}
+
+.resume h1, .resume h2, .resume h3, .resume h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.resume p, .resume ul, .resume li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.resume ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+.resume h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.resume h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.resume h3 {
+    font-size: 1.5rem;
+}
+
+.resume h4 {
+    font-size: 1.3rem;
+}
+
+.resume .job {
+    margin-bottom: 30px;
+}
+
+.resume .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Download PDF Button */
+.download-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+  
+.download-btn .btn {
+    padding: 10px 20px;
+    background-color: #5d5bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+  
+.download-btn .btn:hover {
+    background-color: #7c8bff;
+}
+
+/* Footer styles */
+footer {
+    background-color: #1e1e2d00;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Centered and Frosted Navbar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(100, 80, 160, 0.2); /* Light semi-transparent purple */
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for more frosted feel */
+}
+
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-item {
+    margin: 0 10px;
+}
+
+.navbar-item a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff; /* White text for contrast */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar-item a:hover,
+.navbar-item.active a {
+    background-color: rgba(51, 0, 255, 0.3); /* Light blue-purple hover effect */
+    box-shadow: 0 0 8px rgba(120, 100, 200, 0.5); /* Subtle glow */
+    backdrop-filter: blur(15px); /* Add more blur on hover */
+}
+
+.navbar-item.active b {
+    background-color: rgba(55, 0, 255, 0.249); /* Slightly more intense active background */
+    box-shadow: 0 0 12px rgba(120, 100, 200, 0.6); /* Glow for active state */
+}
+
+/* Optional: Navbar stick to the top on scroll */
+.navbar {
+    z-index: 10;
+}
