@@ -262,6 +262,32 @@ header nav ul li a:hover {
     box-shadow: 0 0 12px rgba(120, 100, 200, 0.6); /* Glow for active state */
 }
 
+/* Social Media Icons Styling */
+.navbar-social {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    position: absolute;
+    right: 20px; /* Position it on the right side */
+    top: 20px; /* Align it with the navbar */
+  }
+  
+  .navbar-social li {
+    margin-left: 15px;
+  }
+  
+  .navbar-social a {
+    color: #ffffff; /* White icon color */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-social a:hover {
+    color: #7c8bff; /* Hover color for the icons */
+  }
+  
+
+
 /* Optional: Navbar stick to the top on scroll */
 .navbar {
     z-index: 10;

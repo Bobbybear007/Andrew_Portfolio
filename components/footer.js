@@ -2,6 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const footer = `
       <footer>
+        <h2>Contact Me</h2>
+        <p>Email: andrewzambazos@gmail.com</p>
+      
         <p>&copy; 2024 Andrew Zambazos. All Rights Reserved.</p>
       </footer>
     `;
