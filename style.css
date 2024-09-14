@@ -1,136 +1,134 @@
+/* Load the custom font */
 @font-face {
-    font-family: 'Josefin Sans';
+    font-family: 'JosefinSans';
     src: url('assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
-/* Add background gradient for the entire page */
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    background: linear-gradient(to bottom, #0d0d0d 0%, #0d0d0d 40%, #1e025b 60%, #004c98 100%);
-    min-height: 100vh;
-    overflow: hidden;
-    color: white;
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'JosefinSans', sans-serif;
+    background: #0b0033; /* Deep blue background */
+    color: #fff;
+    height: 200vh;
 }
 
-body.allow-scroll {
-    overflow-y: auto;
+/* Portal Wrapper */
+.portal-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    transition: opacity 1s ease;
 }
 
-/* Scale header content with viewport height and width */
-.neon-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Scroll Text */
+.scroll-text {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'JosefinSans', sans-serif;
     text-align: center;
-    opacity: 0;
-    font-size: calc(3rem + 1vw); /* Scale font size */
-    letter-spacing: calc(8px + 0.5vw); /* Scale letter spacing */
-    transition: transform 1.5s ease, opacity 1.5s ease;
-    animation: fadeInGrow 2s forwards;
-    animation-delay: 2.2s;
+    white-space: nowrap;
+    z-index: 15;
+    transition: opacity 1s ease;
+    text-transform: uppercase;
 }
 
-@keyframes fadeInGrow {
+/* Portal (Lander) - Darker Gradient */
+.portal {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(45, 0, 136, 0.8), rgb(0, 47, 129) 70%); /* Darker purple and blue gradient */
+    border: 3px solid rgba(80, 60, 150, 0.5); /* Darker border */
+    box-shadow: 0 0 25px 15px rgba(50, 30, 100, 0.7), 0 0 35px 30px rgba(20, 20, 60, 0.5); /* Darker purple and blue glowing effect */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 1s ease;
+}
+
+/* Inner Portal */
+.inner-portal {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(83, 0, 128, 0.7), rgba(0, 94, 152, 0.8)); /* Darker shades for the inner portal */
+    animation: swirl 8s infinite linear, pulse 5s infinite alternate;
+    position: absolute;
+}
+
+@keyframes swirl {
     0% {
-        opacity: 0;
-        transform: scale(0.8);
+        transform: rotate(0deg);
     }
     100% {
-        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
         transform: scale(1);
     }
+    100% {
+        transform: scale(1.05);
+    }
 }
 
-/* Scale image responsively */
-.neon-header img {
-    width: 100%;
-    height: auto;
-    max-width: 100vw;
-}
-
-/* Loading bar */
-.sweep-line {
-    position: fixed;
-    width: 100vw;
-    height: 5vh; /* Scale height relative to viewport */
-    background: linear-gradient(90deg, rgba(104, 0, 190, 0.7), rgb(0, 114, 185));
+/* Name and Slogan Image (Logo) */
+.name-slogan {
+    position: fixed; /* Fixes the image in the center of the viewport */
     top: 50%;
-    left: -100vw;
-    transform: translateY(-50%);
-    animation: sweep 2s forwards;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Center and initially smaller */
+    width: auto; /* Maintain original aspect ratio */
+    height: auto; /* Maintain original aspect ratio */
+    max-width: 100%; /* Ensure the image scales to fit the screen */
+    max-height: 450px; /* Set the max height for your image */
+    opacity: 0; /* Initially invisible */
+    z-index: 20;
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth fade and grow effect */
 }
 
-@keyframes sweep {
-    0% {
-        left: -100vw;
-    }
-    100% {
-        left: 100vw;
-    }
+
+
+/* Background Layers */
+.background-1, .background-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
 }
 
-/* Project section */
-.content {
-    text-align: center;
-    padding: 5vh 0; /* Use vh for padding to scale with viewport */
-    margin-top: 20vh; /* Move the projects further down */
+/* First Background (Darker Royal Purple Gradient) */
+.background-1 {
+    background: linear-gradient(135deg, #1a0033, #30006b, #41009f); /* Darker royal purple gradient */
+    z-index: 0;
+}
+
+/* Second Background (Darker Deep Blue Gradient) */
+.background-2 {
+    background: radial-gradient(circle, #2f0087, #001666); /* Darker blue gradient */
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease, visibility 0s linear 1s;
+    z-index: 1;
 }
 
-.content.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Scale project cards with the viewport */
-.project {
-    margin: 4vh 0;
-    padding: 2vh 2vw;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project:hover {
-    transform: translateY(-1vh);
-    box-shadow: 0 0 2vh rgba(0, 150, 255, 0.5);
-}
-
-.project h2 {
-    font-size: calc(2rem + 0.5vw); /* Responsive font size */
-    color: #ccc;
-}
-
-.project p {
-    font-size: calc(1.2rem + 0.2vw); /* Responsive font size */
-    color: #aaa;
-}
-
-/* Continuous particles */
-.particle {
-    position: absolute;
-    width: calc(8px + 0.2vw); /* Scale with viewport */
-    height: calc(8px + 0.2vw);
-    background-color: rgb(0, 149, 255);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: float-particle 6s ease-in-out infinite;
-    opacity: 0.7;
-}
-
-@keyframes float-particle {
-    0% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(calc(-10vw + 20vw * random()), calc(-10vh + 20vh * random()));
-    }
-    100% {
-        transform: translate(calc(-5vw + 10vw * random()), calc(-5vh + 10vh * random()));
-    }
+/* Content Section */
+.content-section {
+    position: relative;
+    margin-top: 200vh;
+    text-align: center;
+    padding: 50px;
+    z-index: 2;
 }
