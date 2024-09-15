@@ -182,6 +182,101 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Fallout Modding Project Container with floating emojis */
+.project-card.fallout-theme {
+    background-color: rgba(255, 255, 255, 0.1); /* Same background as your other cards */
+    color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: visible; /* Ensure emojis can overflow */
+}
+
+/* Floating emojis */
+.floating-emoji {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.8;
+    z-index: 10; /* Ensure emojis are above the card */
+    animation: float 5s infinite ease-in-out;
+    transform: scale(1.2); /* Slightly scale up the emojis */
+}
+
+/* Individual floating emoji positions */
+.floating-emoji:nth-child(1) {
+    top: 60px;
+    left: -50px;
+    animation-duration: 6s;
+}
+
+.floating-emoji:nth-child(2) {
+    top: -200%;
+    left: -60px;
+    transform: translateY(-50%);
+    animation-duration: 8s;
+}
+
+.floating-emoji:nth-child(3) {
+    bottom: -20px;
+    left: -80px;
+    animation-duration: 7s;
+}
+
+.floating-emoji:nth-child(4) {
+    bottom: -20px;
+    right: -60px;
+    animation-duration: 9s;
+}
+
+.floating-emoji:nth-child(5) {
+    top: -40px;
+    right: -40px;
+    animation-duration: 7.5s;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.project-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd700; /* Fallout's classic yellow color */
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #ccc; /* Subtle gray for the description */
+}
+
+.arrow-icon span {
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.arrow-icon span:hover {
+    opacity: 1;
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 20px;
@@ -220,10 +315,10 @@ header nav ul li a:hover {
     justify-content: center; /* Center the navbar */
     align-items: center;
     padding: 10px 20px;
-  }
-  
-  /* Navbar */
-  .navbar {
+}
+
+/* Navbar */
+.navbar {
     display: inline-block; /* Only as wide as the content */
     background: rgba(100, 80, 160, 0.2);
     border-radius: 50px;
@@ -233,27 +328,27 @@ header nav ul li a:hover {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 5;
-  }
-  
-  /* Centered Navbar Items */
-  .navbar-menu {
+}
+
+/* Centered Navbar Items */
+.navbar-menu {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .navbar-item {
+}
+
+.navbar-item {
     margin: 0 10px;
-  }
-  
-  .navbar-item a {
+}
+
+.navbar-item a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
     padding: 10px;
-  }
-  
+}
+
 /* Social Media Icons */
 .social-icons {
     position: absolute;
@@ -282,17 +377,13 @@ header nav ul li a:hover {
     }
 }
 
-
-  .navbar-item a.active {
+.navbar-item a.active {
     background-color: rgba(51, 0, 255, 0.3); /* Active background */
     box-shadow: 0 0 12px rgba(120, 100, 200, 0.6); /* Glow for active state */
     backdrop-filter: blur(15px);
     border-radius: 30px; /* Ensure the active item has rounded corners */
     padding: 10px 20px; /* Ensure consistent padding */
-  }
-  
-  
-
+}
 
 /* Optional: Navbar stick to the top on scroll */
 .navbar {
@@ -362,31 +453,3 @@ footer {
         margin-bottom: 20px;
     }
 }
-
-
-.about-me-section .container {
-    max-width: 700px; /* Similar to Perry's */
-  }
-  
-  .about-me-section h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .about-me-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #ccc; /* Subtle gray */
-  }
-  
-  .about-me-section a {
-    color: #ff009d; /* Match the gradient color */
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .about-me-section a:hover {
-    border-color: #ff009d; /* Underline on hover */
-  }

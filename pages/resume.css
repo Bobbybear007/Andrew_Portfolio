@@ -264,3 +264,34 @@ footer {
     border-radius: 30px; /* Ensure the active item has rounded corners */
     padding: 10px 20px; /* Ensure consistent padding */
   }
+
+  /* Header and Navbar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    padding: 15px 20px;
+    z-index: 10;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #98c1ff; /* Soft hover effect */
+}
