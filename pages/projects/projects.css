@@ -59,7 +59,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    color: #fff;
+    color: #ffd700;
     max-width: 1200px;
     margin: 40px auto;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -114,7 +114,7 @@ body {
 /* Download Button */
 .download-btn .btn {
     padding: 12px 24px;
-    background-color: #ff009d;
+    background: linear-gradient(90deg, #0057e7, #8a2be2, #ff009d);
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
@@ -320,4 +320,43 @@ footer {
     .footer-contact {
         margin-bottom: 20px;
     }
+}
+
+
+/* Gallery Section */
+.gallery-section {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffd700;
+}
+
+.gallery-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
 }

@@ -122,7 +122,7 @@ header nav ul li a:hover {
 /* Portfolio Section */
 .portfolio-section {
     background-color: #11111100; /* Dark background */
-    padding: 50px 0;
+    padding: 130px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,9 +182,68 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Fallout Modding Project Container with floating emojis */
-.project-card.fallout-theme {
-    background-color: rgba(255, 255, 255, 0.1); /* Same background as your other cards */
+/* General Floating Emojis Styles */
+.floating-emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* Fallout Theme Emoji Positions */
+.fallout-theme .floating-emoji:nth-child(3) {
+    top: 110%;
+    left: 5%;
+    animation-duration: 7s;
+}
+
+.fallout-theme .floating-emoji:nth-child(4) {
+    top: 50%;
+    left: 100%;
+    animation-duration: 5s;
+}
+
+.fallout-theme .floating-emoji:nth-child(5) {
+    top: -40%;
+    left: 40%;
+    animation-duration: 8s;
+}
+
+/* Star Trek Theme Emoji Positions */
+.startrek-theme .floating-emoji:nth-child(3) {
+    top: -40%;
+    left: 15%;
+    animation-duration: 6s;
+}
+
+.startrek-theme .floating-emoji:nth-child(4) {
+    top: 40%;
+    left: -10%;
+    animation-duration: 9s;
+}
+
+.startrek-theme .floating-emoji:nth-child(5) {
+    top: 110%;
+    left: 60%;
+    animation-duration: 6s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Project Card Styling (Merged Fallout and General Styles) */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Same background for all project cards */
     color: #fff;
     border-radius: 20px;
     padding: 20px;
@@ -197,83 +256,28 @@ header nav ul li a:hover {
     transition: transform 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: visible; /* Ensure emojis can overflow */
+    cursor: pointer;
 }
 
-/* Floating emojis */
-.floating-emoji {
-    position: absolute;
-    font-size: 40px;
-    opacity: 0.8;
-    z-index: 10; /* Ensure emojis are above the card */
-    animation: float 5s infinite ease-in-out;
-    transform: scale(1.2); /* Slightly scale up the emojis */
+.project-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    background: rgba(255, 255, 255, 0.15); /* Slightly brighter background on hover */
 }
 
-/* Individual floating emoji positions */
-.floating-emoji:nth-child(1) {
-    top: 60px;
-    left: -50px;
-    animation-duration: 6s;
+/* Project Info and Arrow */
+.project-info {
+    z-index: 1;
+    color: #fff;
 }
 
-.floating-emoji:nth-child(2) {
-    top: -200%;
-    left: -60px;
-    transform: translateY(-50%);
-    animation-duration: 8s;
-}
-
-.floating-emoji:nth-child(3) {
-    bottom: -20px;
-    left: -80px;
-    animation-duration: 7s;
-}
-
-.floating-emoji:nth-child(4) {
-    bottom: -20px;
-    right: -60px;
-    animation-duration: 9s;
-}
-
-.floating-emoji:nth-child(5) {
-    top: -40px;
-    right: -40px;
-    animation-duration: 7.5s;
-}
-
-/* Floating animation */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-.project-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #ffd700; /* Fallout's classic yellow color */
-}
-
-.project-info p {
-    font-size: 1rem;
-    color: #ccc; /* Subtle gray for the description */
-}
-
-.arrow-icon span {
-    font-size: 2rem;
+.arrow-icon {
+    z-index: 1;
     color: #fff;
     opacity: 0.6;
-    transition: opacity 0.3s ease;
+    font-size: 2rem;
 }
 
-.arrow-icon span:hover {
+.arrow-icon:hover {
     opacity: 1;
 }
 
