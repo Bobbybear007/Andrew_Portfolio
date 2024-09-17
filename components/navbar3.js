@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="navbar">
           <ul class="navbar-menu">
             <li class="navbar-item active"><a href="../../index.html">Portfolio</a></li>
-            <li class="navbar-item"><a href="../../pages/about.html">About Me</a></li>
+            <li class="navbar-item"><a href="../../pages/about.html">About</a></li>
             <li class="navbar-item"><a href="../../pages/resume.html">Résumé</a></li>
             <li class="navbar-item"><a href="mailto:andrewzambazos@gmail.com" class="btn-contact">Contact</a></li>
           </ul>
