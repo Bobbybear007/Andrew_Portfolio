@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="navbar-container">
           <nav class="navbar">
             <ul class="navbar-menu">
-              <li class="navbar-item"><a href="#home">Home</a></li>
+              <li class="navbar-item"><a href="#home">About</a></li>
               <li class="navbar-item"><a href="#projects">Projects</a></li>
-              <li class="navbar-item"><a href="#about">About</a></li>
+              <li class="navbar-item"><a href="https://www.andrewzambazos.com">Main Site</a></li>
               <li class="navbar-item"><a href="#contact">Contact</a></li>
             </ul>
           </nav>

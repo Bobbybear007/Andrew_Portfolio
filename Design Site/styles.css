@@ -74,7 +74,7 @@ header nav ul li a:hover {
 .hero h1 {
     font-size: 8rem; /* Large font size */
     font-weight: 700;
-    background: linear-gradient(90deg, #0077b6, #0096c7, #00b4d8); /* Deep ocean gradient */
+    background: linear-gradient(90deg, #0077b6, #00d5ff); /* Deep ocean gradient */
     -webkit-background-clip: text; /* Clip the background to the text */
     -webkit-text-fill-color: transparent; /* Make the text itself transparent to show the gradient */
     background-clip: text;
@@ -85,7 +85,7 @@ header nav ul li a:hover {
 .hero p {
     font-size: 2rem; /* Tagline font size */
     font-weight: 500;
-    color: #bfbfbf; /* Softer gray for the tagline */
+    color: #ff4400; /* Softer gray for the tagline */
     margin-top: 10px;
 }
 
