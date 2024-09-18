@@ -1,0 +1,19 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const footer = `
+      <footer>
+        <div class="footer-container">
+          <div class="footer-contact">
+            <h2>Andrew Zambazos</h2>
+            <p>Design & Photography Portfolio</p>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
+        <p class="footer-rights">© 2024 Andrew Zambazos. All rights reserved.</p>
+      </footer>
+    `;
+    document.body.insertAdjacentHTML('beforeend', footer);
+  });
+  
