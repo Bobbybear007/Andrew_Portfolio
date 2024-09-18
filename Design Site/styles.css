@@ -16,8 +16,8 @@ html, body {
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background: linear-gradient(180deg, #FFD580 0%, #FF7F50 100%); /* Light orange at the top, transitioning to soft pink */
-    color: #4B3F00;
+    background: linear-gradient(180deg, #1c1c2b 0%, #0d0d17 100%); /* Darker gradient for a sleek look */
+    color: #e0e0e0; /* Light gray for readability */
     scroll-behavior: smooth;
     flex: 1;
 }
@@ -50,13 +50,13 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #e0e0e0; /* Light gray for contrast */
     font-weight: 500;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #008080; /* Soft hover effect */
+    color: #66ccff; /* Cool cyan hover effect */
 }
 
 /* Hero Section */
@@ -74,7 +74,7 @@ header nav ul li a:hover {
 .hero h1 {
     font-size: 8rem; /* Large font size */
     font-weight: 700;
-    background: linear-gradient(90deg, #008080, #FFD580, #FF6347); /* Teal to orange gradient */
+    background: linear-gradient(90deg, #0077b6, #0096c7, #00b4d8); /* Deep ocean gradient */
     -webkit-background-clip: text; /* Clip the background to the text */
     -webkit-text-fill-color: transparent; /* Make the text itself transparent to show the gradient */
     background-clip: text;
@@ -85,7 +85,7 @@ header nav ul li a:hover {
 .hero p {
     font-size: 2rem; /* Tagline font size */
     font-weight: 500;
-    color: #4B3F00; /* Darker brown for the tagline */
+    color: #bfbfbf; /* Softer gray for the tagline */
     margin-top: 10px;
 }
 
@@ -104,12 +104,13 @@ header nav ul li a:hover {
 .about {
     padding: 100px 20px;
     text-align: center;
-    color: #4B3F00;
+    color: #bfbfbf;
 }
 
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #66ccff; /* Cool cyan heading for contrast */
 }
 
 .about p {
@@ -120,7 +121,7 @@ header nav ul li a:hover {
 
 /* Portfolio Section */
 .portfolio-section {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    background-color: rgba(255, 255, 255, 0.05); /* Darker background with subtle transparency */
     padding: 130px 0;
     display: flex;
     flex-direction: column;
@@ -152,7 +153,7 @@ header nav ul li a:hover {
 }
 
 .project-info {
-    color: #4B3F00; /* Darker text */
+    color: #e0e0e0; /* Light text */
 }
 
 .project-info h2 {
@@ -162,12 +163,12 @@ header nav ul li a:hover {
 
 .project-info p {
     font-size: 1rem;
-    color: #ccc; /* Subtle gray for the description */
+    color: #999; /* Subtle gray for the description */
 }
 
 .arrow-icon {
     font-size: 2rem;
-    color: #fff;
+    color: #e0e0e0;
     opacity: 0.6;
     transition: opacity 0.3s ease;
 }
@@ -192,12 +193,13 @@ header nav ul li a:hover {
 .contact {
     padding: 50px 20px;
     text-align: center;
-    color: #4B3F00;
+    color: #bfbfbf;
 }
 
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #66ccff; /* Cool cyan for section headers */
 }
 
 .contact p {
@@ -207,7 +209,7 @@ header nav ul li a:hover {
 
 .contact .btn {
     padding: 10px 20px;
-    background-color: #008080;
+    background-color: #0077b6;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -215,7 +217,7 @@ header nav ul li a:hover {
 }
 
 .contact .btn:hover {
-    background-color: #FF6347; /* Dark coral on hover */
+    background-color: #00b4d8; /* Light ocean blue on hover */
 }
 
 /* Navbar container */
@@ -231,7 +233,7 @@ header nav ul li a:hover {
 /* Navbar */
 .navbar {
     display: inline-block;
-    background: rgba(0, 128, 128, 0.2);
+    background: rgba(0, 119, 182, 0.2); /* Semi-transparent deep blue */
     border-radius: 50px;
     padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -254,7 +256,7 @@ header nav ul li a:hover {
 }
 
 .navbar-item a {
-    color: #fff;
+    color: #e0e0e0;
     text-decoration: none;
     font-size: 1.2rem;
     padding: 10px;
@@ -272,19 +274,19 @@ header nav ul li a:hover {
 }
 
 .social-icons a {
-    color: #ffffff;
+    color: #e0e0e0;
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #FF6347; /* Coral hover effect for social icons */
+    color: #00b4d8;
 }
 
 /* Footer styles */
 footer {
     background-color: transparent;
-    color: #fff;
+    color: #e0e0e0;
     text-align: center;
     padding: 20px 20px;
     width: 100%;
@@ -310,7 +312,7 @@ footer {
 }
 
 .footer-contact a {
-    color: #FF6347;
+    color: #00b4d8;
     text-decoration: none;
 }
 
@@ -320,13 +322,13 @@ footer {
 }
 
 .footer-social a {
-    color: #fff;
+    color: #e0e0e0;
     font-size: 2rem;
     transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: #FF6347;
+    color: #00b4d8;
 }
 
 .footer-rights {
