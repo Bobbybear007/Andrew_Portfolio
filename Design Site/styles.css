@@ -16,7 +16,7 @@ html, body {
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background: linear-gradient(180deg, #1c1c2b 0%, #0d0d17 100%); /* Darker gradient for a sleek look */
+    background: linear-gradient(180deg, #0e1730 0%, #1c0428 100%); /* Darker gradient for a sleek look */
     color: #e0e0e0; /* Light gray for readability */
     scroll-behavior: smooth;
     flex: 1;
@@ -85,7 +85,7 @@ header nav ul li a:hover {
 .hero p {
     font-size: 2rem; /* Tagline font size */
     font-weight: 500;
-    color: #ff4400; /* Softer gray for the tagline */
+    color: #00aeff; /* Softer gray for the tagline */
     margin-top: 10px;
 }
 
