@@ -1,0 +1,324 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply flexbox to the entire body */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #002543; /* Dark blue to match the gradient theme */
+}
+
+/* Load custom font */
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../../assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Header and Navbar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    padding: 15px 20px;
+    z-index: 10;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0; /* Light gray for contrast */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #66ccff; /* Cool cyan hover effect */
+}
+
+/* Navbar container */
+.navbar-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: inline-block;
+    background: rgba(0, 119, 182, 0.2); /* Semi-transparent deep blue */
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 5;
+}
+
+/* Centered Navbar Items */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-item {
+    margin: 0 10px;
+}
+
+.navbar-item a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.social-icons a {
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00b4d8;
+}
+
+/* Footer styles */
+footer {
+    background-color: transparent;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px 20px;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.footer-contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    font-size: 1.2rem;
+}
+
+.footer-contact a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a {
+    color: #e0e0e0;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #00b4d8;
+}
+
+.footer-rights {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* Responsive Footer for Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-contact {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Parallax Hero Section */
+.hero {
+    height: 100vh; /* Full height of viewport */
+    background-image: url('RealonFake2.jpg'); /* Replace with your image path */
+    background-attachment: fixed; /* Key for parallax effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Allows positioning of hero text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+/* Hero Text Styles */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #0077b6, #00d5ff); /* Gradient color */
+    -webkit-background-clip: text; /* Ensures the gradient only affects the text */
+    -webkit-text-fill-color: transparent; /* Makes the fill of the text transparent to show the gradient */
+    background-clip: text; /* Non-webkit version */
+    text-fill-color: transparent;
+  }
+  
+/* Optional styling for a fade effect on scroll */
+.hero-text h1 {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+/* New Content Section */
+/* New Content Section */
+.content-section {
+    height: auto; /* Adjust to auto to fit content size */
+    background: linear-gradient(180deg, #170b2c 0%, #002543 100%); /* Darker gradient for a sleek look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Behind the hero for depth */
+    padding: 50px 20px; /* Add padding for breathing room */
+}
+
+.content-text {
+    text-align: left; /* Change to left-align for readability */
+    font-size: 1.5rem; /* Adjust font size */
+    color: #66ccff;
+    line-height: 1.6; /* Add line-height for spacing */
+    max-width: 900px; /* Limit the content width for better readability */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+.content-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.content-text p {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+
+/* Gallery Section */
+.gallery-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .gallery-section h2 {
+    font-size: 3rem;
+    color: #0077b6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+  
+  .gallery-img {
+    max-width: 900px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Modal styling for when image is clicked */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+  
+  .modal img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+  
+/* Adjusting footer space */
+footer {
+    margin-top: 4rem;
+}

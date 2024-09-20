@@ -7,39 +7,33 @@ const projectsSection = `
   &nbsp;
   <div class="gallery">
     <!-- Project Cards -->
+    <a href="projects/trains/trains.html" class="project-link">
+      <div class="project-card">
+        <div class="project-info">
+          <h2>Phantom Rails: Where Reality Derails</h2>
+          <h3>NCEA Level 2 Art Boards</h3>
+          <p>This project was created for NCEA Level 2 Photography. I explored using trains as the subject in surrealist photography.</p>
+        </div>
+        <div class="arrow-icon">
+          <span>→</span>
+        </div>
+      </div>
+    </a>
+   
+   
     <a href="projects/moon/moon.html" class="project-link">
       <div class="project-card">
         <div class="project-info">
           <h2>MOONLIGHT</h2>
-          <p>How the world looks when lit by the moon</p>
+          <p>The moon as seen from New Zealand</p>
         </div>
         <div class="arrow-icon">
           <span>→</span>
         </div>
       </div>
     </a>
-    <a href="/projects/poster-series.html" class="project-link">
-      <div class="project-card">
-        <div class="project-info">
-          <h2>Graphic Design: Poster Series</h2>
-          <p>Conceptual poster designs that reflect bold typography and vibrant colors.</p>
-        </div>
-        <div class="arrow-icon">
-          <span>→</span>
-        </div>
-      </div>
-    </a>
-    <a href="/projects/portrait-series.html" class="project-link">
-      <div class="project-card">
-        <div class="project-info">
-          <h2>Photography: Portrait Series</h2>
-          <p>Capturing human emotion and identity through detailed portraiture.</p>
-        </div>
-        <div class="arrow-icon">
-          <span>→</span>
-        </div>
-      </div>
-    </a>
+   
+    
   </div>
 </section>
 `;
