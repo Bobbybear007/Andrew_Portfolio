@@ -16,16 +16,15 @@ html, body {
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background: url('m4.jpg') no-repeat center center fixed; /* Correct syntax */
-    background-size: cover; /* Ensure the image covers the entire background */
-    scroll-behavior: smooth;
-    flex: 1;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #002543; /* Dark blue to match the gradient theme */
 }
 
 /* Load custom font */
 @font-face {
     font-family: 'Josefin Sans';
-    src: url('assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    src: url('../../assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
 }
 
 /* Header and Navbar */
@@ -57,167 +56,6 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #66ccff; /* Cool cyan hover effect */
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: transparent;
-}
-
-/* Gradient Text Effect */
-.hero h1 {
-    font-size: 8rem; /* Large font size */
-    font-weight: 700;
-    background: linear-gradient(90deg, #0077b6, #00d5ff); /* Deep ocean gradient */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    -webkit-text-fill-color: transparent; /* Make the text itself transparent to show the gradient */
-    background-clip: text;
-    text-fill-color: transparent; /* For compatibility */
-    margin: 0;
-}
-
-.hero p {
-    font-size: 2rem; /* Tagline font size */
-    font-weight: 500;
-    color: #00aeff; /* Softer gray for the tagline */
-    margin-top: 10px;
-}
-
-/* Responsive Hero Section */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 5rem; /* Adjust the size for smaller screens */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Smaller text for smaller screens */
-    }
-}
-
-/* About Section */
-.about {
-    padding: 100px 20px;
-    text-align: center;
-    color: #bfbfbf;
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #66ccff; /* Cool cyan heading for contrast */
-}
-
-.about p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Portfolio Section */
-.portfolio-section {
-    background-color: rgba(255, 255, 255, 0); /* Darker background with subtle transparency */
-    padding: 130px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.project-link {
-    text-decoration: none; /* Remove underline from the link */
-    width: 100%;
-    max-width: 800px;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for frosted effect */
-    border-radius: 20px; /* Rounded corners */
-    padding: 20px;
-    margin-bottom: 40px;
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px); /* Lift the card on hover */
-    background: rgba(255, 255, 255, 0.15); /* Slightly brighter background on hover */
-}
-
-.project-info {
-    color: #e0e0e0; /* Light text */
-}
-
-.project-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.project-info p {
-    font-size: 1rem;
-    color: #999; /* Subtle gray for the description */
-}
-
-.arrow-icon {
-    font-size: 2rem;
-    color: #e0e0e0;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.arrow-icon:hover {
-    opacity: 1;
-}
-
-.arrow-icon span {
-    cursor: pointer;
-}
-
-/* Floating Emojis Styling (for Project Cards) */
-.floating-emoji {
-    position: absolute;
-    font-size: 2rem;
-    animation: float 6s ease-in-out infinite;
-    opacity: 0.8;
-}
-
-/* Contact Section */
-.contact {
-    padding: 50px 20px;
-    text-align: center;
-    color: #bfbfbf;
-}
-
-.contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #66ccff; /* Cool cyan for section headers */
-}
-
-.contact p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.contact .btn {
-    padding: 10px 20px;
-    background-color: #0077b6;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.contact .btn:hover {
-    background-color: #00b4d8; /* Light ocean blue on hover */
 }
 
 /* Navbar container */
@@ -346,3 +184,74 @@ footer {
         margin-bottom: 20px;
     }
 }
+
+
+/* Parallax Hero Section */
+.hero {
+    height: 100vh; /* Full height of viewport */
+    background-image: url('m4.jpg'); /* Replace with your image path */
+    background-attachment: fixed; /* Key for parallax effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Allows positioning of hero text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+/* Hero Text Styles */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #0077b6, #00d5ff); /* Gradient color */
+    -webkit-background-clip: text; /* Ensures the gradient only affects the text */
+    -webkit-text-fill-color: transparent; /* Makes the fill of the text transparent to show the gradient */
+    background-clip: text; /* Non-webkit version */
+    text-fill-color: transparent;
+  }
+  
+  
+  /* Optional styling for a fade effect on scroll */
+  .hero-text h1 {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* New Content Section */
+.content-section {
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(180deg, #170b2c 0%, #002543 100%); /* Darker gradient for a sleek look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Behind the hero for depth */
+    position: relative;
+  }
+  
+  .content-text {
+    text-align: center;
+    font-size: 2rem;
+    color: #66ccff;
+  }
+  
+  .content-text h2 {
+    font-size: 3rem;
+  }
+  
+  .content-text p {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }

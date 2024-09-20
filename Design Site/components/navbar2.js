@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
           </nav>
           <div class="social-icons">
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="https://www.behance.net/zambazos"><i class="fab fa-behance"></i></a>
           </div>
         </div>
       </header>

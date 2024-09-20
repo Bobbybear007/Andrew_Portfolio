@@ -7,33 +7,39 @@ const projectsSection = `
   &nbsp;
   <div class="gallery">
     <!-- Project Cards -->
-    <div class="project-card">
-      <div class="project-info">
-        <h2>MOONLIGHT</h2>
-        <p>How the world looks when lit by the moon</p>
+    <a href="projects/moon/moon.html" class="project-link">
+      <div class="project-card">
+        <div class="project-info">
+          <h2>MOONLIGHT</h2>
+          <p>How the world looks when lit by the moon</p>
+        </div>
+        <div class="arrow-icon">
+          <span>→</span>
+        </div>
       </div>
-      <div class="arrow-icon">
-        <span>→</span>
+    </a>
+    <a href="/projects/poster-series.html" class="project-link">
+      <div class="project-card">
+        <div class="project-info">
+          <h2>Graphic Design: Poster Series</h2>
+          <p>Conceptual poster designs that reflect bold typography and vibrant colors.</p>
+        </div>
+        <div class="arrow-icon">
+          <span>→</span>
+        </div>
       </div>
-    </div>
-    <div class="project-card">
-      <div class="project-info">
-        <h2>Graphic Design: Poster Series</h2>
-        <p>Conceptual poster designs that reflect bold typography and vibrant colors.</p>
+    </a>
+    <a href="/projects/portrait-series.html" class="project-link">
+      <div class="project-card">
+        <div class="project-info">
+          <h2>Photography: Portrait Series</h2>
+          <p>Capturing human emotion and identity through detailed portraiture.</p>
+        </div>
+        <div class="arrow-icon">
+          <span>→</span>
+        </div>
       </div>
-      <div class="arrow-icon">
-        <span>→</span>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-info">
-        <h2>Photography: Portrait Series</h2>
-        <p>Capturing human emotion and identity through detailed portraiture.</p>
-      </div>
-      <div class="arrow-icon">
-        <span>→</span>
-      </div>
-    </div>
+    </a>
   </div>
 </section>
 `;
