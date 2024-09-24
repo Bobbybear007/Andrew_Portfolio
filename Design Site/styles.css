@@ -1,62 +1,7 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Apply flexbox to the entire body */
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    background: linear-gradient(180deg, #0e1730 0%, #1c0428 100%); /* Darker gradient for a sleek look */
-    color: #e0e0e0; /* Light gray for readability */
-    scroll-behavior: smooth;
-    flex: 1;
-}
-
 /* Load custom font */
 @font-face {
     font-family: 'Josefin Sans';
     src: url('assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
-}
-
-/* Header and Navbar */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: transparent;
-    padding: 15px 20px;
-    z-index: 10;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #e0e0e0; /* Light gray for contrast */
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #66ccff; /* Cool cyan hover effect */
 }
 
 /* Hero Section */
@@ -72,33 +17,55 @@ header nav ul li a:hover {
 
 /* Gradient Text Effect */
 .hero h1 {
-    font-size: 8rem; /* Large font size */
+    font-size: 8rem; /* Large font size for bigger screens */
     font-weight: 700;
-    background: linear-gradient(90deg, #0077b6, #00d5ff); /* Deep ocean gradient */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    -webkit-text-fill-color: transparent; /* Make the text itself transparent to show the gradient */
+    background: linear-gradient(90deg, #0077b6, #00d5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent; /* For compatibility */
+    text-fill-color: transparent;
     margin: 0;
 }
 
 .hero p {
     font-size: 2rem; /* Tagline font size */
     font-weight: 500;
-    color: #00aeff; /* Softer gray for the tagline */
+    color: #00aeff;
     margin-top: 10px;
 }
 
 /* Responsive Hero Section */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .hero h1 {
-        font-size: 5rem; /* Adjust the size for smaller screens */
+        font-size: 6rem; /* Adjust the size for medium screens */
     }
 
     .hero p {
-        font-size: 1.2rem; /* Smaller text for smaller screens */
+        font-size: 1.8rem;
     }
 }
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 4.5rem; /* Adjust the size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 3rem; /* Even smaller for very small devices */
+        line-height: 1.2; /* Ensure proper spacing between lines */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
 
 /* About Section */
 .about {
@@ -110,7 +77,7 @@ header nav ul li a:hover {
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #66ccff; /* Cool cyan heading for contrast */
+    color: #66ccff;
 }
 
 .about p {
@@ -121,7 +88,7 @@ header nav ul li a:hover {
 
 /* Portfolio Section */
 .portfolio-section {
-    background-color: rgba(255, 255, 255, 0); /* Darker background with subtle transparency */
+    background-color: rgba(255, 255, 255, 0);
     padding: 130px 0;
     display: flex;
     flex-direction: column;
@@ -129,18 +96,18 @@ header nav ul li a:hover {
 }
 
 .project-link {
-    text-decoration: none; /* Remove underline from the link */
+    text-decoration: none;
     width: 100%;
     max-width: 800px;
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for frosted effect */
-    border-radius: 20px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     padding: 20px;
     margin-bottom: 40px;
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,12 +115,12 @@ header nav ul li a:hover {
 }
 
 .project-card:hover {
-    transform: translateY(-10px); /* Lift the card on hover */
-    background: rgba(255, 255, 255, 0.15); /* Slightly brighter background on hover */
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .project-info {
-    color: #e0e0e0; /* Light text */
+    color: #e0e0e0;
 }
 
 .project-info h2 {
@@ -163,7 +130,7 @@ header nav ul li a:hover {
 
 .project-info p {
     font-size: 1rem;
-    color: #999; /* Subtle gray for the description */
+    color: #999;
 }
 
 .arrow-icon {
@@ -199,7 +166,7 @@ header nav ul li a:hover {
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #66ccff; /* Cool cyan for section headers */
+    color: #66ccff;
 }
 
 .contact p {
@@ -217,132 +184,5 @@ header nav ul li a:hover {
 }
 
 .contact .btn:hover {
-    background-color: #00b4d8; /* Light ocean blue on hover */
-}
-
-/* Navbar container */
-.navbar-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-/* Navbar */
-.navbar {
-    display: inline-block;
-    background: rgba(0, 119, 182, 0.2); /* Semi-transparent deep blue */
-    border-radius: 50px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    z-index: 5;
-}
-
-/* Centered Navbar Items */
-.navbar-menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar-item {
-    margin: 0 10px;
-}
-
-.navbar-item a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px;
-}
-
-/* Social Media Icons */
-.social-icons {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 15px;
-    z-index: 10;
-}
-
-.social-icons a {
-    color: #e0e0e0;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #00b4d8;
-}
-
-/* Footer styles */
-footer {
-    background-color: transparent;
-    color: #e0e0e0;
-    text-align: center;
-    padding: 20px 20px;
-    width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0);
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
-
-.footer-contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.footer-contact p {
-    font-size: 1.2rem;
-}
-
-.footer-contact a {
-    color: #00b4d8;
-    text-decoration: none;
-}
-
-.footer-social {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-social a {
-    color: #e0e0e0;
-    font-size: 2rem;
-    transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-    color: #00b4d8;
-}
-
-.footer-rights {
-    font-size: 1rem;
-    margin-top: 20px;
-}
-
-/* Responsive Footer for Mobile */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-contact {
-        margin-bottom: 20px;
-    }
+    background-color: #00b4d8;
 }
