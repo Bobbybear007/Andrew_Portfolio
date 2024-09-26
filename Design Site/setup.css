@@ -166,12 +166,14 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 50px; /* Adjust this value for more/less space */
 }
 
+
+
 .portfolio-btn {
-    padding: 10px 20px;
-    background-color: #00b4d8;
+    padding: 5px 20px;
+    background-color: #0077b6;
     color: white;
     border: none;
     border-radius: 5px;
@@ -181,7 +183,7 @@ footer {
 }
 
 .portfolio-btn:hover {
-    background-color: #0077b6; 
+    background-color: #0e1730; 
 }
 
 /* Responsive Footer for Mobile */

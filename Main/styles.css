@@ -1,104 +1,30 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Apply flexbox to the entire body */
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    background: linear-gradient(180deg, #003877 0%, #200066 100%); /* Light at the top, darker at bottom */
-    color: #333;
-    scroll-behavior: smooth;
-    flex: 1;
-}
-
-/* Load custom font */
-@font-face {
-    font-family: 'Josefin Sans';
-    src: url('assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
-}
-
-/* Header and Navbar */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: transparent;
-    padding: 15px 20px;
-    z-index: 10;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #98c1ff; /* Soft hover effect */
-}
-
 /* Hero Section */
 .hero {
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #1e1e2d00; /* Dark background */
+    background-color: #1e1e2d00;
 }
 
-/* Gradient Text Effect */
 .hero h1 {
-    font-size: 8rem; /* Large font size */
+    font-size: 8rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #0057e7, #8a2be2, #ff009d); /* Gradient */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    -webkit-text-fill-color: transparent; /* Make the text itself transparent to show the gradient */
+    background: linear-gradient(90deg, #0057e7, #8a2be2, #ff009d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent; /* For compatibility */
-    
+    text-fill-color: transparent;
     margin: 0;
 }
 
 .hero p {
-    font-size: 2rem; /* Tagline font size */
+    font-size: 2rem;
     font-weight: 500;
-    color: #ccc; /* Lighter color for the tagline */
+    color: #ccc;
     margin-top: 10px;
-}
-
-/* Optional: Adjust responsiveness */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 5rem; /* Adjust the size for smaller screens */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Smaller text for smaller screens */
-    }
 }
 
 /* About Section */
@@ -121,7 +47,7 @@ header nav ul li a:hover {
 
 /* Portfolio Section */
 .portfolio-section {
-    background-color: #11111100; /* Dark background */
+    background-color: #11111100;
     padding: 130px 0;
     display: flex;
     flex-direction: column;
@@ -129,18 +55,18 @@ header nav ul li a:hover {
 }
 
 .project-link {
-    text-decoration: none; /* Remove underline from the link */
+    text-decoration: none;
     width: 100%;
     max-width: 800px;
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for frosted effect */
-    border-radius: 20px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     padding: 20px;
     margin-bottom: 40px;
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,12 +74,12 @@ header nav ul li a:hover {
 }
 
 .project-card:hover {
-    transform: translateY(-10px); /* Lift the card on hover */
-    background: rgba(255, 255, 255, 0.15); /* Slightly brighter background on hover */
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .project-info {
-    color: #fff; /* White text */
+    color: #fff;
 }
 
 .project-info h2 {
@@ -163,7 +89,7 @@ header nav ul li a:hover {
 
 .project-info p {
     font-size: 1rem;
-    color: #ccc; /* Subtle gray for the description */
+    color: #ccc;
 }
 
 .arrow-icon {
@@ -171,110 +97,6 @@ header nav ul li a:hover {
     color: #fff;
     opacity: 0.6;
     transition: opacity 0.3s ease;
-}
-
-.arrow-icon:hover {
-    opacity: 1;
-}
-
-/* Optional: Add a slight glow effect on the arrow hover */
-.arrow-icon span {
-    cursor: pointer;
-}
-
-/* General Floating Emojis Styles */
-.floating-emoji {
-    position: absolute;
-    font-size: 2rem;
-    animation: float 6s ease-in-out infinite;
-    opacity: 0.8;
-}
-
-/* Fallout Theme Emoji Positions */
-.fallout-theme .floating-emoji:nth-child(3) {
-    top: 110%;
-    left: 5%;
-    animation-duration: 7s;
-}
-
-.fallout-theme .floating-emoji:nth-child(4) {
-    top: 50%;
-    left: 100%;
-    animation-duration: 5s;
-}
-
-.fallout-theme .floating-emoji:nth-child(5) {
-    top: -40%;
-    left: 40%;
-    animation-duration: 8s;
-}
-
-/* Star Trek Theme Emoji Positions */
-.startrek-theme .floating-emoji:nth-child(3) {
-    top: -40%;
-    left: 15%;
-    animation-duration: 6s;
-}
-
-.startrek-theme .floating-emoji:nth-child(4) {
-    top: 40%;
-    left: -10%;
-    animation-duration: 9s;
-}
-
-.startrek-theme .floating-emoji:nth-child(5) {
-    top: 110%;
-    left: 60%;
-    animation-duration: 6s;
-}
-
-/* Floating Animation */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px) translateX(10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Project Card Styling (Merged Fallout and General Styles) */
-.project-card {
-    background-color: rgba(255, 255, 255, 0.1); /* Same background for all project cards */
-    color: #fff;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 40px;
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-    position: relative;
-    overflow: visible; /* Ensure emojis can overflow */
-    cursor: pointer;
-}
-
-.project-card:hover {
-    transform: translateY(-10px); /* Lift the card on hover */
-    background: rgba(255, 255, 255, 0.15); /* Slightly brighter background on hover */
-}
-
-/* Project Info and Arrow */
-.project-info {
-    z-index: 1;
-    color: #fff;
-}
-
-.arrow-icon {
-    z-index: 1;
-    color: #fff;
-    opacity: 0.6;
-    font-size: 2rem;
 }
 
 .arrow-icon:hover {
@@ -311,149 +133,23 @@ header nav ul li a:hover {
     background-color: #7c8bff;
 }
 
-/* Navbar container */
-.navbar-container {
-    position: relative;
-    width: 100%; /* Full width of the screen */
-    display: flex;
-    justify-content: center; /* Center the navbar */
-    align-items: center;
-    padding: 10px 20px;
-}
-
-/* Navbar */
-.navbar {
-    display: inline-block; /* Only as wide as the content */
-    background: rgba(100, 80, 160, 0.2);
-    border-radius: 50px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    z-index: 5;
-}
-
-/* Centered Navbar Items */
-.navbar-menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar-item {
-    margin: 0 10px;
-}
-
-.navbar-item a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px;
-}
-
-/* Social Media Icons */
-.social-icons {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 15px;
-    z-index: 10;
-}
-
-.social-icons a {
-    color: #ffffff;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #7c8bff;
-}
-
-/* Hide social media icons on small screens */
+/* Optional: Adjust responsiveness */
 @media (max-width: 768px) {
-    .social-icons {
-        display: none; /* Hide icons when screen width is less than or equal to 768px */
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
     }
 }
 
-.navbar-item a.active {
-    background-color: rgba(51, 0, 255, 0.3); /* Active background */
-    box-shadow: 0 0 12px rgba(120, 100, 200, 0.6); /* Glow for active state */
-    backdrop-filter: blur(15px);
-    border-radius: 30px; /* Ensure the active item has rounded corners */
-    padding: 10px 20px; /* Ensure consistent padding */
-}
-
-/* Optional: Navbar stick to the top on scroll */
-.navbar {
-    z-index: 10;
-}
-
-/* Footer styles */
-footer {
-    background-color: #1e1e2d00;
-    color: #fff;
-    text-align: center;
-    padding: 20px 20px;
-    width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0);
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
-
-.footer-contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.footer-contact p {
-    font-size: 1.2rem;
-}
-
-.footer-contact a {
-    color: #7c8bff;
-    text-decoration: none;
-}
-
-.footer-social {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-social a {
-    color: #fff;
-    font-size: 2rem;
-    transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-    color: #7c8bff; /* Hover effect for social icons */
-}
-
-.footer-rights {
-    font-size: 1rem;
-    margin-top: 20px;
-}
-
-/* Responsive Footer for Mobile */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
     }
 
-    .footer-contact {
-        margin-bottom: 20px;
+    .hero p {
+        font-size: 0.9rem;
     }
 }

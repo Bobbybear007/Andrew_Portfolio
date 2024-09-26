@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="footer-contact">
           <h2>Andrew Zambazos</h2>
           <p>Design & Photography Portfolio</p>
-          <!-- Added Button -->
-          <button class="portfolio-btn" onclick="window.location.href='https://andrewzambazos.com';">Back to Main Portfolio</button>
+          <!-- Wrapped button in a container with additional margin -->
+          <div class="button-container">
+            <button class="portfolio-btn" onclick="window.location.href='https://andrewzambazos.com';">Back to Main Portfolio</button>
+          </div>
         </div>
         <div class="footer-social">
           <a href="#"><i class="fab fa-instagram"></i></a>
