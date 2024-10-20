@@ -42,7 +42,7 @@
 
 /* Content Section */
 .content-section {
-  background: linear-gradient(180deg, #170b2c 0%, #002543 100%); /* Darker gradient for a sleek look */
+  background: linear-gradient(180deg, #002543 0%, #170b2c 100%); /* Darker gradient for a sleek look */
   padding-top: 100px; /* Add top padding to avoid overlap with the navigation */
   display: flex;
   justify-content: center;
