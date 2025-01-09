@@ -1,4 +1,3 @@
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -27,6 +26,36 @@
     margin-top: 10px;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Add spacing above the buttons */
+}
+
+.hero-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #5d5bff;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-buttons a:hover {
+    background-color: #7c8bff;
+}
+
+
+
+
+
+
 /* About Section */
 .about {
     padding: 100px 20px;
@@ -45,63 +74,7 @@
     margin: 0 auto;
 }
 
-/* Portfolio Section */
-.portfolio-section {
-    background-color: #11111100;
-    padding: 130px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.project-link {
-    text-decoration: none;
-    width: 100%;
-    max-width: 800px;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 40px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.project-info {
-    color: #fff;
-}
-
-.project-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.project-info p {
-    font-size: 1rem;
-    color: #ccc;
-}
-
-.arrow-icon {
-    font-size: 2rem;
-    color: #fff;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.arrow-icon:hover {
-    opacity: 1;
-}
 
 /* Contact Section */
 .contact {
