@@ -6,13 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
             <ul class="navbar-menu">
               
               <li class="navbar-item"><a href="https://www.andrewzambazos.com">Main Site</a></li>
+              <li class="navbar-item"><a href="https://www.design.andrewzambazos.com">Photography Site</a></li>
               
               
             </ul>
           </nav>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.behance.net/zambazos"><i class="fab fa-behance"></i></a>
+            <a href="https://www.youtube.com/@Zambazos" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/andrewzambazos/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Bobbybear007" target="_blank"><i class="fab fa-github"></i></a>
+            
           </div>
         </div>
       </header>

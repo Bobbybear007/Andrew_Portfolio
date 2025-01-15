@@ -4,15 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
       <div class="footer-container">
         <div class="footer-contact">
           <h2>Andrew Zambazos</h2>
-          <p>Design & Photography Portfolio</p>
+          <p>Game / Digital Development</p>
           <!-- Wrapped button in a container with additional margin -->
           <div class="button-container">
             <button class="portfolio-btn" onclick="window.location.href='https://andrewzambazos.com';">Back to Main Portfolio</button>
           </div>
         </div>
         <div class="footer-social">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="https://www.youtube.com/@Zambazos" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/andrewzambazos/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Bobbybear007" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
       <p class="footer-rights">© 2024 Andrew Zambazos. All rights reserved.</p>
