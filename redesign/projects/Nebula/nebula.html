@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Browser | Andrew Zambazos</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/AZ.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../project.css">
+</head>
+<body class="antialiased">
+<canvas id="particle-canvas"></canvas>
+
+<header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="../../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="../../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+            <a href="../../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300">Projects</a>
+            <a href="../../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+            <a href="../../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <a href="../../index.html#about" class="block py-2 hover:text-[#00D4FF]">About</a>
+        <a href="../../projects.html" class="block py-2 hover:text-[#00D4FF]">Projects</a>
+        <a href="../../index.html#resume" class="block py-2 hover:text-[#00D4FF]">Résumé</a>
+        <a href="../../index.html#contact" class="block mt-2 text-center bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg">Contact</a>
+    </div>
+</header>
+
+<main class="pt-40 md:pt-32">
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Nebula Web Browser</h1>
+        </div>
+    </section>
+
+    <section class="case-study-section">
+        <h2>Project Overview</h2>
+        <p>Nebula is an open-source web browser built on the Electron framework. It aims to provide a lightweight and fast browsing experience with a focus on user privacy and customization. The project is an exploration into modern web technologies and a practical application of desktop development.</p>
+        <img src="../../assets/images/Nebula/Screenshot1.png" alt="Nebula Browser Project Image" class="clickable-image">
+    </section>
+
+    <section class="case-study-section">
+        <h2>My Contributions</h2>
+        <ul>
+            <li><strong>Core Development:</strong> Responsible for the main application logic and feature implementation.</li>
+            <li><strong>UI/UX Design:</strong> Designed the clean, minimalist user interface.</li>
+            <li><strong>Community Management:</strong> Managed the project repository, addressed issues, and reviewed pull requests.</li>
+        </ul>
+
+        <section class="cta-section">
+            <h2>More About Nebula</h2>
+            <a href="https://github.com/NebulaZMG/NebulaBrowser">Github</a>
+            <a href="https://nebula.zambazosmedia.group">Website</a>
+        </section>
+    </section>
+
+    <section class="image-gallery">
+        <h2>Project Image Gallery</h2>
+        <div class="image-gallery-grid">
+            <img src="../../assets/images/Nebula/Screenshot1.png" alt="Nebula screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot2.png" alt="Nebula screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot3.png" alt="Nebula screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot4.png" alt="Nebula screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot5.png" alt="Nebula screenshot" class="clickable-image">
+        </div>
+    </section>
+
+    <div class="image-overlay" id="imageOverlay">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <span class="prev-btn" id="prevBtn">&#10094;</span>
+        <img src="" alt="Expanded Image" id="expandedImg">
+        <span class="next-btn" id="nextBtn">&#10095;</span>
+    </div>
+
+    <section class="cta-section">
+        <h2>Explore More Projects</h2>
+        <a href="../../projects.html">Back to Projects</a>
+    </section>
+</main>
+
+<footer class="py-8 border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+        <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="../../projects.js"></script>
+<script src="../../navbar.js" defer></script>
+<script src="../../script.js" defer></script>
+<script src="../../project.js"></script>
+</body>
+</html>

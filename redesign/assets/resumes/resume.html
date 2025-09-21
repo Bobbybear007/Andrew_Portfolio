@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Résumé — Andrew Zambazos</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/AZ.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../style.css" />
+    <style>
+      @media print {
+        #header, #particle-canvas, footer, .no-print { display: none !important; }
+        main { padding-top: 0 !important; }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <canvas id="particle-canvas"></canvas>
+
+    <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#home" class="text-2xl font-bold tracking-wider">AZ</a>
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+          <a href="../../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300">Projects</a>
+          <a href="#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+          <a href="#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <a href="#about" class="block py-2 hover:text-[#00D4FF]">About</a>
+        <a href="../../projects.html" class="block py-2 hover:text-[#00D4FF]">Projects</a>
+  <a href="#resume" class="block py-2 hover:text-[#00D4FF]">Résumé</a>
+        <a href="#contact" class="block mt-2 text-center bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg">Contact</a>
+      </div>
+    </header>
+
+    <main class="pt-28 pb-16">
+      <section id="resume" class="container mx-auto px-6">
+        <div class="text-center mb-8">
+          <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">Andrew Zambazos</h1>
+          <p class="text-lg text-gray-300 mt-2">Game Designer · Palmerston North, New Zealand</p>
+          <div class="mt-3 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-center gap-2">
+            <a class="text-[#00D4FF] hover:underline" href="mailto:andrewzambazos@gmail.com">andrewzambazos@gmail.com</a>
+            <span class="hidden md:inline">|</span>
+            <a class="text-[#00D4FF] hover:underline" href="https://www.andrewzambazos.com/" target="_blank" rel="noreferrer noopener">andrewzambazos.com</a>
+            <span class="hidden md:inline">|</span>
+            <a class="text-[#00D4FF] hover:underline" href="https://github.com/Bobbybear007" target="_blank" rel="noreferrer noopener">GitHub</a>
+            <span class="hidden md:inline">|</span>
+            <a class="text-[#00D4FF] hover:underline" href="https://www.linkedin.com/in/andrewzambazos/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Objective</h2>
+          <p class="text-gray-200 leading-relaxed">Game Designer with 9 years of hobbyist hands-on experience across leading game engines including Unreal Engine, Unity, Godot, and Bethesda Creation Engine. Great at crafting immersive experiences and innovative gameplay mechanics. I am excited to bring my expertise to a team, contributing to the development of a project wanting my skills.</p>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Personal Statement</h2>
+          <p class="text-gray-200 leading-relaxed">I specialize in crafting immersive worlds, intuitive user interfaces, and seamless user experiences. With years of hobbyist experience across game design, development, and digital art, I’ve worked on my skills in a range of technologies and design tools.</p>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-4">Work History</h2>
+
+          
+
+          <div>
+            <h3 class="text-xl font-semibold">Lead Designer — Fallout Wastelands (Mod)</h3>
+            <p class="text-sm text-gray-400">Remote, New Zealand · Jun 2021 – Present</p>
+            <p class="text-gray-200 mt-2">Coordinate a team of level designers to create immersive and interesting worlds in the Fallout universe; planned and designed alongside writers and artists.</p>
+          </div>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Technical Skills</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill">Unreal Engine (Blueprints)</span>
+            <span class="skill-pill">Unity</span>
+            <span class="skill-pill">Godot</span>
+            <span class="skill-pill">Bethesda Creation Engine</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">HTML / CSS</span>
+          </div>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Personal Skills</h2>
+          <ul class="list-disc list-outside ml-5 mt-2 space-y-1 text-gray-200">
+            <li>BBb Tuba</li>
+            <li>Tenor / Baritone Saxophone</li>
+            <li>Clarinet / Bass Clarinet</li>
+            <li>Radio Presenting</li>
+          </ul>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Qualifications</h2>
+          <p class="text-gray-300"><span class="font-semibold">Awatapu College</span> — Palmerston North, New Zealand</p>
+          <ul class="list-disc list-outside ml-5 mt-2 space-y-1 text-gray-200">
+            <li>NCEA Level 1</li>
+            <li>NCEA Level 2</li>
+          </ul>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Community & Volunteer Experience</h2>
+          <div class="space-y-4 text-gray-200">
+            <div>
+              <h3 class="font-semibold">Palmerston North Brass Band</h3>
+              <p>BBb Tuba · Palmerston North, New Zealand · Apr 2022 – Present</p>
+            </div>
+            <div>
+              <h3 class="font-semibold">Awatapu Jazz Band</h3>
+              <p>Tenor Saxophone · Palmerston North, New Zealand · Aug 2022 – Present</p>
+            </div>
+            <div>
+              <h3 class="font-semibold">Manawatu Youth Orchestra</h3>
+              <p>BBb Tuba · Palmerston North, New Zealand · Jul 2024 – Present</p>
+            </div>
+            <div>
+              <h3 class="font-semibold">Manawatu Sinfonia</h3>
+              <p>BBb Tuba · Palmerston North, New Zealand · 2024</p>
+            </div>
+            <div>
+              <h3 class="font-semibold">New Zealand National Secondary Schools Brass Band</h3>
+              <p>BBb Tuba · Nelson, New Zealand · Oct 2024</p>
+              <p>BBb Tuba · Wellington, New Zealand · Oct 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 md:p-8 border border-gray-800 mt-6">
+          <h2 class="text-2xl font-bold text-[#bdbdfb] mb-3">Interests</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill">Game Development</span>
+            <span class="skill-pill">Music</span>
+            <span class="skill-pill">Video Games</span>
+            <span class="skill-pill">Digital Art</span>
+            <span class="skill-pill">Game Modding</span>
+            <span class="skill-pill">Web Development</span>
+          </div>
+        </div>
+
+        <p class="text-gray-400 mt-6">References available on request.</p>
+
+        <div class="mt-8 flex flex-wrap gap-3 no-print">
+          <a class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 text-lg" href="./Andrew-Zambazos-CV-20-9-24(Current).pdf" target="_blank" rel="noreferrer noopener">Download PDF Résumé</a>
+          <a class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 text-lg" href="mailto:andrewzambazos@gmail.com">Contact</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-8 border-t border-gray-800">
+      <div class="container mx-auto px-6 text-center text-gray-500">
+        <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../../navbar.js" defer></script>
+    <script src="../../script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Corridor Project | Andrew Zambazos</title>
+  <link rel="icon" type="image/x-icon" href="../assets/images/AZ.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+<body class="antialiased">
+  <canvas id="particle-canvas"></canvas>
+  <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+        <a href="../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300 text-[#00D4FF]">Projects</a>
+        <a href="../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+        <a href="../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-2xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+      <a href="../index.html#about" class="block py-2 hover:text-[#00D4FF]">About</a>
+      <a href="../projects.html" class="block py-2 hover:text-[#00D4FF] text-[#00D4FF]">Projects</a>
+      <a href="../index.html#resume" class="block py-2 hover:text-[#00D4FF]">Résumé</a>
+      <a href="../index.html#contact" class="block mt-2 text-center bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-40 md:pt-32">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Star Wars - Inspired Corridor Design</h1>
+      </div>
+    </section>
+
+    <section class="case-study-section">
+      <h2>Introduction</h2>
+      <p>This project focuses on bringing the iconic design language of the Star Wars universe to life through a highly detailed corridor inspired by concept art from Star Wars Battlefront II. The goal was to create an environment that feels authentic to the Star Wars galaxy, blending futuristic industrial design with atmospheric lighting to create an immersive and believable setting.</p>
+      <p>Star Wars: Battlefield II Concept Art:</p>
+      <img src="../assets/images/StarWars/BF2Art.png" alt="Star Wars Corridor Design" class="clickable-image">
+    </section>
+
+    <section class="case-study-section">
+      <h2>Problem Statement</h2>
+      <p>Translating concept art into a fully realized 3D environment presents several challenges, including maintaining visual fidelity while ensuring the design is optimized for real-time rendering. Balancing detailed geometry with efficient performance was critical, as was capturing the atmospheric mood that defines Star Wars interiors.</p>
+    </section>
+
+    <section class="case-study-section">
+      <h2>Design & Development</h2>
+      <p>The design process began by analyzing the source concept art to identify key visual elements such as color schemes, textures, and lighting. The corridor was meticulously modeled in Blender, focusing on intricate paneling, piping, and surface wear to reflect the utilitarian Star Wars aesthetic. Once imported into Unreal Engine 5, Lumen was used to implement dynamic lighting, enhancing the realism with subtle reflections and shadows. Nanite technology allowed for high-polygon assets without compromising performance, ensuring a seamless and immersive experience.</p>
+      <img src="../assets/images/StarWars/Corridor2.jpg" alt="Development Process" class="clickable-image">
+    </section>
+
+    <section class="case-study-section">
+      <h2>Key Features</h2>
+      <div class="key-features">
+        <div class="feature">
+          <h3>Detailed Modeling</h3>
+          <p>The corridor features highly detailed models created in Blender, including modular wall panels, conduits, and control terminals, designed to reflect the lived-in, industrial feel of the Star Wars universe.</p>
+        </div>
+        <div class="feature">
+          <h3>Dynamic Lighting</h3>
+          <p>Using Unreal Engine 5's Lumen system, dynamic lighting was implemented to simulate realistic reflections, shadows, and ambient light, capturing the dark and atmospheric tone characteristic of Imperial interiors.</p>
+        </div>
+        <div class="feature">
+          <h3>Atmospheric Design</h3>
+          <p>Environmental storytelling was integrated through props and texture details, such as scuffed floors, exposed wiring, and flickering lights, to create a sense of history and function within the corridor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-section">
+      <h2>Final Result</h2>
+      <p>The finished corridor successfully captures the essence of Star Wars, blending high-detail modeling with sophisticated lighting to create a space that feels both cinematic and interactive. The project demonstrates how modern game development tools can faithfully recreate iconic designs while pushing the boundaries of visual fidelity.</p>
+      <img src="../assets/images/StarWars/Corridor1.jpg" alt="Final Corridor Design" class="clickable-image">
+    </section>
+
+    <section class="image-gallery">
+      <h2>Project Image Gallery</h2>
+      <div class="image-gallery-grid">
+        <img src="../assets/images/StarWars/Corridor1.jpg" alt="Gallery Image 1" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor2.jpg" alt="Gallery Image 2" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor3.jpg" alt="Gallery Image 3" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor4.jpg" alt="Gallery Image 4" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor5.jpg" alt="Gallery Image 5" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor6.jpg" alt="Gallery Image 6" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor7.jpg" alt="Gallery Image 7" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor8.jpg" alt="Gallery Image 8" class="clickable-image">
+        <img src="../assets/images/StarWars/Corridor9.jpg" alt="Gallery Image 9" class="clickable-image">
+      </div>
+    </section>
+
+    <div class="image-overlay" id="imageOverlay">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <span class="prev-btn" id="prevBtn">&#10094;</span>
+      <img src="" alt="Expanded Image" id="expandedImg">
+      <span class="next-btn" id="nextBtn">&#10095;</span>
+    </div>
+
+    <section class="cta-section">
+      <h2>Explore More Projects</h2>
+      <a href="../projects.html">Back to Projects</a>
+    </section>
+  </main>
+
+  <footer class="py-8 border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../projects.js"></script>
+  <script src="../navbar.js" defer></script>
+  <script src="../script.js" defer></script>
+  <script src="../project.js"></script>
+</body>
+</html>
