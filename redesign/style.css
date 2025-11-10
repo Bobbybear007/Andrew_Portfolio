@@ -231,8 +231,14 @@ body {
 }
 
 .project-card .relative {
-    line-height: 0;
+    /* Removed line-height:0 which caused inherited zero line-height inside overlay text leading to overlapping lines */
     overflow: hidden;
+}
+
+/* Ensure readable line height inside project overlays */
+.project-card .project-overlay h3,
+.project-card .project-overlay p {
+    line-height: 1.25;
 }
 
 .about-image {
