@@ -1,0 +1,8 @@
+# robots.txt for Andrew_Portfolio (redesign)
+
+
+User-agent: *
+Disallow:
+
+
+Sitemap: https://andrewzambazos.com/sitemap.xml

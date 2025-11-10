@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://andrewzambazos.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Top-level pages -->
+  <url>
+    <loc>https://andrewzambazos.com/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects pages -->
+  <url>
+    <loc>https://andrewzambazos.com/projects/fallout.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/hideout.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/mr-brown.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/star-wars-ue5.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/stfu.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/c/whiteboard.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/c/inscribe.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/Nebula/nebula.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/star-trek-ue5/star-trek-ue5.html</loc>
+  </url>
+
+  <!-- Reference pages -->
+  <url>
+    <loc>https://andrewzambazos.com/reference/fallout.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/hideout.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/inscribe.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/mr-brown.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/star-trek-ue5.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/star-wars-ue5.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/stfu.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/reference/whiteboard.html</loc>
+  </url>
+
+  <!-- Resume / assets -->
+  <url>
+    <loc>https://andrewzambazos.com/assets/resumes/resume.html</loc>
+  </url>
+
+</urlset>
