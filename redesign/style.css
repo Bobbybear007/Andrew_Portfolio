@@ -137,6 +137,20 @@
     transform: translateY(0);
     pointer-events: auto;
 }
+#game-dev-projects,
+#web-dev-projects,
+#olympus-projects {
+    transition: opacity 300ms ease, transform 300ms ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+#game-dev-projects:not(.show),
+#web-dev-projects:not(.show),
+#olympus-projects:not(.show) {
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+}
 .section-title-underline {
     position: relative;
     display: block;

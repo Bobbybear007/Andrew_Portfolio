@@ -132,18 +132,50 @@ const projectsData = {
             title: 'Nebula Browser',
             href: 'projects/Nebula/nebula-browser.html',
             image: 'assets/images/Nebula/NebulaBanner.svg',
-            subtitle: 'Web Development, Electron',
-            description: 'A custom Electron based Web Browser'
+            subtitle: 'Desktop Browser, SteamOS & Steam Deck',
+            description: 'A desktop web browser designed for SteamOS, Steam Deck, and controller-first navigation.'
+        },
+        {
+            title: 'The Nebula Project',
+            href: 'projects/Nebula/nebula-project.html',
+            image: 'assets/images/Nebula/NebulaBanner.svg',
+            subtitle: 'Open-source Ecosystem',
+            description: 'An open-source ecosystem of desktop applications built around controller-friendly UX.'
         }
     ],
     'olympus-game-dev': [
-        // Add Olympus Game Development projects here
+        {
+            title: 'Olympus Game Studios',
+            href: 'projects/olympus/olympus-game-studio.html',
+            image: 'assets/images/Olympus/OlympusBanner.svg',
+            subtitle: 'Independent Game & Technology Studio',
+            description: 'An independent game and technology studio focused on building original tools, engines, and narrative-driven experiences.'
+        },
+        {
+            title: 'Mount Olympus (Tech Demo)',
+            href: 'projects/olympus/mount-olympus.html',
+            image: 'assets/images/Olympus/OlympusBanner.svg',
+            subtitle: 'Technical Showcase',
+            description: 'A technical showcase demonstrating rendering, lighting, tooling, and engine capabilities.'
+        }
     ],
     'olympus-web-dev': [
-        // Add Olympus Web Development projects here
+        {
+            title: 'Atlas (Internal Tooling)',
+            href: 'projects/olympus/atlas.html',
+            image: 'assets/images/Olympus/OlympusBanner.svg',
+            subtitle: 'Management & Collaboration',
+            description: 'Internal planning and collaboration tools used by Olympus to manage projects, documentation, and development workflows.'
+        }
     ],
     'olympus-software-dev': [
-        // Add Olympus Software Development projects here
+        {
+            title: 'Hephaestus Engine',
+            href: 'projects/olympus/hephaestus.html',
+            image: 'assets/images/Olympus/OlympusBanner.svg',
+            subtitle: 'Custom C++ Engine',
+            description: 'Custom C++ game engine built from the ground up, focused on performance, modern rendering, and bespoke tooling.'
+        }
     ]
 };
 
@@ -210,6 +242,12 @@ function renderTabPanes() {
                 const activeSubcat = category.subcategories.find(s => s.isActive);
                 if (activeSubcat) {
                     renderSubcategoryProjects(category.id, activeSubcat.id);
+                    
+                    // Add show class to projects container for initial state
+                    const projectsContainer = document.getElementById(`${category.id}-projects`);
+                    if (projectsContainer) {
+                        projectsContainer.classList.add('show');
+                    }
                 }
             }
         });
@@ -314,9 +352,50 @@ function setupTabListeners() {
                 sub.isActive = sub.id === button.getAttribute('data-subcat');
             });
 
-            // Render new projects
+            // Animate projects container
+            const projectsContainer = document.getElementById(`${categoryId}-projects`);
             const subcategoryId = button.getAttribute('data-subcat');
-            renderSubcategoryProjects(categoryId, subcategoryId);
+            
+            const hideProjects = (container) => {
+                return new Promise(resolve => {
+                    if (!container) return resolve();
+                    container.classList.remove('show');
+
+                    let fallback;
+                    const onTransitionEnd = (e) => {
+                        if (e && (e.target !== container || (e.propertyName && !/opacity|transform/.test(e.propertyName)))) return;
+                        container.removeEventListener('transitionend', onTransitionEnd);
+                        clearTimeout(fallback);
+                        resolve();
+                    };
+
+                    fallback = setTimeout(() => onTransitionEnd({ target: container, propertyName: 'opacity' }), 350);
+                    container.addEventListener('transitionend', onTransitionEnd);
+                });
+            };
+
+            const showProjects = (container) => {
+                return new Promise(resolve => {
+                    if (!container) return resolve();
+                    container.classList.add('show');
+
+                    let fallback;
+                    const onTransitionEnd = (e) => {
+                        if (e && (e.target !== container || (e.propertyName && !/opacity|transform/.test(e.propertyName)))) return;
+                        container.removeEventListener('transitionend', onTransitionEnd);
+                        clearTimeout(fallback);
+                        resolve();
+                    };
+
+                    fallback = setTimeout(() => onTransitionEnd({ target: container, propertyName: 'opacity' }), 350);
+                    container.addEventListener('transitionend', onTransitionEnd);
+                });
+            };
+
+            hideProjects(projectsContainer).then(() => {
+                renderSubcategoryProjects(categoryId, subcategoryId);
+                showProjects(projectsContainer);
+            });
         }
     });
 }

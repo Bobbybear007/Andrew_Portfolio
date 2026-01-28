@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../project.css">
+    <link rel="stylesheet" href="nebula-browser.css">
 </head>
 <body class="antialiased">
 <canvas id="particle-canvas"></canvas>
@@ -37,41 +38,69 @@
 </header>
 
 <main class="pt-40 md:pt-32">
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h1>Nebula Web Browser</h1>
+            <h1>Nebula Browser</h1>
+            <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">A desktop web browser designed for SteamOS, Steam Deck, and controller-first navigation. Fast, responsive, and built for the living room.</p>
         </div>
     </section>
 
+    <!-- What is Nebula Browser -->
     <section class="case-study-section">
-        <h2>Project Overview</h2>
-        <p>Nebula is an open-source web browser built on the Electron framework. It aims to provide a lightweight and fast browsing experience with a focus on user privacy and customization. The project is an exploration into modern web technologies and a practical application of desktop development.</p>
-        <img src="../../assets/images/Nebula/Screenshot1.png" alt="Nebula Browser Project Image" class="clickable-image">
+        <h2>What Is Nebula Browser?</h2>
+        <p>Nebula Browser is a purpose-built web browser designed from the ground up for SteamOS, Steam Deck, and controller-first interaction. Rather than trying to force a traditional mouse-and-keyboard browser onto a gamepad, Nebula Browser reimagines what web browsing can be when designed for modern hardware and input methods.</p>
+        <p style="margin-top: 1rem;">Built on proven web technologies with a focus on performance, accessibility, and couch-friendly interaction, Nebula Browser proves that controller-first desktop applications can be practical, fast, and compelling. It serves as both a practical tool for Steam Deck users and a flagship application for the broader Nebula ecosystem.</p>
     </section>
 
+    <!-- Key Features -->
     <section class="case-study-section">
-        <h2>My Contributions</h2>
-        <ul>
-            <li><strong>Core Development:</strong> Responsible for the main application logic and feature implementation.</li>
-            <li><strong>UI/UX Design:</strong> Designed the clean, minimalist user interface.</li>
-            <li><strong>Community Management:</strong> Managed the project repository, addressed issues, and reviewed pull requests.</li>
-        </ul>
-
-        <section class="cta-section">
-            <h2>More About Nebula</h2>
-            <a href="https://github.com/NebulaZMG/NebulaBrowser">Github</a>
-            <a href="https://nebula.zambazosmedia.group">Website</a>
-        </section>
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Controller-Native Navigation</h3>
+                <p>Every interaction is optimized for gamepad input. Menus, tabs, and page navigation feel natural with a controller—no keyboard required.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Big Picture Friendly</h3>
+                <p>Designed to work seamlessly with Steam's Big Picture Mode. Large, readable text and touch-friendly interface elements work from your couch.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Performance Optimized</h3>
+                <p>Built with handheld hardware in mind. Fast startup, responsive navigation, and efficient resource usage ensure smooth browsing on Steam Deck.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Open Source</h3>
+                <p>Transparent development, community contributions, and a commitment to open standards. Inspect the code, report issues, and help shape the future.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Accessibility First</h3>
+                <p>Built with diverse abilities and input methods in mind. Alternative interaction modes ensure Nebula Browser works for everyone.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Part of Nebula Project</h3>
+                <p>Built on shared Nebula Core libraries and design systems. Nebula Browser is the flagship of a broader ecosystem of controller-friendly desktop apps.</p>
+            </div>
+        </div>
     </section>
 
+    <!-- Development & Contributions -->
+    <section class="case-study-section">
+        <h2>Development & Contributions</h2>
+        <p><strong>Core Development:</strong> Responsible for the main application logic, feature implementation, and architecture decisions that make controller-first browsing possible.</p>
+        <p style="margin-top: 0.75rem;"><strong>UI/UX Design:</strong> Designed the clean, intuitive interface with a focus on controller navigation, readability at distance, and accessibility.</p>
+        <p style="margin-top: 0.75rem;"><strong>Community Management:</strong> Maintaining the repository, addressing issues, reviewing contributions, and gathering user feedback to drive the project forward.</p>
+    </section>
+
+    <!-- Project Image Gallery -->
     <section class="image-gallery">
-        <h2>Project Image Gallery</h2>
+        <h2>Screenshots</h2>
         <div class="image-gallery-grid">
-            <img src="../../assets/images/Nebula/Screenshot1.png" alt="Nebula screenshot" class="clickable-image">
-            <img src="../../assets/images/Nebula/Screenshot2.png" alt="Nebula screenshot" class="clickable-image">
-            <img src="../../assets/images/Nebula/Screenshot3.png" alt="Nebula screenshot" class="clickable-image">
-            <img src="../../assets/images/Nebula/Screenshot4.png" alt="Nebula screenshot" class="clickable-image">
-            <img src="../../assets/images/Nebula/Screenshot5.png" alt="Nebula screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot1.png" alt="Nebula Browser screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot2.png" alt="Nebula Browser screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot3.png" alt="Nebula Browser screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot4.png" alt="Nebula Browser screenshot" class="clickable-image">
+            <img src="../../assets/images/Nebula/Screenshot5.png" alt="Nebula Browser screenshot" class="clickable-image">
         </div>
     </section>
 
@@ -82,8 +111,33 @@
         <span class="next-btn" id="nextBtn">&#10095;</span>
     </div>
 
+    <!-- Get Involved -->
+    <section class="case-study-section">
+        <h2>Get Involved</h2>
+        <p>Nebula Browser is open source and welcomes contributions. Whether you're interested in using the browser, reporting bugs, suggesting features, or contributing code, there's a place for you.</p>
+        <p style="margin-top: 1rem;">Check out the GitHub repository to explore the code, review the roadmap, and get started contributing.</p>
+    </section>
+
+    <!-- Call to Action -->
     <section class="cta-section">
-        <h2>Explore More Projects</h2>
+        <h2>Explore</h2>
+        <div class="cta-buttons">
+            <a href="https://store.steampowered.com/app/4290110/Nebula/" class="primary" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/steam/white" alt="Steam" class="button-icon">
+                Get it on Steam
+            </a>
+            <a href="https://github.com/NebulaZMG/NebulaBrowser" class="secondary" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" class="button-icon">
+                Explore on GitHub
+            </a>
+            <a href="nebula-project.html" class="secondary">View The Nebula Project</a>
+            
+        </div>
+    </section>
+
+    <!-- Back to Projects -->
+    <section class="cta-section">
+        <h2>More Projects</h2>
         <a href="../../projects.html">Back to Projects</a>
     </section>
 </main>
