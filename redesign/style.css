@@ -231,6 +231,14 @@ body {
     margin-top: 0.75rem;
 }
 
+#resume-content .qualification-spacer {
+    height: 1.25rem;
+}
+
+#resume-content .md-spacer {
+    height: 1rem;
+}
+
 #resume-content p {
     color: #e5e7eb;
     line-height: 1.65;
@@ -336,6 +344,10 @@ body {
 .resume-pdf p {
     margin-bottom: 0.4rem;
     text-align: left;
+}
+
+.resume-pdf .md-spacer {
+    height: 0.5rem;
 }
 
 .resume-pdf a {

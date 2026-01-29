@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Résumé | Andrew Zambazos</title>
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/AZ.svg" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +14,30 @@
       @media print {
         #header, #particle-canvas, footer, .no-print { display: none !important; }
         main { padding-top: 0 !important; }
+      }
+
+      .resume-pdf {
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: #ffffff;
+        color: #0f172a;
+        width: 7.5in;
+        padding: 0.5in;
+        box-sizing: border-box;
+      }
+
+      .resume-pdf .resume-header,
+      .resume-pdf .resume-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .resume-pdf .resume-section h2,
+      .resume-pdf .resume-section h3,
+      .resume-pdf .resume-section ul,
+      .resume-pdf .resume-section li,
+      .resume-pdf .resume-section p {
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
     </style>
   </head>
@@ -59,6 +83,176 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
+      const addMarkdownSpacers = (markdown) => {
+        const lines = markdown.split(/\r?\n/);
+        const output = [];
+        let blankRun = 0;
+
+        const flushBlanks = () => {
+          if (!blankRun) {
+            return;
+          }
+          output.push("");
+          for (let i = 1; i < blankRun; i += 1) {
+            output.push('<div class="md-spacer"></div>');
+            output.push("");
+          }
+          blankRun = 0;
+        };
+
+        lines.forEach((line) => {
+          if (!line.trim()) {
+            blankRun += 1;
+            return;
+          }
+          flushBlanks();
+          output.push(line);
+        });
+
+        flushBlanks();
+        return output.join("\n");
+      };
+
+      const buildResumeLayout = (container, { sectionClassName } = {}) => {
+        const nodes = Array.from(container.childNodes).filter((node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            return node.textContent.trim().length > 0;
+          }
+          return true;
+        });
+
+        container.innerHTML = "";
+        const fragment = document.createDocumentFragment();
+        let index = 0;
+
+        const headerWrapper = document.createElement("div");
+        headerWrapper.className = "resume-header";
+        while (index < nodes.length) {
+          const node = nodes[index];
+          if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "H2") {
+            break;
+          }
+          headerWrapper.appendChild(node);
+          index += 1;
+        }
+        if (headerWrapper.childNodes.length) {
+          fragment.appendChild(headerWrapper);
+        }
+
+        let footerHRIndex = -1;
+        for (let i = nodes.length - 1; i >= 0; i--) {
+          if (nodes[i].nodeType === Node.ELEMENT_NODE && nodes[i].tagName === "HR") {
+            footerHRIndex = i;
+            break;
+          }
+        }
+
+        while (index < nodes.length) {
+          const node = nodes[index];
+
+          if (footerHRIndex !== -1 && index === footerHRIndex) {
+            index += 1;
+            const footerWrapper = document.createElement("div");
+            footerWrapper.className = "resume-footer";
+            while (index < nodes.length) {
+              footerWrapper.appendChild(nodes[index]);
+              index += 1;
+            }
+            const actionList = footerWrapper.querySelector("ul");
+            if (actionList) {
+              actionList.classList.add("resume-actions", "no-print");
+            }
+            if (footerWrapper.childNodes.length) {
+              fragment.appendChild(footerWrapper);
+            }
+            break;
+          }
+
+          if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "H2") {
+            const section = document.createElement("section");
+            section.className = sectionClassName || "resume-section glass-effect rounded-2xl p-6 md:p-8 border border-gray-800";
+            section.appendChild(node);
+            index += 1;
+            while (index < nodes.length) {
+              const next = nodes[index];
+              if (next.nodeType === Node.ELEMENT_NODE && next.tagName === "H2") {
+                break;
+              }
+              if (footerHRIndex !== -1 && index === footerHRIndex) {
+                break;
+              }
+              section.appendChild(next);
+              index += 1;
+            }
+            fragment.appendChild(section);
+            continue;
+          }
+
+          fragment.appendChild(node);
+          index += 1;
+        }
+
+        container.appendChild(fragment);
+      };
+
+      const applyResumeEnhancements = (container, { forPdf = false } = {}) => {
+        const headings = container.querySelectorAll("h2");
+        headings.forEach((heading) => {
+          const title = heading.textContent.trim().toLowerCase();
+          if (!forPdf && (title === "technical skills" || title === "interests")) {
+            const list = heading.nextElementSibling;
+            if (list && list.tagName === "UL") {
+              list.classList.add("resume-pill-list");
+              list.querySelectorAll("li").forEach((item) => item.classList.add("skill-pill"));
+            }
+          }
+
+          if (title === "education") {
+            const section = heading.closest("section") || heading.parentElement;
+            if (section) {
+              section.querySelectorAll("hr").forEach((rule) => {
+                const spacer = document.createElement("div");
+                spacer.className = "qualification-spacer";
+                rule.replaceWith(spacer);
+              });
+            }
+          }
+        });
+
+        if (forPdf) {
+          const pillLists = container.querySelectorAll(".resume-pill-list");
+          pillLists.forEach((list) => {
+            list.classList.remove("resume-pill-list");
+          });
+          const pillItems = container.querySelectorAll(".skill-pill");
+          pillItems.forEach((item) => item.classList.remove("skill-pill"));
+        }
+
+        if (forPdf) {
+          const firstSection = container.querySelector("h2");
+          const introParagraphs = [];
+          let currentNode = container.querySelector("p");
+          while (currentNode && currentNode !== firstSection) {
+            if (currentNode.tagName === "P") {
+              introParagraphs.push(currentNode);
+            }
+            currentNode = currentNode.nextElementSibling;
+          }
+          introParagraphs.forEach((paragraph) => {
+            paragraph.className = "contact-info";
+          });
+
+          const h3Elements = container.querySelectorAll("h3");
+          h3Elements.forEach((h3) => {
+            h3.className = "job-title";
+            const nextP = h3.nextElementSibling;
+            if (nextP && nextP.tagName === "P" && nextP.innerHTML.includes("·")) {
+              nextP.className = "job-details";
+            }
+          });
+        }
+      };
+
       window.addEventListener("DOMContentLoaded", async () => {
         const container = document.getElementById("resume-content");
         try {
@@ -67,87 +261,10 @@
             throw new Error(`Failed to load résumé (${response.status})`);
           }
           const markdown = await response.text();
-          container.innerHTML = marked.parse(markdown);
-
-          const nodes = Array.from(container.childNodes).filter((node) => {
-            if (node.nodeType === Node.TEXT_NODE) {
-              return node.textContent.trim().length > 0;
-            }
-            return true;
-          });
-
-          container.innerHTML = "";
-          const fragment = document.createDocumentFragment();
-          let index = 0;
-
-          const headerWrapper = document.createElement("div");
-          headerWrapper.className = "resume-header";
-          while (index < nodes.length) {
-            const node = nodes[index];
-            if (node.nodeType === Node.ELEMENT_NODE && (node.tagName === "H2" || node.tagName === "HR")) {
-              break;
-            }
-            headerWrapper.appendChild(node);
-            index += 1;
-          }
-          if (headerWrapper.childNodes.length) {
-            fragment.appendChild(headerWrapper);
-          }
-
-          while (index < nodes.length) {
-            const node = nodes[index];
-            if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "HR") {
-              index += 1;
-              const footerWrapper = document.createElement("div");
-              footerWrapper.className = "resume-footer";
-              while (index < nodes.length) {
-                footerWrapper.appendChild(nodes[index]);
-                index += 1;
-              }
-              const actionList = footerWrapper.querySelector("ul");
-              if (actionList) {
-                actionList.classList.add("resume-actions", "no-print");
-              }
-              if (footerWrapper.childNodes.length) {
-                fragment.appendChild(footerWrapper);
-              }
-              break;
-            }
-
-            if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "H2") {
-              const section = document.createElement("section");
-              section.className = "resume-section glass-effect rounded-2xl p-6 md:p-8 border border-gray-800";
-              section.appendChild(node);
-              index += 1;
-              while (index < nodes.length) {
-                const next = nodes[index];
-                if (next.nodeType === Node.ELEMENT_NODE && (next.tagName === "H2" || next.tagName === "HR")) {
-                  break;
-                }
-                section.appendChild(next);
-                index += 1;
-              }
-              fragment.appendChild(section);
-              continue;
-            }
-
-            fragment.appendChild(node);
-            index += 1;
-          }
-
-          container.appendChild(fragment);
-
-          const headings = container.querySelectorAll("h2");
-          headings.forEach((heading) => {
-            const title = heading.textContent.trim().toLowerCase();
-            if (title === "technical skills" || title === "interests") {
-              const list = heading.nextElementSibling;
-              if (list && list.tagName === "UL") {
-                list.classList.add("resume-pill-list");
-                list.querySelectorAll("li").forEach((item) => item.classList.add("skill-pill"));
-              }
-            }
-          });
+          const spacedMarkdown = addMarkdownSpacers(markdown);
+          container.innerHTML = marked.parse(spacedMarkdown);
+          buildResumeLayout(container);
+          applyResumeEnhancements(container);
 
           const actionLinks = container.querySelectorAll(".resume-actions a");
           actionLinks.forEach((link) => {
@@ -160,12 +277,15 @@
                     throw new Error(`Failed to load résumé (${mdResponse.status})`);
                   }
                   const mdContent = await mdResponse.text();
+                  const spacedMdContent = addMarkdownSpacers(mdContent);
                   const pdfContainer = document.createElement("div");
                   pdfContainer.className = "resume-pdf";
                   pdfContainer.style.position = "absolute";
                   pdfContainer.style.left = "-9999px";
-                  pdfContainer.innerHTML = marked.parse(mdContent);
-                  
+                  pdfContainer.innerHTML = marked.parse(spacedMdContent);
+                  buildResumeLayout(pdfContainer, { sectionClassName: "resume-section" });
+                  applyResumeEnhancements(pdfContainer, { forPdf: true });
+
                   const pdfLinks = pdfContainer.querySelectorAll('a[href*="resume.md"]');
                   pdfLinks.forEach((link) => {
                     const listItem = link.closest("li");
@@ -181,35 +301,20 @@
                     }
                   });
 
-                  // Style header lines before first section
-                  const firstSection = pdfContainer.querySelector('h2');
-                  const introParagraphs = [];
-                  let currentNode = pdfContainer.querySelector('p');
-                  while (currentNode && currentNode !== firstSection) {
-                    if (currentNode.tagName === 'P') {
-                      introParagraphs.push(currentNode);
-                    }
-                    currentNode = currentNode.nextElementSibling;
-                  }
-                  introParagraphs.forEach((paragraph) => {
-                    paragraph.className = 'contact-info';
-                  });
-                  
-                  // Style job entries
-                  const h3Elements = pdfContainer.querySelectorAll('h3');
-                  h3Elements.forEach(h3 => {
-                    h3.className = 'job-title';
-                    const nextP = h3.nextElementSibling;
-                    if (nextP && nextP.tagName === 'P' && nextP.innerHTML.includes('·')) {
-                      nextP.className = 'job-details';
-                    }
-                  });
                   document.body.appendChild(pdfContainer);
 
                   const fullName = (pdfContainer.querySelector("h1")?.textContent || "Resume").trim();
+                  const pdfScale = 1.6;
+
+                  const breakTargets = Array.from(
+                    pdfContainer.querySelectorAll(".resume-header, .resume-section, .resume-footer")
+                  ).map((element) => ({
+                    top: element.offsetTop,
+                    bottom: element.offsetTop + element.offsetHeight,
+                  }));
                   
                   const canvas = await html2canvas(pdfContainer, {
-                    scale: 1.6,
+                    scale: pdfScale,
                     useCORS: true,
                     logging: false,
                     backgroundColor: "#ffffff",
@@ -231,25 +336,48 @@
                   const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
                   const pagePixelHeight = (usableHeight / imgWidth) * canvas.width;
-                  let yOffset = 0;
 
-                  pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
-                  yOffset += pagePixelHeight;
+                  const pageBreaks = [];
+                  let currentPageBottom = pagePixelHeight;
+                  const minSegmentHeight = 64 * pdfScale;
 
-                  while (yOffset < canvas.height) {
-                    pdf.addPage();
-                    const sourceY = yOffset;
-                    const remainingHeight = canvas.height - yOffset;
-                    const heightToUse = Math.min(remainingHeight, pagePixelHeight);
-                    const croppedCanvas = document.createElement("canvas");
-                    croppedCanvas.width = canvas.width;
-                    croppedCanvas.height = heightToUse;
-                    const ctx = croppedCanvas.getContext("2d");
-                    ctx.drawImage(canvas, 0, sourceY, canvas.width, heightToUse, 0, 0, canvas.width, heightToUse);
-                    const croppedImgData = croppedCanvas.toDataURL("image/png");
-                    const croppedImgHeight = (heightToUse * imgWidth) / canvas.width;
-                    pdf.addImage(croppedImgData, "PNG", margin, margin, imgWidth, croppedImgHeight);
-                    yOffset += heightToUse;
+                  breakTargets.forEach(({ top, bottom }) => {
+                    const scaledTop = top * pdfScale;
+                    const scaledBottom = bottom * pdfScale;
+                    if (scaledBottom > currentPageBottom) {
+                      const lastBreak = pageBreaks.length ? pageBreaks[pageBreaks.length - 1] : 0;
+                      if (scaledTop - lastBreak > minSegmentHeight) {
+                        pageBreaks.push(scaledTop);
+                        currentPageBottom = scaledTop + pagePixelHeight;
+                      }
+                    }
+                  });
+
+                  const sliceStarts = [0, ...pageBreaks.filter((pos) => pos > 0 && pos < canvas.height)];
+
+                  let pageIndex = 0;
+                  for (let i = 0; i < sliceStarts.length; i += 1) {
+                    let start = sliceStarts[i];
+                    const end = i + 1 < sliceStarts.length ? sliceStarts[i + 1] : canvas.height;
+                    let remaining = end - start;
+
+                    while (remaining > 0) {
+                      const heightToUse = Math.min(remaining, pagePixelHeight);
+                      const croppedCanvas = document.createElement("canvas");
+                      croppedCanvas.width = canvas.width;
+                      croppedCanvas.height = heightToUse;
+                      const ctx = croppedCanvas.getContext("2d");
+                      ctx.drawImage(canvas, 0, start, canvas.width, heightToUse, 0, 0, canvas.width, heightToUse);
+                      const croppedImgData = croppedCanvas.toDataURL("image/png");
+                      const croppedImgHeight = (heightToUse * imgWidth) / canvas.width;
+                      if (pageIndex > 0) {
+                        pdf.addPage();
+                      }
+                      pdf.addImage(croppedImgData, "PNG", margin, margin, imgWidth, croppedImgHeight);
+                      start += heightToUse;
+                      remaining -= heightToUse;
+                      pageIndex += 1;
+                    }
                   }
 
                   pdf.save(`${fullName.replace(/\s+/g, "-")}-Resume.pdf`);
