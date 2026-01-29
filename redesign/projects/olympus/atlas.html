@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Atlas | Internal Platform</title>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../../style.css">
+	<link rel="stylesheet" href="../../project.css">
+	<style>
+		.fact-chip {
+			background: rgba(124, 58, 237, 0.1);
+			border: 1px solid rgba(124, 58, 237, 0.2);
+			color: #a78bfa;
+			font-size: 0.8rem;
+			font-weight: 600;
+			padding: 0.25rem 0.75rem;
+			border-radius: 9999px;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+		.engine-card {
+			background: rgba(17, 17, 40, 0.6);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			transition: all 0.3s ease;
+		}
+		.engine-card:hover {
+			border-color: rgba(124, 58, 237, 0.3);
+			transform: translateY(-4px);
+			box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.2);
+		}
+		.bullet-point {
+			position: relative;
+			padding-left: 1.5rem;
+		}
+		.bullet-point::before {
+			content: '→';
+			position: absolute;
+			left: 0;
+			color: #7c3aed;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body class="antialiased text-gray-200">
+<canvas id="particle-canvas"></canvas>
+
+<header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+	<div class="container mx-auto px-6 flex justify-between items-center">
+		<a href="../../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+		<nav class="hidden md:flex space-x-8 items-center">
+			<a href="../../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+			<a href="../../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300">Projects</a>
+			<a href="../../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Resume</a>
+			<a href="../../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+		</nav>
+		<button id="mobile-menu-button" class="md:hidden text-2xl">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		</button>
+	</div>
+</header>
+
+<main class="pt-40 md:pt-48">
+	<section class="max-w-5xl mx-auto px-6 mb-24">
+		<div class="text-center md:text-left mb-12">
+			<h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Atlas</h1>
+			<p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+				A private internal platform that centralizes planning, coordination, and knowledge across active projects. Atlas is a shared operational backbone that combines structured data with flexible, human friendly workflows.
+			</p>
+
+			<div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+				<a href="#overview" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+					Explore the platform
+				</a>
+				<a href="#pillars" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+					View the core pillars
+				</a>
+			</div>
+		</div>
+
+		<div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+			<div class="fact-chip">
+				<span class="opacity-50">Type:</span> Internal Platform
+			</div>
+			<div class="fact-chip">
+				<span class="opacity-50">Focus:</span> Planning and Knowledge
+			</div>
+			<div class="fact-chip">
+				<span class="opacity-50">Scope:</span> Long Running Projects
+			</div>
+			<div class="fact-chip">
+				<span class="opacity-50">Status:</span> Active Design
+			</div>
+		</div>
+	</section>
+
+	<section id="overview" class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8">What Atlas Solves</h2>
+			<div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+				<p>
+					Atlas exists for teams building complex things over time. It keeps documentation, decisions, assets, and conversations connected so context stays intact as projects evolve.
+				</p>
+				<p>
+					It is not a traditional project management tool. It is a shared operational backbone that balances structure where it matters with flexibility in how teams work day to day.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="pillars" class="case-study-section border-0 py-24">
+		<h2 class="text-3xl font-bold mb-12 text-center md:text-left">Core Pillars</h2>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="engine-card p-8 rounded-2xl">
+				<h3 class="text-xl font-bold mb-3">Clarity and Continuity</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					A single source of truth for project structure, team access, and evolving plans with less fragmentation across external tools.
+				</p>
+			</div>
+			<div class="engine-card p-8 rounded-2xl">
+				<h3 class="text-xl font-bold mb-3">Opinionated Structure</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					Clear ownership, permissions, and versioned resources that keep long running work stable and easy to navigate.
+				</p>
+			</div>
+			<div class="engine-card p-8 rounded-2xl">
+				<h3 class="text-xl font-bold mb-3">Flexible Workflows</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					Human friendly documentation and collaboration flows that adapt to how teams actually build and communicate.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="case-study-section border-0 py-20 bg-[#111128]">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl font-bold mb-10">Platform Architecture</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Separation of Layers</h4>
+					<p class="text-gray-400 text-sm">Clear boundaries between data, API, and interface layers to keep the core stable and testable.</p>
+				</div>
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Secure Self Hosted Core</h4>
+					<p class="text-gray-400 text-sm">Reliability and auditability are prioritized over feature sprawl so long term maintenance stays realistic.</p>
+				</div>
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Role Aware Access</h4>
+					<p class="text-gray-400 text-sm">Permissions and ownership models keep sensitive work protected while enabling cross team visibility.</p>
+				</div>
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Integration Ready</h4>
+					<p class="text-gray-400 text-sm">Designed to connect with internal tools, automation, and custom clients without redesigning the core.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="case-study-section border-0 py-24">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8">Workflow Design</h2>
+			<div class="space-y-8 text-gray-300">
+				<div>
+					<h3 class="text-xl font-semibold mb-3 text-violet-400">Knowledge Continuity</h3>
+					<p class="leading-relaxed">
+						Decisions, assets, and conversations stay connected to project structure so context does not drift over time.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-3 text-violet-400">Human Friendly Documentation</h3>
+					<p class="leading-relaxed">
+						Structured data lives alongside narrative notes so teams can track progress and intent without heavy overhead.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-3 text-violet-400">Quiet Collaboration</h3>
+					<p class="leading-relaxed">
+						The platform reduces noise by keeping plans, access, and resources in one place that stays consistent across long running work.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="case-study-section border-0 py-20 bg-gradient-to-t from-[#0E0E1E] to-[#111128]">
+		<div class="max-w-4xl mx-auto text-center md:text-left">
+			<h2 class="text-3xl font-bold mb-8">Current Focus</h2>
+			<p class="text-lg text-gray-300 mb-10 leading-relaxed">
+				Atlas is evolving around secure access, durable project structure, and a maintainable platform core. The goal is continuity and clarity that lasts through long running creative and technical work.
+			</p>
+			<div class="flex flex-wrap justify-center md:justify-start gap-6">
+				<a href="../../projects.html" class="border border-gray-700 hover:border-gray-500 text-gray-300 font-bold py-3 px-10 rounded-lg transition-all duration-300">
+					Back to Projects
+				</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="py-8 border-t border-gray-800">
+	<div class="container mx-auto px-6 text-center text-gray-500">
+		<p>&copy; 2026 Andrew Zambazos. All Rights Reserved.</p>
+	</div>
+</footer>
+
+<script src="../../navbar.js" defer></script>
+<script src="../../script.js" defer></script>
+</body>
+</html>

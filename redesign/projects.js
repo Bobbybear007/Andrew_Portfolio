@@ -150,14 +150,8 @@ const projectsData = {
             image: 'assets/images/Olympus/OlympusBanner.svg',
             subtitle: 'Independent Game & Technology Studio',
             description: 'An independent game and technology studio focused on building original tools, engines, and narrative-driven experiences.'
-        },
-        {
-            title: 'Mount Olympus (Tech Demo)',
-            href: 'projects/olympus/mount-olympus.html',
-            image: 'assets/images/Olympus/OlympusBanner.svg',
-            subtitle: 'Technical Showcase',
-            description: 'A technical showcase demonstrating rendering, lighting, tooling, and engine capabilities.'
         }
+       
     ],
     'olympus-web-dev': [
         {

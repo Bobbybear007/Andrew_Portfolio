@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hephaestus Engine | Custom C++ Engine & Tooling</title>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../../style.css">
+	<link rel="stylesheet" href="../../project.css">
+	<style>
+		.fact-chip {
+			background: rgba(124, 58, 237, 0.1);
+			border: 1px solid rgba(124, 58, 237, 0.2);
+			color: #a78bfa;
+			font-size: 0.8rem;
+			font-weight: 600;
+			padding: 0.25rem 0.75rem;
+			border-radius: 9999px;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+		.engine-card {
+			background: rgba(17, 17, 40, 0.6);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			transition: all 0.3s ease;
+		}
+		.engine-card:hover {
+			border-color: rgba(124, 58, 237, 0.3);
+			transform: translateY(-4px);
+			box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.2);
+		}
+		.bullet-point {
+			position: relative;
+			padding-left: 1.5rem;
+		}
+		.bullet-point::before {
+			content: '→';
+			position: absolute;
+			left: 0;
+			color: #7c3aed;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body class="antialiased text-gray-200">
+<canvas id="particle-canvas"></canvas>
+
+<header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+	<div class="container mx-auto px-6 flex justify-between items-center">
+		<a href="../../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+		<nav class="hidden md:flex space-x-8 items-center">
+			<a href="../../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+			<a href="../../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300">Projects</a>
+			<a href="../../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+			<a href="../../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+		</nav>
+		<button id="mobile-menu-button" class="md:hidden text-2xl">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		</button>
+	</div>
+</header>
+
+<main class="pt-40 md:pt-48">
+	<!-- Hero Section -->
+	<section class="max-w-5xl mx-auto px-6 mb-24">
+		<div class="text-center md:text-left mb-12">
+			<h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Hephaestus Engine</h1>
+			<p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+				A custom C++ engine built from the ground up to study modern engine architecture, prioritize clarity, and create a direct relationship between creative intent and technical execution.
+			</p>
+
+			<div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+				<a href="https://www.olympusgames.dev/hephaestus.html" target="_blank" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+					Visit the Hephaestus page
+				</a>
+				<a href="#pillars" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+					Explore the core pillars
+				</a>
+			</div>
+		</div>
+
+		<!-- Quick Facts -->
+		<div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+			<div class="fact-chip">
+				<span class="opacity-50">Built:</span> Custom C++ Engine
+			</div>
+			<div class="fact-chip">
+				<span class="opacity-50">Focus:</span> Rendering + Tooling + Pipelines
+			</div>
+			<div class="fact-chip">
+				<span class="opacity-50">Role:</span> Engine Architect & Tools Dev
+			</div>
+			<div class="fact-chip">
+				<span class="opacity-50">Status:</span> Active Iteration
+			</div>
+		</div>
+	</section>
+
+	<!-- Overview -->
+	<section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8">Why Hephaestus Exists</h2>
+			<div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+				<p>
+					Hephaestus is a design first engine created as a personal exploration of how modern tools are built. The goal is not to hide complexity, but to understand it, organize it, and make the workflow feel direct and intentional.
+				</p>
+				<p>
+					It serves as both the technical foundation for Olympus Game Studios projects and a learning driven platform for exploring rendering, tooling, asset pipelines, and iteration speed with minimal abstraction.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Core Pillars -->
+	<section id="pillars" class="case-study-section border-0 py-24">
+		<h2 class="text-3xl font-bold mb-12 text-center md:text-left">Core Pillars</h2>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="engine-card p-8 rounded-2xl">
+				<h3 class="text-xl font-bold mb-3">Clarity Over Abstraction</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					Systems are intentionally transparent. The engine prioritizes readable flows and explicit ownership so every feature can be understood, modified, and extended with confidence.
+				</p>
+			</div>
+			<div class="engine-card p-8 rounded-2xl">
+				<h3 class="text-xl font-bold mb-3">Editor Ergonomics</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					Tooling is treated as a first class system. The editor focuses on fast iteration, approachable controls, and workflows tailored to the creative process.
+				</p>
+			</div>
+			<div class="engine-card p-8 rounded-2xl">
+				<h3 class="text-xl font-bold mb-3">Experimental Workflows</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					The engine is built to explore new ideas like custom render paths, asset pipelines, and world building tools that evolve alongside project needs.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Engine Architecture -->
+	<section class="case-study-section border-0 py-20 bg-[#111128]">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl font-bold mb-10">Engine Architecture</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Modular Runtime Core</h4>
+					<p class="text-gray-400 text-sm">A lightweight runtime with clear ownership boundaries, focused on performance and predictable behavior.</p>
+				</div>
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Separation of Editor + Runtime</h4>
+					<p class="text-gray-400 text-sm">Tools and runtime layers are kept distinct so shipping builds stay lean while editor workflows remain rich.</p>
+				</div>
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Iterative Rendering Stack</h4>
+					<p class="text-gray-400 text-sm">Rendering is designed to be evolvable, allowing targeted experiments without destabilizing the core.</p>
+				</div>
+				<div class="bullet-point">
+					<h4 class="font-bold text-white mb-2">Asset Centric Data Flow</h4>
+					<p class="text-gray-400 text-sm">Assets are treated as first class entities with versioned pipelines and fast reimport cycles.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tooling & Workflow -->
+	<section class="case-study-section border-0 py-24">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8">Tooling & Workflow</h2>
+			<div class="space-y-8 text-gray-300">
+				<div>
+					<h3 class="text-xl font-semibold mb-3 text-violet-400">Editor UX</h3>
+					<p class="leading-relaxed">
+						Hephaestus treats the editor as a creative cockpit. The UI focuses on direct manipulation, minimal friction, and fast context switching between world, assets, and runtime diagnostics.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-3 text-violet-400">Asset Pipelines</h3>
+					<p class="leading-relaxed">
+						The pipeline is built for reliability and iteration speed with clean import and reimport paths, deterministic outputs, and immediate feedback for designers.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-3 text-violet-400">Custom Tooling Layer</h3>
+					<p class="leading-relaxed">
+						Bespoke tools support experimental workflows: layout authoring, live scene inspection, and structured data panels tailored to each system.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Current Focus -->
+	<section class="case-study-section border-0 py-20 bg-gradient-to-t from-[#0E0E1E] to-[#111128]">
+		<div class="max-w-4xl mx-auto text-center md:text-left">
+			<h2 class="text-3xl font-bold mb-8">Current Focus</h2>
+			<p class="text-lg text-gray-300 mb-10 leading-relaxed">
+				The engine is currently evolving around renderer iteration, editor diagnostics, and a streamlined asset pipeline. Each system is built with the intent to teach, scale, and stay readable for future experimentation.
+			</p>
+			<div class="flex flex-wrap justify-center md:justify-start gap-6">
+				<a href="https://www.olympusgames.dev/hephaestus.html" target="_blank" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+					Engine Updates
+				</a>
+				<a href="../../projects.html" class="border border-gray-700 hover:border-gray-500 text-gray-300 font-bold py-3 px-10 rounded-lg transition-all duration-300">
+					Back to Projects
+				</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="py-8 border-t border-gray-800">
+	<div class="container mx-auto px-6 text-center text-gray-500">
+		<p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+	</div>
+</footer>
+
+<script src="../../navbar.js" defer></script>
+<script src="../../script.js" defer></script>
+</body>
+</html>
