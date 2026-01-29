@@ -43,36 +43,22 @@
     <loc>https://andrewzambazos.com/projects/c/inscribe.html</loc>
   </url>
   <url>
-    <loc>https://andrewzambazos.com/projects/Nebula/nebula.html</loc>
+    <loc>https://andrewzambazos.com/projects/Nebula/nebula-browser.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/Nebula/nebula-project.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/olympus/atlas.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/olympus/hephaestus.html</loc>
+  </url>
+  <url>
+    <loc>https://andrewzambazos.com/projects/olympus/olympus-game-studio.html</loc>
   </url>
   <url>
     <loc>https://andrewzambazos.com/projects/star-trek-ue5/star-trek-ue5.html</loc>
-  </url>
-
-  <!-- Reference pages -->
-  <url>
-    <loc>https://andrewzambazos.com/reference/fallout.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/hideout.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/inscribe.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/mr-brown.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/star-trek-ue5.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/star-wars-ue5.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/stfu.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/reference/whiteboard.html</loc>
   </url>
 
   <!-- Resume / assets -->
