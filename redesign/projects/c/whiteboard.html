@@ -11,8 +11,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="../../project.css">
+  <style>
+        .fact-chip {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased text-gray-200">
   <canvas id="particle-canvas"></canvas>
   <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
     <div class="container mx-auto px-6 flex justify-between items-center">
@@ -35,37 +49,82 @@
     </div>
   </header>
 
-  <main class="pt-40 md:pt-32">
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Whiteboard</h1>
-      </div>
+  <main class="pt-40 md:pt-48">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center md:text-left mb-12">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Whiteboard</h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                A custom-built productivity app designed to give users a limitless space to plan, map, and organize their ideas. Built with offline-first principles and full local control in mind.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                <a href="#features" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    View Features
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+            <div class="fact-chip">
+                <span class="opacity-50">Type:</span> Productivity Tool
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Focus:</span> Offline-First Design
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Stack:</span> HTML / CSS / JavaScript
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Format:</span> Visual Canvas + Local Files
+            </div>
+        </div>
     </section>
 
-    <section class="case-study-section">
-      <h2>Introduction</h2>
-      <p>Whiteboard is a custom-built productivity app designed to give users a limitless space to plan, map, and organize their ideas. It was born from a need for an offline-first tool that doesn’t rely on cloud logins or subscriptions—just pure, local control. Users can drag, drop, and organize elements like sticky notes, files, checklists, and links in a visual canvas.</p>
+    <!-- Overview Section -->
+    <section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Overview</h2>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    Whiteboard was born from a need for an offline-first tool that doesn't rely on cloud logins or subscriptions—just pure, local control. Most modern planning tools are cloud-based, restrictive, or locked behind paywalls. While tools like Milanote offer flexibility, they come with limitations in free versions and require constant internet connectivity.
+                </p>
+                <p>
+                    Whiteboard provides complete freedom: no account needed, no storage limits, fully portable on a USB stick or through file transfer. Users can drag, drop, and organize elements like sticky notes, files, checklists, and links in an infinite visual canvas.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section class="case-study-section">
-      <h2>Problem Statement</h2>
-      <p>Most modern planning tools are cloud-based, restrictive, or locked behind paywalls. Milanote offers flexibility but comes with limitations in its free version. I wanted to create a tool that gave users complete freedom—no account needed, no storage limits, and fully portable on a USB stick or online file transfer.</p>
+    <!-- Design & Development Section -->
+    <section class="case-study-section border-0 py-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Design & Development</h2>
+            <div class="space-y-8 text-gray-300">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Tech Stack</h3>
+                    <p class="leading-relaxed">
+                        Whiteboard was built using vanilla HTML, CSS, and JavaScript to ensure maximum compatibility and fast load times. The project file system is JSON-based, with each workspace saved and opened like a document file (.zpf). The UI is modular and optimized for drag-and-drop performance across browsers without external libraries.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Canvas & Interaction</h3>
+                    <p class="leading-relaxed">
+                        A custom canvas and grid system provides a scrollable and zoomable workspace for users to freely move elements around. The interface mimics physical whiteboards—users can freely position items, connect ideas, and organize information visually rather than hierarchically. The FileReader API enables users to export and open project files locally.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Data Handling & Privacy</h3>
+                    <p class="leading-relaxed">
+                        Whiteboard stores nothing by default. Projects must be saved manually using the built-in export system, ensuring total user control. This makes it ideal for local workflows and privacy-conscious users who want to maintain complete ownership of their data without any cloud synchronization.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section class="case-study-section">
-      <h2>Design & Development</h2>
-      <p>Whiteboard was built using vanilla HTML, CSS, and JavaScript to ensure maximum compatibility and fast load times. The project file system is JSON-based, with each workspace saved and opened like a document file (.zpf). The UI is modular and optimized for drag-and-drop performance across browsers without external libraries.</p>
-      <h3>Tech Stack</h3>
-      <ul>
-        <li><strong>HTML/CSS/JavaScript</strong> – Built from classic web technologies to ensure compatibility and performance.</li>
-        <li><strong>Canvas & Grid System</strong> – Provides a scrollable and zoomable workspace for users to freely move elements around.</li>
-        <li><strong>FileReader API</strong> – Allows users to export and open project files locally.</li>
-      </ul>
-      <h3>Design Philosophy</h3>
-      <p>The design prioritizes clarity and minimalism while enabling flexible layouts. The interface mimics physical whiteboards—users can freely position items, connect ideas, and organize information visually rather than hierarchically.</p>
-      <h3>Data Handling</h3>
-      <p>Whiteboard stores nothing by default. Projects must be saved manually using the built-in export system, ensuring total user control. This makes it ideal for local workflows and privacy-conscious users.</p>
-      <img src="../../assets/images/whiteboard/WhiteboardBanner.svg" alt="Whiteboard Development Process" class="clickable-image">
+    <section class="max-w-5xl mx-auto px-6 py-12">
+        <img src="../../assets/images/whiteboard/WhiteboardBanner.svg" alt="Whiteboard Development Process" class="clickable-image rounded-lg">
     </section>
 
     <section class="case-study-section">
@@ -110,9 +169,14 @@
       <span class="next-btn" id="nextBtn">&#10095;</span>
     </div>
 
-    <section class="cta-section">
-      <h2>Explore More Projects</h2>
-      <a href="../../projects.html">Back to Projects</a>
+    <!-- Footer CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-6">Explore More Projects</h2>
+            <a href="../../projects.html" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                Back to Projects
+            </a>
+        </div>
     </section>
   </main>
 
@@ -122,9 +186,7 @@
     </div>
   </footer>
 
-  <script src="../../projects.js"></script>
   <script src="../../navbar.js" defer></script>
-  <script src="../../footer.js" defer></script>
   <script src="../../script.js" defer></script>
   <script src="../../project.js"></script>
 </body>

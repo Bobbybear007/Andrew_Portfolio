@@ -11,8 +11,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../project.css">
+    <style>
+        .fact-chip {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased text-gray-200">
 <canvas id="particle-canvas"></canvas>
 
 <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
@@ -36,41 +50,82 @@
     </div>
 </header>
 
-<main class="pt-40 md:pt-32">
-    <section class="hero">
-        <div class="hero-text">
-            <h1 class="hero-title">STAR TREK</h1>
-            <h1>In Unreal Engine</h1>
+<main class="pt-40 md:pt-48">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center md:text-left mb-12">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Star Trek in Unreal Engine</h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                A custom environment design project recreating authentic Star Trek starship interiors using Unreal Engine 5's cutting-edge rendering technology and real-time lighting systems.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                <a href="#image-gallery" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    View Gallery
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+            <div class="fact-chip">
+                <span class="opacity-50">Type:</span> Environment Design
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Engine:</span> Unreal Engine 5
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Focus:</span> Lighting + Modeling + VFX
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Status:</span> Complete
+            </div>
         </div>
     </section>
 
-    <section class="case-study-section">
-        <h2>Introduction</h2>
-        <p>This project involves designing custom Star Trek-inspired environments using Unreal Engine 5. The goal was to blend authentic Starfleet aesthetics with modern game design technology, highlighting detailed modeling, dynamic lighting, and immersive textures.</p>
-        <img src="../../assets/images/ststuff/Andromeda1.png" alt="Star Trek Bridge Design" class="clickable-image">
+    <!-- Overview Section -->
+    <section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Overview</h2>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    This project explores the challenge of faithfully recreating Star Trek environments in a modern game engine while maintaining both authenticity to the source material and technical interactivity. The goal was to blend iconic Starfleet aesthetics with cutting-edge rendering technology.
+                </p>
+                <p>
+                    The focus centered on detailed modeling, dynamic lighting, and immersive textures—particularly the bridges and command centers of Starfleet vessels like the U.S.S. Andromeda and the Clarke. Using Unreal Engine 5's advanced systems, every detail from console interfaces to atmospheric lighting was crafted with precision and realism.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section class="case-study-section">
-        <h2>Problem Statement</h2>
-        <p>How can Star Trek environments be faithfully recreated in a modern game engine while maintaining both authenticity and interactivity?</p>
+    <!-- Design & Development Section -->
+    <section class="case-study-section border-0 py-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Design & Development</h2>
+            <div class="space-y-8 text-gray-300">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Engine & Rendering</h3>
+                    <p class="leading-relaxed">
+                        The project was developed using Unreal Engine 5, leveraging Nanite for high-fidelity geometry that handles complex starship interiors with minimal performance cost. Lumen provides real-time global illumination, creating authentic lighting that reflects the sleek, sophisticated aesthetic of Starfleet ship design.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">3D Modeling & Asset Creation</h3>
+                    <p class="leading-relaxed">
+                        Blender was used as the primary 3D modeling tool, with careful attention to recreating authentic Starfleet interior design. Ship consoles, panels, seating arrangements, and environmental details were modeled to match the visual language established across Star Trek franchises. Every model was optimized for real-time rendering within UE5.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Lighting & Atmosphere</h3>
+                    <p class="leading-relaxed">
+                        Dynamic lighting and real-time reflections bring the environments to life. Carefully placed light sources create the warm, controlled ambiance of a starship bridge while maintaining technical realism. Reflections on polished surfaces and console displays enhance immersion and authenticity.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="case-study-section">
-        <h2>Design & Development</h2>
-        <p>The project was developed using Unreal Engine 5. Key tools included Nanite for high-fidelity geometry and Lumen for real-time global illumination, creating an immersive Starfleet experience. Blender was used for 3D modeling of ship interiors, focusing on the U.S.S. Andromeda Bridge.</p>
-        <img src="../../assets/images/ststuff/Andromeda2.png" alt="Design Process in Unreal Engine" class="clickable-image">
-    </section>
-
-    <section class="case-study-section">
-        <h2>Technologies Used</h2>
-        <ul>
-            <li><strong>Unreal Engine 5:</strong> Nanite for complex details and Lumen for realistic lighting.</li>
-            <li><strong>Blender:</strong> 3D modeling of Starfleet-inspired interiors and props.</li>
-            <li><strong>Dynamic Lighting:</strong> Real-time reflections to enhance realism.</li>
-        </ul>
-    </section>
-
-    <section class="image-gallery">
+    <section class="image-gallery" id="gallery">
         <h2>Project Image Gallery</h2>
         <div class="image-gallery-grid">
             <img src="../../assets/images/ststuff/Andromeda1.png" alt="Gallery Image 1" class="clickable-image">
@@ -94,9 +149,14 @@
         <span class="next-btn" id="nextBtn">&#10095;</span>
     </div>
 
-    <section class="cta-section">
-        <h2>Explore More Projects</h2>
-        <a href="../../projects.html">Back to Projects</a>
+    <!-- Footer CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-6">Explore More Projects</h2>
+            <a href="../../projects.html" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                Back to Projects
+            </a>
+        </div>
     </section>
 </main>
 
@@ -105,7 +165,6 @@
         <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
     </div>
 </footer>
-<script src="../../projects.js"></script>
 <script src="../../navbar.js" defer></script>
 <script src="../../footer.js" defer></script>
 <script src="../../script.js" defer></script>

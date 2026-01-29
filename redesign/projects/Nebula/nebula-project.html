@@ -12,8 +12,22 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../project.css">
     <link rel="stylesheet" href="nebula-project.css">
+    <style>
+        .fact-chip {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased text-gray-200">
 <canvas id="particle-canvas"></canvas>
 
 <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
@@ -37,21 +51,58 @@
     </div>
 </header>
 
-<main class="pt-40 md:pt-32">
+<main class="pt-40 md:pt-48">
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>The Nebula Project</h1>
-            <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">An open-source ecosystem of desktop applications built for modern hardware, controller-first interaction, and SteamOS compatibility.</p>
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center md:text-left mb-12">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">The Nebula Project</h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                An open-source ecosystem of desktop applications built for modern hardware, controller-first interaction, and SteamOS compatibility.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                <a href="https://nebula.zambazosmedia.group" target="_blank" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    Visit Nebula Site
+                </a>
+                <a href="https://github.com/The-Nebula-Project-ZMG" target="_blank" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    Explore on GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+            <div class="fact-chip">
+                <span class="opacity-50">Type:</span> Open-Source Ecosystem
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Focus:</span> Controller-First Desktop Apps
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Platform:</span> SteamOS / Steam Deck
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Status:</span> Active Development
+            </div>
         </div>
     </section>
 
-    <!-- Philosophy -->
-    <section class="case-study-section">
-        <h2>What Is the Nebula Project?</h2>
-        <p>Traditional desktop software assumes a mouse and keyboard. The Nebula Project exists to rethink that assumption.</p>
-        <p>Nebula is an umbrella initiative focused on building modern, controller-friendly desktop applications designed for SteamOS, Steam Deck, and living-room PCs. Rather than a single product, Nebula encompasses multiple applications unified by shared design systems, input handling conventions, and a commitment to performance and accessibility.</p>
-        <p style="margin-top: 1rem;">The project embodies an open-source mindset where experimentation, iteration, and community feedback drive development forward. Each Nebula application can stand alone, but together they form a cohesive ecosystem that proves controller-first desktop experiences are viable, practical, and compelling.</p>
+    <!-- Overview Section -->
+    <section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">What Is the Nebula Project?</h2>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    Traditional desktop software assumes a mouse and keyboard. The Nebula Project exists to rethink that assumption.
+                </p>
+                <p>
+                    Nebula is an umbrella initiative focused on building modern, controller-friendly desktop applications designed for SteamOS, Steam Deck, and living-room PCs. Rather than a single product, Nebula encompasses multiple applications unified by shared design systems, input handling conventions, and a commitment to performance and accessibility.
+                </p>
+                <p>
+                    The project embodies an open-source mindset where experimentation, iteration, and community feedback drive development forward. Each Nebula application can stand alone, but together they form a cohesive ecosystem that proves controller-first desktop experiences are viable, practical, and compelling.
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- Core Principles -->
@@ -152,24 +203,19 @@
         <p style="margin-top: 1rem;">Whether you're interested in using Nebula applications, contributing code, reporting issues, or exploring ideas—there's a place for you in the ecosystem. We believe that open development, feedback, and experimentation lead to better software.</p>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <h2>Get Started</h2>
-        <div class="cta-buttons">
-            <a href="https://nebula.zambazosmedia.group" class="primary">
-                Nebula Website
-            </a>
-            <a href="https://github.com/The-Nebula-Project-ZMG" class="secondary" target="_blank" rel="noopener noreferrer">
-                <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" class="button-icon">
-                Explore on GitHub
-            </a>
+    <!-- Footer CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-6">Explore More Projects</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://nebula.zambazosmedia.group" target="_blank" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                    Visit Nebula Site
+                </a>
+                <a href="../../projects.html" class="inline-block border border-gray-700 hover:border-gray-500 text-gray-300 font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                    Back to Projects
+                </a>
+            </div>
         </div>
-    </section>
-
-    <!-- Back to Projects -->
-    <section class="cta-section">
-        <h2>Explore More Projects</h2>
-        <a href="../../projects.html">Back to Projects</a>
     </section>
 </main>
 
@@ -178,9 +224,7 @@
         <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
     </div>
 </footer>
-<script src="../../projects.js"></script>
 <script src="../../navbar.js" defer></script>
-<script src="../../footer.js" defer></script>
 <script src="../../script.js" defer></script>
 <script src="../../project.js"></script>
 </body>

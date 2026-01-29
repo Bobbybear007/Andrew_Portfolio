@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: url(#linear-gradient);
+        stroke-width: 4px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: none;
+      }
+
+      .st3 {
+        fill: #0e0e1e;
+      }
+
+      .st4 {
+        fill: url(#radial-gradient);
+      }
+
+      .st5 {
+        fill: #7c3aed;
+        font-family: Inter18pt-Bold, 'Inter 18pt';
+        font-size: 64px;
+        font-weight: 700;
+        letter-spacing: .2em;
+      }
+
+      .st5, .st1 {
+        isolation: isolate;
+      }
+
+      .st1 {
+        opacity: .3;
+      }
+
+      .st1, .st2 {
+        stroke: #7c3aed;
+        stroke-width: 2px;
+      }
+
+      .st2 {
+        stroke-dasharray: 20 20;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="447.95" cy="1051.53" fx="447.95" fy="1051.53" r="1" gradientTransform="translate(-1008512 -241352) rotate(90) scale(540 -960)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#0e0e1e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="-6.8" y1="1067.9" x2="1913.2" y2="-12.1" gradientTransform="translate(0 1080) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect class="st3" width="1920" height="1080"/>
+  <rect class="st4" width="1920" height="1080"/>
+  <path class="st0" d="M960,300l200,400h-400l200-400Z"/>
+  <circle class="st2" cx="960" cy="540" r="150"/>
+  <text class="st5" transform="translate(758.37 918)"><tspan x="0" y="0">OLYMPUS</tspan></text>
+  <path class="st1" d="M400,540h200"/>
+  <path class="st1" d="M1320,540h200"/>
+</svg>

@@ -138,7 +138,7 @@ const projectsData = {
         {
             title: 'The Nebula Project',
             href: 'projects/Nebula/nebula-project.html',
-            image: 'assets/images/Nebula/NebulaBanner.svg',
+            image: 'assets/images/Nebula/NebulaProjectBanner.svg',
             subtitle: 'Open-source Ecosystem',
             description: 'An open-source ecosystem of desktop applications built around controller-friendly UX.'
         }
@@ -172,7 +172,7 @@ const projectsData = {
         {
             title: 'Hephaestus Engine',
             href: 'projects/olympus/hephaestus.html',
-            image: 'assets/images/Olympus/OlympusBanner.svg',
+            image: 'assets/images/Olympus/HephaestusBanner.svg',
             subtitle: 'Custom C++ Engine',
             description: 'Custom C++ game engine built from the ground up, focused on performance, modern rendering, and bespoke tooling.'
         }
@@ -198,7 +198,7 @@ function createProjectCard(project) {
 }
 
 function renderTabButtons() {
-    const buttonContainer = document.querySelector('.flex.flex-wrap.justify-center');
+    const buttonContainer = document.getElementById('category-tab-buttons');
     
     if (buttonContainer) {
         buttonContainer.innerHTML = categories.map(category => `

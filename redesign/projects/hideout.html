@@ -1,123 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Underground Hideout in UEFN | Andrew Zambazos</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../project.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underground Hideout in UEFN | Andrew Zambazos</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../project.css">
+    <style>
+        .fact-chip {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
 </head>
-<body class="antialiased">
-  <canvas id="particle-canvas"></canvas>
-  <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+<body class="antialiased text-gray-200">
+<canvas id="particle-canvas"></canvas>
+
+<header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
     <div class="container mx-auto px-6 flex justify-between items-center">
-      <a href="../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
-      <nav class="hidden md:flex space-x-8 items-center">
-        <a href="../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
-        <a href="../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300 text-[#00D4FF]">Projects</a>
-        <a href="../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
-        <a href="../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
-      </nav>
-      <button id="mobile-menu-button" class="md:hidden text-2xl">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
+        <a href="../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+            <a href="../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300">Projects</a>
+            <a href="../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+            <a href="../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-      <a href="../index.html#about" class="block py-2 hover:text-[#00D4FF]">About</a>
-      <a href="../projects.html" class="block py-2 hover:text-[#00D4FF] text-[#00D4FF]">Projects</a>
-      <a href="../index.html#resume" class="block py-2 hover:text-[#00D4FF]">Résumé</a>
-      <a href="../index.html#contact" class="block mt-2 text-center bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg">Contact</a>
-    </div>
-  </header>
+</header>
 
-  <main class="pt-40 md:pt-32">
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Underground Hideout in UEFN</h1>
-      </div>
-    </section>
-
-    <section class="case-study-section">
-      <h2>Introduction</h2>
-      <p>This project showcases a sprawling underground hideout built in Unreal Engine for Fortnite (UEFN). Designed to showcase the tools of creativity within Fortnite Creative, this hideout highlights the power of UEFN's tools in crafting highly detailed and immersive environments.</p>
-      <img src="../assets/images/Hideout/Hideout4.png" alt="Design and Development Process" class="clickable-image">
-    </section>
-
-    <section class="case-study-section">
-      <h2>Problem Statement</h2>
-      <p>The challenge was to create an expansive underground hideout that feels both immersive and functional within the constraints of Fortnite Creative. Balancing intricate design with performance optimization was essential to ensure smooth gameplay without sacrificing visual quality.</p>
-    </section>
-
-    <section class="case-study-section">
-      <h2>Design & Development</h2>
-      <p>The project began by conceptualizing the structure of the hideout, focusing on creating interconnected chambers and hidden pathways. UEFN's advanced tools enabled precise terrain sculpting, dynamic lighting, and environmental storytelling. Key features like secret doors, ambient sounds, and interactive props were implemented to enrich player engagement.</p>
-      <img src="../assets/images/Hideout/Hideout3.png" alt="Design and Development Process" class="clickable-image">
-    </section>
-
-    <section class="case-study-section">
-      <h2>Key Features</h2>
-      <div class="key-features">
-        <div class="feature">
-          <h3>Detailed Environment Design</h3>
-          <p>Intricately designed chambers and tunnels with immersive textures and lighting create a realistic underground setting.</p>
+<main class="pt-40 md:pt-48">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center md:text-left mb-12">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Underground Hideout</h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                A sprawling underground hideout built in UEFN, showcasing detailed environmental design, dynamic lighting, and immersive world-building.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                <a href="#design" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    View Design
+                </a>
+            </div>
         </div>
-        <div class="feature">
-          <h3>Interactive Elements</h3>
-          <p>Hidden doors, environmental triggers, and interactive props add depth and replayability to the space.</p>
+
+        <!-- Quick Facts -->
+        <div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+            <div class="fact-chip">
+                <span class="opacity-50">Engine:</span> Unreal Engine for Fortnite
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Platform:</span> Fortnite Creative (UEFN)
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Focus:</span> Environment Design + Lighting
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Key Features:</span> Interconnected Chambers, Interactive Elements
+            </div>
         </div>
-        <div class="feature">
-          <h3>Optimized Performance</h3>
-          <p>Careful asset management and optimization ensure smooth performance across different devices.</p>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Project Overview</h2>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    This project showcases a sprawling underground hideout built in Unreal Engine for Fortnite (UEFN). Designed to showcase the tools of creativity within Fortnite Creative, this hideout highlights the power of UEFN's tools in crafting highly detailed and immersive environments.
+                </p>
+                <p>
+                    The challenge was to create an expansive underground hideout that feels both immersive and functional within the constraints of Fortnite Creative. Balancing intricate design with performance optimization was essential to ensure smooth gameplay without sacrificing visual quality.
+                </p>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section class="case-study-section">
-      <h2>Final Result</h2>
-      <p>The final hideout presents a dynamic and immersive underground environment that leverages UEFN's powerful features. It successfully combines atmospheric storytelling with engaging gameplay, demonstrating the creative potential of Fortnite Creative.</p>
-      <img src="../assets/images/Hideout/Hideout2.png" alt="Design and Development Process" class="clickable-image">
+    <!-- Design Approach -->
+    <section id="design" class="case-study-section border-0 py-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Design & Development</h2>
+            <div class="space-y-8 text-gray-300">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Concept & Structure</h3>
+                    <p class="leading-relaxed">
+                        The project began by conceptualizing the structure of the hideout, focusing on creating interconnected chambers and hidden pathways. UEFN's advanced tools enabled precise terrain sculpting, dynamic lighting, and environmental storytelling.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Detailed Environment Design</h3>
+                    <p class="leading-relaxed">
+                        Intricately designed chambers and tunnels with immersive textures and lighting create a realistic underground setting that encourages exploration and discovery.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Key Features Implemented</h3>
+                    <ul class="leading-relaxed space-y-2 ml-4">
+                        <li>• <strong>Interactive Elements:</strong> Hidden doors, environmental triggers, and interactive props add depth and replayability to the space.</li>
+                        <li>• <strong>Dynamic Lighting:</strong> Advanced lighting systems create atmospheric depth and guide player navigation.</li>
+                        <li>• <strong>Optimized Performance:</strong> Careful asset management and optimization ensure smooth performance across different devices.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="image-gallery">
-      <h2>Project Image Gallery</h2>
-      <div class="image-gallery-grid">
-        <img src="../assets/images/Hideout/Hideout1.png" alt="Gallery Image 1" class="clickable-image">
-        <img src="../assets/images/Hideout/Hideout2.png" alt="Gallery Image 2" class="clickable-image">
-        <img src="../assets/images/Hideout/Hideout3.png" alt="Gallery Image 3" class="clickable-image">
-        <img src="../assets/images/Hideout/Hideout4.png" alt="Gallery Image 4" class="clickable-image">
-        <img src="../assets/images/Hideout/Hideout5.png" alt="Gallery Image 5" class="clickable-image">
-        <img src="../assets/images/Hideout/Hideout6.png" alt="Gallery Image 6" class="clickable-image">
-      </div>
+    <!-- Gallery Section -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <h2 class="text-3xl font-bold mb-12">Project Gallery</h2>
+        <div class="image-gallery-grid">
+            <img src="../assets/images/Hideout/Hideout1.png" alt="Hideout 1" class="clickable-image">
+            <img src="../assets/images/Hideout/Hideout2.png" alt="Hideout 2" class="clickable-image">
+            <img src="../assets/images/Hideout/Hideout3.png" alt="Hideout 3" class="clickable-image">
+            <img src="../assets/images/Hideout/Hideout4.png" alt="Hideout 4" class="clickable-image">
+            <img src="../assets/images/Hideout/Hideout5.png" alt="Hideout 5" class="clickable-image">
+            <img src="../assets/images/Hideout/Hideout6.png" alt="Hideout 6" class="clickable-image">
+        </div>
     </section>
 
-    <div class="image-overlay" id="imageOverlay">
-      <span class="close-btn" id="closeBtn">&times;</span>
-      <span class="prev-btn" id="prevBtn">&#10094;</span>
-      <img src="" alt="Expanded Image" id="expandedImg">
-      <span class="next-btn" id="nextBtn">&#10095;</span>
-    </div>
-
-    <section class="cta-section">
-      <h2>Explore More Projects</h2>
-      <a href="../projects.html">Back to Projects</a>
+    <!-- Footer CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-6">Explore More Projects</h2>
+            <a href="../projects.html" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                Back to Projects
+            </a>
+        </div>
     </section>
-  </main>
+</main>
 
-  <footer class="py-8 border-t border-gray-800">
+<footer class="py-8 border-t border-gray-800">
     <div class="container mx-auto px-6 text-center text-gray-500">
-      <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+        <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
     </div>
-  </footer>
+</footer>
 
-  <script src="../projects.js"></script>
-  <script src="../navbar.js" defer></script>
-  <script src="../footer.js" defer></script>
-  <script src="../script.js" defer></script>
-  <script src="../project.js"></script>
+<div class="image-overlay" id="imageOverlay">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <span class="prev-btn" id="prevBtn">&#10094;</span>
+    <img src="" alt="Expanded Image" id="expandedImg">
+    <span class="next-btn" id="nextBtn">&#10095;</span>
+</div>
+
+<script src="../navbar.js" defer></script>
+<script src="../script.js" defer></script>
+<script src="../project.js"></script>
 </body>
 </html>
