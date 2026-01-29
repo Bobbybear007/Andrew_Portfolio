@@ -56,6 +56,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
       window.addEventListener("DOMContentLoaded", async () => {
         const container = document.getElementById("resume-content");
@@ -144,6 +146,119 @@
                 list.classList.add("resume-pill-list");
                 list.querySelectorAll("li").forEach((item) => item.classList.add("skill-pill"));
               }
+            }
+          });
+
+          const actionLinks = container.querySelectorAll(".resume-actions a");
+          actionLinks.forEach((link) => {
+            if (link.getAttribute("href")?.includes("resume.md")) {
+              link.addEventListener("click", async (event) => {
+                event.preventDefault();
+                try {
+                  const mdResponse = await fetch("./resume.md", { cache: "no-store" });
+                  if (!mdResponse.ok) {
+                    throw new Error(`Failed to load résumé (${mdResponse.status})`);
+                  }
+                  const mdContent = await mdResponse.text();
+                  const pdfContainer = document.createElement("div");
+                  pdfContainer.className = "resume-pdf";
+                  pdfContainer.style.position = "absolute";
+                  pdfContainer.style.left = "-9999px";
+                  pdfContainer.innerHTML = marked.parse(mdContent);
+                  
+                  const pdfLinks = pdfContainer.querySelectorAll('a[href*="resume.md"]');
+                  pdfLinks.forEach((link) => {
+                    const listItem = link.closest("li");
+                    if (listItem) {
+                      listItem.remove();
+                      return;
+                    }
+                    link.remove();
+                  });
+                  pdfContainer.querySelectorAll("ul").forEach((list) => {
+                    if (!list.querySelector("li")) {
+                      list.remove();
+                    }
+                  });
+
+                  // Style header lines before first section
+                  const firstSection = pdfContainer.querySelector('h2');
+                  const introParagraphs = [];
+                  let currentNode = pdfContainer.querySelector('p');
+                  while (currentNode && currentNode !== firstSection) {
+                    if (currentNode.tagName === 'P') {
+                      introParagraphs.push(currentNode);
+                    }
+                    currentNode = currentNode.nextElementSibling;
+                  }
+                  introParagraphs.forEach((paragraph) => {
+                    paragraph.className = 'contact-info';
+                  });
+                  
+                  // Style job entries
+                  const h3Elements = pdfContainer.querySelectorAll('h3');
+                  h3Elements.forEach(h3 => {
+                    h3.className = 'job-title';
+                    const nextP = h3.nextElementSibling;
+                    if (nextP && nextP.tagName === 'P' && nextP.innerHTML.includes('·')) {
+                      nextP.className = 'job-details';
+                    }
+                  });
+                  document.body.appendChild(pdfContainer);
+
+                  const fullName = (pdfContainer.querySelector("h1")?.textContent || "Resume").trim();
+                  
+                  const canvas = await html2canvas(pdfContainer, {
+                    scale: 1.6,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: "#ffffff",
+                  });
+
+                  const imgData = canvas.toDataURL("image/png");
+                  const { jsPDF } = window.jspdf;
+                  const pdf = new jsPDF({
+                    orientation: "portrait",
+                    unit: "in",
+                    format: "letter",
+                  });
+
+                  const pageWidth = 8.5;
+                  const pageHeight = 11;
+                  const margin = 0.5;
+                  const usableHeight = pageHeight - margin * 2;
+                  const imgWidth = pageWidth - margin * 2;
+                  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                  const pagePixelHeight = (usableHeight / imgWidth) * canvas.width;
+                  let yOffset = 0;
+
+                  pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
+                  yOffset += pagePixelHeight;
+
+                  while (yOffset < canvas.height) {
+                    pdf.addPage();
+                    const sourceY = yOffset;
+                    const remainingHeight = canvas.height - yOffset;
+                    const heightToUse = Math.min(remainingHeight, pagePixelHeight);
+                    const croppedCanvas = document.createElement("canvas");
+                    croppedCanvas.width = canvas.width;
+                    croppedCanvas.height = heightToUse;
+                    const ctx = croppedCanvas.getContext("2d");
+                    ctx.drawImage(canvas, 0, sourceY, canvas.width, heightToUse, 0, 0, canvas.width, heightToUse);
+                    const croppedImgData = croppedCanvas.toDataURL("image/png");
+                    const croppedImgHeight = (heightToUse * imgWidth) / canvas.width;
+                    pdf.addImage(croppedImgData, "PNG", margin, margin, imgWidth, croppedImgHeight);
+                    yOffset += heightToUse;
+                  }
+
+                  pdf.save(`${fullName.replace(/\s+/g, "-")}-Resume.pdf`);
+                  pdfContainer.remove();
+                } catch (downloadError) {
+                  console.error("PDF generation error:", downloadError);
+                  alert("Unable to generate the PDF. Please try again.");
+                }
+              });
             }
           });
         } catch (error) {

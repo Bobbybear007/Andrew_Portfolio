@@ -2,7 +2,7 @@
 
 Game Designer · Palmerston North, New Zealand
 
-[andrewzambazos@gmail.com](mailto:andrewzambazos@gmail.com) | [andrewzambazos.com](https://www.andrewzambazos.com/) | [GitHub](https://github.com/Bobbybear007) | [LinkedIn](https://www.linkedin.com/in/andrewzambazos/)
+[andrewzambazos@gmail.com](mailto:andrewzambazos@gmail.com) | [andrewzambazos.com](https://www.andrewzambazos.com/)
 
 ## Objective
 
@@ -96,5 +96,5 @@ BBb Tuba · Wellington, New Zealand · Oct 2025
 
 References available on request.
 
-- [Download PDF Résumé](./Andrew-Zambazos-CV-20-9-24(Current).pdf)
+- [Download Résumé (PDF)](./resume.md)
 - [Contact](mailto:andrewzambazos@gmail.com)
