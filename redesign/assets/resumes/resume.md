@@ -1,67 +1,100 @@
 # Andrew Zambazos
 
-Palmerston North, New Zealand  
-Email: [andrewzambazos@gmail.com](mailto:andrewzambazos@gmail.com)  
-GitHub: [github.com/Bobbybear007](https://github.com/Bobbybear007)
+Game Designer · Palmerston North, New Zealand
+
+[andrewzambazos@gmail.com](mailto:andrewzambazos@gmail.com) | [andrewzambazos.com](https://www.andrewzambazos.com/) | [GitHub](https://github.com/Bobbybear007) | [LinkedIn](https://www.linkedin.com/in/andrewzambazos/)
+
+## Objective
+
+Game Designer with 9 years of hobbyist hands-on experience across leading game engines including Unreal Engine, Unity, Godot, and Bethesda Creation Engine. Great at crafting immersive experiences and innovative gameplay mechanics. I am excited to bring my expertise to a team, contributing to the development of a project wanting my skills.
+
+## Personal Statement
+
+I specialize in crafting immersive worlds, intuitive user interfaces, and seamless user experiences. With years of hobbyist experience across game design, development, and digital art, I’ve worked on my skills in a range of technologies and design tools.
+
+## Work History
+
+### Lead Designer, Fallout Wastelands (Mod)
+
+Remote, New Zealand · Jun 2021 – Present
+
+Coordinate a team of level designers to create immersive and interesting worlds in the Fallout universe. Planned and designed alongside writers and artists.
+
+## Technical Skills
+
+- Unreal Engine (Blueprints)
+- Unity
+- Godot
+- Bethesda Creation Engine
+- C++
+- C#
+- Java
+- JavaScript
+- Python
+- Git
+- HTML / CSS
+
+## Qualifications
+
+**Awatapu College**, Palmerston North, New Zealand
+
+- NCEA Level 1
+- NCEA Level 2
+- NCEA Level 3 / University Entrance
+
+## Personal Skills
+
+- BBb Tuba
+- Tenor / Baritone Saxophone
+- Clarinet / Bass Clarinet
+- Radio Presenting
+
+## Community & Volunteer Experience
+
+### Palmerston North Brass Band
+
+BBb Tuba · Palmerston North, New Zealand · Apr 2022 – Present
+
+### Feilding Brass Band
+
+BBb Tuba · Feilding, New Zealand · August 2024 – February 2026
+
+### Awatapu College Music Department
+
+1st Tenor Saxophone · Awatapu Jazz Band · Aug 2022 – December 2025
+
+1st Clarinet (Mentor) · Awatapu Concert Band · November 2024 – December 2025
+
+Tuba · Orichal Quintet · February 2025 – December 2025
+
+Tuba / Bass Clarinet (Mentor) · Awatapu Junior Concert Band · June 2025 – December 2025
+
+### Manawatu Sinfonia / Youth Orchestra
+
+BBb Tuba · Palmerston North, New Zealand · Jul 2024 – Present
+
+### Manawatu Concert Band
+
+BBb Tuba · Palmerston North, New Zealand · January 2025 – January 2026
+
+### New Zealand National Secondary Schools' Brass Band
+
+BBb Tuba · Nelson, New Zealand · Oct 2024
+
+BBb Tuba · Wellington, New Zealand · Oct 2025
+
+## Interests
+
+- Game Development
+- Music
+- Video Games
+- Digital Art
+- Game Modding
+- Web Development
 
 ---
 
-## Summary
-Game Developer and Digital Creator with 9 years of hands-on experience building immersive worlds, intuitive interfaces, and performant game systems. Comfortable leading small teams, coordinating cross-discipline work, and shipping polished content in Unreal Engine and Unity. Strong focus on world building, level design, and UI/UX with a technical mindset.
+References available on request.
 
----
-
-## Skills
-- Engines: Unreal Engine 5, Unity, Godot
-- Programming: C++, C#, Blueprints, Python (tools), Git
-- Design: Level Design, World Building, Gameplay Systems, UI/UX Design
-- Art & Tools: 3D Modeling, Materials, Lighting, Photoshop, Figma
-- Collaboration: Agile/Scrum, Task Tracking, Documentation, Mentoring
-
----
-
-## Experience
-
-### Producer & Lead World Designer — Elysium (UE5)
-- Led world design, establishing visual language, layout, and biomes using UE5 tools (Landscape, Foliage, Lumen/Nanite).
-- Coordinated tasks across design, art, and tech to maintain scope and quality; ran reviews and milestone planning.
-- Built modular level blockouts, established traversal and encounter beats, and iterated based on playtest feedback.
-
-### Lead Designer — Fallout: Wastelands (Modding)
-- Directed a small mod team; defined goals, features, and content pipeline for a cohesive Fallout experience.
-- Produced layouts and points-of-interest; optimized world streaming and performance across large open areas.
-- Created documentation and tutorials to onboard contributors and maintain content quality.
-
-### UI/UX Designer — Sci‑Fi RPG Concept
-- Designed a modern, diegetic UI system with scalable components, accessibility considerations, and prototyped user flows.
-- Built interactive prototypes and motion concepts; defined style guide and component inventory.
-
-### Additional Work
-- Star Wars UE5 Scenes — Lighting and environment composition studies.
-- STFU — Gameplay scripting, UI polish, and content integration.
-- Mr. Brown — Visual design support, asset integration, and presentation materials.
-
----
-
-## Selected Projects
-- Elysium — Producer & Lead World Designer (UE5)
-- Fallout: Wastelands — Lead Designer (Mod)
-- Sci‑Fi UI Concept — UI/UX Lead
-- Star Wars UE5 — Environment & Lighting Studies
-- Star Trek UE5 — Environment exploration
-
----
-
-## Education
-- Ongoing Professional Development — Unreal/Unity Certifications, Design/UX courses, and self‑directed projects.
-
----
-
-## Awards & Activities
-- Co-host of the "Generation Fusion" podcast discussing games, design, and technology.
-- Active musician (Tuba and Saxophone), contributing to community ensembles and events.
-
----
-
-## References
-Available on request.
+- [Download PDF Résumé](./Andrew-Zambazos-CV-20-9-24(Current).pdf)
+- [Contact](mailto:andrewzambazos@gmail.com)

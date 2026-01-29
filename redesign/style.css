@@ -184,6 +184,113 @@ body {
     overflow-x: hidden;
 }
 
+#resume-content {
+    color: #e0e0e0;
+}
+
+#resume-content .resume-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#resume-content .resume-header h1 {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+#resume-content .resume-header p {
+    color: #d1d5db;
+    margin-top: 0.5rem;
+}
+
+#resume-content .resume-header a {
+    color: #00D4FF;
+    text-decoration: none;
+}
+
+#resume-content .resume-header a:hover {
+    text-decoration: underline;
+}
+
+#resume-content .resume-section {
+    margin-top: 1.5rem;
+}
+
+#resume-content .resume-section h2 {
+    color: #bdbdfb;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+#resume-content .resume-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+#resume-content p {
+    color: #e5e7eb;
+    line-height: 1.65;
+}
+
+#resume-content ul {
+    margin-left: 1.25rem;
+    list-style: disc;
+}
+
+#resume-content li {
+    margin: 0.25rem 0;
+}
+
+#resume-content .resume-pill-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+#resume-content .resume-pill-list .skill-pill {
+    margin: 0;
+}
+
+#resume-content .resume-footer {
+    margin-top: 1.5rem;
+    color: #9ca3af;
+}
+
+#resume-content .resume-footer ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#resume-content .resume-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+#resume-content .resume-actions a {
+    background: #7c3aed;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease;
+}
+
+#resume-content .resume-actions a:hover {
+    background: #8b5cf6;
+}
+
 #particle-canvas {
     position: fixed;
     top: 0;
