@@ -88,14 +88,14 @@ const projectsData = {
     ],
     'game-dev-jam': [
         {
-            title: 'STFU: Game Jam Entry',
+            title: 'Special Time Fixing Unit',
             href: 'projects/stfu.html',
             image: 'assets/images/STFU/STFU-Thumbnail2.jpg',
             subtitle: 'Game Development, Game Jam, Unity',
             description: 'A puzzle-platformer where you manipulate time and collaborate with your past self to fix temporal anomalies.'
         },
         {
-            title: 'Mr. Brown\'s Smuggle Run: Game Jam Entry',
+            title: 'Mr. Brown\'s Smuggle Run',
             href: 'projects/mr-brown.html',
             image: 'assets/images/MrB/MrB.jpg',
             subtitle: 'Game Development, Game Jam, Godot',
