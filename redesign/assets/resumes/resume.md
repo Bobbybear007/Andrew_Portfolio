@@ -1,6 +1,6 @@
 # Andrew Zambazos
 
-Game Designer · Palmerston North, New Zealand
+Game Designer · Wellington, New Zealand
 
 [andrewzambazos@gmail.com](mailto:andrewzambazos@gmail.com) | [andrewzambazos.com](https://www.andrewzambazos.com/)
 
