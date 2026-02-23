@@ -59,6 +59,7 @@
   addIcon('https://www.linkedin.com/in/andrewzambazos/', 'LinkedIn', 'fa-brands fa-linkedin-in');
   addIcon('mailto:andrewzambazos@gmail.com', 'Email', 'fa-solid fa-envelope');
   addIcon('https://www.youtube.com/@Zambazos', 'YouTube', 'fa-brands fa-youtube');
+  addIcon('https://mastodon.social/@zambazos', 'Mastodon', 'fa-brands fa-mastodon');
 
         desktopNav.appendChild(social);
       }
@@ -113,6 +114,7 @@
   addIconM('https://www.linkedin.com/in/andrewzambazos/', 'LinkedIn', 'fa-brands fa-linkedin-in');
   addIconM('mailto:andrewzambazos@gmail.com', 'Email', 'fa-solid fa-envelope');
   addIconM('https://www.youtube.com/@Zambazos', 'YouTube', 'fa-brands fa-youtube');
+  addIconM('https://mastodon.social/@zambazos', 'Mastodon', 'fa-brands fa-mastodon');
 
         mobileMenu.appendChild(socialM);
       }
