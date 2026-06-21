@@ -104,11 +104,18 @@ const projectsData = {
     ],
     'game-dev-modding': [
         {
-            title: 'Fallout Modding',
-            href: 'projects/fallout.html',
-            image: 'assets/images/falloutwork/falloutthumbnail.jpg',
+            title: 'Fallout: Wastelands',
+            href: 'projects/fallout-wastelands.html',
+            image: 'assets/images/falloutwork/Wastelands/Fallout-Wastelands0.PNG',
+            subtitle: 'Creation Kit, Modding, Lead Design',
+            description: 'Lead designer on a large-scale Fallout mod focused on world-building and survival.'
+        },
+        {
+            title: 'Fallout: Music City',
+            href: 'projects/fallout-music-city.html',
+            image: 'assets/images/falloutwork/MusicCity/MusicCity-TheDeathDepths1.png',
             subtitle: 'Creation Kit, Modding, Level Design',
-            description: 'A look into my work as a level designer on fallout mods.'
+            description: 'Level design for a post-apocalyptic Nashville with hand-crafted dungeons and interiors.'
         }
     ],
     'web-dev-personal': [

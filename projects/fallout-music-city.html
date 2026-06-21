@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallout: Music City | Andrew Zambazos</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../project.css">
+    <style>
+        .fact-chip {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-200">
+<canvas id="particle-canvas"></canvas>
+
+<header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+            <a href="../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300">Projects</a>
+            <a href="../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+            <a href="../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </div>
+</header>
+
+<main class="pt-40 md:pt-48">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center md:text-left mb-12">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Fallout: Music City</h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                A Fallout mod set in a post-apocalyptic Nashville, featuring hand-crafted dungeons, environmental storytelling and immersive interior spaces.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                <a href="#work" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    View Work
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+            <div class="fact-chip">
+                <span class="opacity-50">Status:</span> Archived
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Role:</span> Level Designer - Project Lead
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Focus:</span> Environmental Design + Interiors
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Engine:</span> Bethesda Creation Kit
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Project Overview</h2>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    <strong>Note:</strong> <em>Fallout: Music City</em> is no longer in development. It was the first project I ever worked on and where I served as project lead, and I am always concepting ways to bring it back.
+                </p>
+                <p>
+                    <em>Fallout: Music City</em> reimagined Nashville as a wasteland frontier, blending Southern culture with Fallout's signature post-apocalyptic tone. I joined as a junior level designer. It was my first time on a team and my first time doing level design.
+                </p>
+                <p>
+                    This project taught me how to make levels that are actually visually interesting and fun to play. A lot of what I learned went beyond the basics of the Creation Kit. I had to figure out how to build spaces with more than just four walls. I spent a lot of time learning how to use rubble, pipes, skeletons and enemies to distinguish each level and make them feel like they could've been in the original game.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Approach -->
+    <section id="work" class="case-study-section border-0 py-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Development Approach</h2>
+            <div class="space-y-8 text-gray-300">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Location Design</h3>
+                    <p class="leading-relaxed mb-4">
+                        Each dungeon I designed was a big step for me, and a challenge I faced was making each feel individual and not tell the same story. The hospital had to be different from the hatch bunker, and the Death Depths had to be different from the hole.
+                    </p>
+                    <p class="leading-relaxed">
+                        The hospital had to feel like a moment frozen in time, with patients in their beds and doctors performing surgeries. The hatch bunker had to feel like a worst-case scenario for a survivalist who people thought was crazy. The Death Depths had to feel like a deep, dark and dangerous place you don't want to go.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Environmental Storytelling</h3>
+                    <p class="leading-relaxed">
+                        Rather than relying on exposition, locations were built to communicate history through debris placement, lighting and spatial composition, encouraging players to piece together what happened as they explore.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Key Locations</h3>
+                    <ul class="leading-relaxed space-y-2 ml-4">
+                        <li>• <strong>Abandoned Hospital:</strong> A long-abandoned hospital housing a large infestation of cave crickets and patients from before the bombs fell.</li>
+                        <li>• <strong>Hatch Bunker:</strong> A homemade bunker built from a trailer by a prewar survivalist.</li>
+                        <li>• <strong>The Death Depths:</strong> A Deathclaw den home to a tribe that has been hunting nearby wastelanders and dragging them deep into their lair.</li>
+                        <li>• <strong>The Hole:</strong> The very first level of the whole mod, an abandoned vault that was under construction when the bombs fell, now taken over by slavers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <h2 class="text-3xl font-bold mb-12">Project Gallery</h2>
+
+        <h3 class="text-xl font-semibold text-violet-400 mb-6">Abandoned Hospital</h3>
+        <div class="image-gallery-grid mb-16">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-AbandonedHospital0.png" alt="Abandoned Hospital exterior" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-AbandonedHospital1.png" alt="Abandoned Hospital corridor" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-AbandonedHospital2.png" alt="Abandoned Hospital interior" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-AbandonedHospital3.png" alt="Abandoned Hospital room" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-AbandonedHospital4.png" alt="Abandoned Hospital detail" class="clickable-image">
+        </div>
+
+        <h3 class="text-xl font-semibold text-violet-400 mb-6">Hatch Bunker</h3>
+        <div class="image-gallery-grid mb-16">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-Hatchbunker0.png" alt="Hatch Bunker entrance" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-Hatchbunker1.png" alt="Hatch Bunker interior" class="clickable-image">
+        </div>
+
+        <h3 class="text-xl font-semibold text-violet-400 mb-6">The Death Depths</h3>
+        <div class="image-gallery-grid mb-16">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheDeathDepths0.png" alt="The Death Depths entrance" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheDeathDepths1.png" alt="The Death Depths corridor" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheDeathDepths2.png" alt="The Death Depths chamber" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheDeathDepths3.png" alt="The Death Depths detail" class="clickable-image">
+        </div>
+
+        <h3 class="text-xl font-semibold text-violet-400 mb-6">The Hole</h3>
+        <div class="image-gallery-grid">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheHole0.jpg" alt="The Hole overview" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheHole2.jpg" alt="The Hole landscape" class="clickable-image">
+            <img src="../assets/images/falloutwork/MusicCity/MusicCity-TheHole3.jpg" alt="The Hole environment" class="clickable-image">
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-6">Explore More Projects</h2>
+            <a href="../projects.html" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                Back to Projects
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="py-8 border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+        <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<div class="image-overlay" id="imageOverlay">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <span class="prev-btn" id="prevBtn">&#10094;</span>
+    <img src="" alt="Expanded Image" id="expandedImg">
+    <span class="next-btn" id="nextBtn">&#10095;</span>
+</div>
+
+<script src="../navbar.js" defer></script>
+<script src="../script.js" defer></script>
+<script src="../project.js"></script>
+</body>
+</html>
