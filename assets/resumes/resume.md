@@ -4,56 +4,48 @@ Game Designer · Wellington, New Zealand
 
 [andrewzambazos@gmail.com](mailto:andrewzambazos@gmail.com) | [andrewzambazos.com](https://www.andrewzambazos.com/)
 
-## Objective
+## Profile
 
-Game Designer with nearly a decade of hands on experience spanning Unreal Engine, Unity, Godot, the Bethesda Creation Engine, and custom engine development. Co founder and Lead Designer at Olympus Game Studios, where I work across game design, level design, UI and UX, and engine tooling. I am passionate about building immersive experiences, strong design systems, and tools that empower creative teams.
-
-## Personal Statement
-
-I work at the intersection of design and development, focusing on how systems feel as much as how they function. My background spans game design, level design, UI and UX, engine tooling, and technical implementation, allowing me to move fluidly between concept, prototype, and production. At Olympus Game Studios, I help shape both the creative direction of projects and the technical foundations that support them, ensuring design intent translates cleanly into playable experiences.
-
-## Education
-
-**Awatapu College**, Palmerston North, New Zealand  
-* NCEA Level 1  
-* NCEA Level 2  
-* NCEA Level 3 / University Entrance  
-
----
-
-**Massey University**, Wellington, New Zealand  
-* Bachelor of Screen Arts (Honours)  
-* Majoring in Game Development  
-Currently Enrolled
+Game Designer and technical creative with experience across level design, UI and UX, game systems, modding workflows, and engine tooling. Experienced with Unreal Engine, Unity, Godot, the Bethesda Creation Engine, and custom tools, with a strong focus on building immersive playable experiences and practical workflows. My work spans independent game projects, mod development, technical design, and collaborative creative production.
 
 ## Work History
 
-### Co-founder and Lead Designer, Olympus Game Studios
+### 3D Artist / Programmer, Patriam Studios
+#### Indie game development team · Remote, Wellington, New Zealand · Apr 2026 – Present
 
-Remote, New Zealand · 2023 – Present
+Contributing to Patriam: The Saga of Roljar, a third-person action RPG, with a focus on level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement, and gameplay scripting support. Work includes building immersive environments, creating and integrating environmental assets, and supporting technical implementation where needed.
 
-Co-founded Olympus Game Studios and lead design across both game projects and internal technology. Responsible for high level creative direction, gameplay and level design, UI and UX design, and collaboration between designers, programmers, and artists. Actively involved in the development of the Hephaestus Engine, contributing to editor workflows, tooling, and usability from a designer focused perspective.
+### Project Lead, Commonwealth Online (Mod)
+#### Independent mod project · Remote, New Zealand · Jun 2026 – Present
 
+Leading development of Commonwealth Online, a multiplayer mod for Fallout 4 focused on preserving the single-player experience while adding online co-op functionality. Responsible for project direction, gameplay systems, networking design, UI and UX design, technical planning, and modding workflows. Developing core systems using C++, F4SE, Python, and custom tooling, including player synchronisation, server-client communication, remote player representation, and developer testing tools.
+
+### Co-founder and Technical Lead, Olympus Game Studios
+#### Independent game development team · Remote, New Zealand · 2023 – Present
+
+Co-founded Olympus Game Studios as an independent game development team and contribute across game design, level design, UI and UX, and internal tools. Work includes supporting creative direction, collaborating with designers, programmers, and artists, and contributing to editor workflows and usability for the Hephaestus Engine from a designer-focused perspective.
 
 ### Lead Designer, Fallout Wastelands (Mod)
-
-Remote, New Zealand · Jun 2021 – Present
+#### Independent mod project · Remote, New Zealand · Jun 2021 – 2024
 
 Coordinate and lead a team of level designers to create immersive environments within the Fallout universe. Plan and design levels alongside writers and artists, focusing on environmental storytelling, gameplay flow, and the technical constraints of the Bethesda Creation Engine.
 
+## Education
+
+### **Awatapu College**, Palmerston North, New Zealand  
+#### NCEA Level 3 / University Entrance  
+
+---
+
+### **Massey University**, Wellington, New Zealand  
+#### Bachelor of Screen Arts (Honours), Game Development
+#### 2026 - Present
+
 ## Technical Skills
 
-* Unreal Engine (Blueprints)
-* Unity
-* Godot
-* Bethesda Creation Engine
-* C++
-* C#
-* Java
-* JavaScript
-* Python
-* Git
-* HTML / CSS
+#### Game Engines: Unreal Engine, Unity, Godot, Bethesda Creation Engine
+#### Programming: C++, C#, Python, JavaScript
+#### Tools & Web: Git, HTML/CSS
 
 ## Community & Volunteer Experience
 
@@ -63,7 +55,7 @@ BBb Tuba · Palmerston North, New Zealand · Apr 2022 – Present
 
 ### Feilding Brass Band
 
-BBb Tuba · Feilding, New Zealand · Aug 2024 – Feb 2026
+BBb Tuba · Feilding, New Zealand · Aug 2024 – Present
 
 ### Awatapu College Music Department
 
@@ -78,7 +70,7 @@ BBb Tuba · Palmerston North, New Zealand · Jul 2024 – Present
 
 ### Manawatu Concert Band
 
-BBb Tuba · Palmerston North, New Zealand · Jan 2025 – Jan 2026
+BBb Tuba · Palmerston North, New Zealand · Jan 2025 – Jan 2026 (Guest - Aug 2026)
 
 ### New Zealand National Secondary Schools' Brass Band
 
@@ -98,5 +90,4 @@ BBb Tuba · Palmerston North, New Zealand · Jan 2025 – Jan 2026
 
 References available on request.
 
-
-* [Download Résumé (PDF)](./resume.md) * [Contact](mailto:andrewzambazos@gmail.com)
+* [Download Résumé (PDF)](./resume.md)  [Contact](mailto:andrewzambazos@gmail.com)

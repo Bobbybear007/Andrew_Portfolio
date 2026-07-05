@@ -21,23 +21,13 @@
         background: #ffffff;
         color: #0f172a;
         width: 7.5in;
-        padding: 0.5in;
+        padding: 0.45in 0.5in;
         box-sizing: border-box;
       }
 
-      .resume-pdf .resume-header,
-      .resume-pdf .resume-section {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-
-      .resume-pdf .resume-section h2,
-      .resume-pdf .resume-section h3,
-      .resume-pdf .resume-section ul,
-      .resume-pdf .resume-section li,
-      .resume-pdf .resume-section p {
-        page-break-inside: avoid;
-        break-inside: avoid;
+      .resume-pdf .resume-header {
+        page-break-after: avoid;
+        break-after: avoid;
       }
     </style>
   </head>
@@ -111,6 +101,172 @@
 
         flushBlanks();
         return output.join("\n");
+      };
+
+      const prepareMarkdownForPdf = (markdown) => {
+        return markdown
+          .replace(/\n{3,}/g, "\n\n")
+          .replace(/<div class="md-spacer"><\/div>\n?/g, "")
+          .trim();
+      };
+
+      const collectPdfBreakPoints = (container) => {
+        const points = new Set([0]);
+
+        container.querySelectorAll(".resume-section").forEach((section) => {
+          const entries = section.querySelectorAll(":scope > h3");
+          if (entries.length > 1) {
+            entries.forEach((entry, index) => {
+              if (index > 0) {
+                points.add(entry.offsetTop);
+              }
+            });
+            return;
+          }
+
+          const lists = section.querySelectorAll(":scope > ul");
+          if (lists.length > 1) {
+            lists.forEach((list, index) => {
+              if (index > 0) {
+                points.add(list.offsetTop);
+              }
+            });
+            return;
+          }
+
+          points.add(section.offsetTop);
+        });
+
+        const footer = container.querySelector(".resume-footer");
+        if (footer) {
+          points.add(footer.offsetTop);
+        }
+
+        return Array.from(points).sort((a, b) => a - b);
+      };
+
+      const computePdfPageBreaks = (totalHeight, pageHeight, breakPoints, scale) => {
+        const scaledPoints = breakPoints.map((point) => point * scale);
+        const scaledTotal = totalHeight;
+        const breaks = [0];
+        let pageStart = 0;
+        const minSegment = pageHeight * 0.35;
+
+        while (pageStart + pageHeight < scaledTotal - 1) {
+          const idealBreak = pageStart + pageHeight;
+          const validPoints = scaledPoints.filter(
+            (point) => point > pageStart + minSegment && point <= idealBreak
+          );
+
+          let nextBreak = validPoints.length ? Math.max(...validPoints) : idealBreak;
+
+          if (nextBreak <= pageStart) {
+            const overflowPoint = scaledPoints.find(
+              (point) => point > idealBreak && point <= idealBreak + pageHeight * 0.15
+            );
+            nextBreak = overflowPoint || idealBreak;
+          }
+
+          if (nextBreak <= pageStart) {
+            nextBreak = idealBreak;
+          }
+
+          breaks.push(nextBreak);
+          pageStart = nextBreak;
+        }
+
+        return breaks;
+      };
+
+      const PDF_LAYOUT = {
+        fontSize: 10,
+        lineHeight: 1.45,
+        paddingY: 0.45,
+        paddingX: 0.5,
+        h1: 18,
+        h2: 11.5,
+        h2Margin: 0.75,
+        h3: 10.5,
+        h3Margin: 0.55,
+        contactMargin: 0.6,
+        headerMargin: 0.5,
+        jobMargin: 0.5,
+        pMargin: 0.35,
+        liMargin: 0.2,
+        sectionSpacer: 0.5,
+      };
+
+      const applyPdfLayoutScale = (container, scale) => {
+        container.style.fontSize = `${PDF_LAYOUT.fontSize * scale}pt`;
+        container.style.lineHeight = String(PDF_LAYOUT.lineHeight * Math.min(scale + 0.05, 1.2));
+        container.style.padding = `${PDF_LAYOUT.paddingY * scale}in ${PDF_LAYOUT.paddingX * scale}in`;
+        container.querySelectorAll("h1").forEach((el) => {
+          el.style.fontSize = `${PDF_LAYOUT.h1 * scale}pt`;
+        });
+        container.querySelectorAll("h2").forEach((el) => {
+          el.style.fontSize = `${PDF_LAYOUT.h2 * scale}pt`;
+          el.style.marginTop = `${PDF_LAYOUT.h2Margin * scale}rem`;
+          el.style.marginBottom = `${0.35 * scale}rem`;
+        });
+        container.querySelectorAll("h3").forEach((el) => {
+          el.style.fontSize = `${PDF_LAYOUT.h3 * scale}pt`;
+          el.style.marginTop = `${PDF_LAYOUT.h3Margin * scale}rem`;
+        });
+        container.querySelectorAll("p").forEach((el) => {
+          if (!el.classList.contains("contact-info")) {
+            el.style.marginBottom = `${PDF_LAYOUT.pMargin * scale}rem`;
+          }
+        });
+        container.querySelectorAll(".contact-info").forEach((el) => {
+          el.style.marginBottom = `${PDF_LAYOUT.contactMargin * scale}rem`;
+        });
+        container.querySelectorAll(".resume-header").forEach((el) => {
+          el.style.marginBottom = `${PDF_LAYOUT.headerMargin * scale}rem`;
+        });
+        container.querySelectorAll(".job-title").forEach((el) => {
+          el.style.marginTop = `${PDF_LAYOUT.jobMargin * scale}rem`;
+        });
+        container.querySelectorAll("li").forEach((el) => {
+          el.style.marginTop = `${PDF_LAYOUT.liMargin * scale}rem`;
+          el.style.marginBottom = `${PDF_LAYOUT.liMargin * scale}rem`;
+        });
+        container.querySelectorAll(".qualification-spacer").forEach((el) => {
+          el.style.height = `${PDF_LAYOUT.sectionSpacer * scale}rem`;
+        });
+      };
+
+      const fitPdfToPages = async (container, { pdfScale, usableHeight, imgWidth, maxPages }) => {
+        let layoutScale = 1;
+        let canvas = await html2canvas(container, {
+          scale: pdfScale,
+          useCORS: true,
+          logging: false,
+          backgroundColor: "#ffffff",
+        });
+
+        const pagePixelHeight = (usableHeight / imgWidth) * canvas.width;
+        const targetHeight = pagePixelHeight * maxPages;
+
+        for (let attempt = 0; attempt < 6; attempt += 1) {
+          const ratio = canvas.height / targetHeight;
+          if (ratio > 1.025) {
+            layoutScale *= 0.985 / ratio;
+          } else if (ratio < 0.96) {
+            layoutScale *= 0.985 / ratio;
+          } else {
+            break;
+          }
+          layoutScale = Math.max(0.82, Math.min(layoutScale, 1.15));
+          applyPdfLayoutScale(container, layoutScale);
+          canvas = await html2canvas(container, {
+            scale: pdfScale,
+            useCORS: true,
+            logging: false,
+            backgroundColor: "#ffffff",
+          });
+        }
+
+        return canvas;
       };
 
       const buildResumeLayout = (container, { sectionClassName } = {}) => {
@@ -245,9 +401,11 @@
           const h3Elements = container.querySelectorAll("h3");
           h3Elements.forEach((h3) => {
             h3.className = "job-title";
-            const nextP = h3.nextElementSibling;
-            if (nextP && nextP.tagName === "P" && nextP.innerHTML.includes("·")) {
-              nextP.className = "job-details";
+            const nextEl = h3.nextElementSibling;
+            if (nextEl && nextEl.tagName === "H4") {
+              nextEl.className = "job-details";
+            } else if (nextEl && nextEl.tagName === "P") {
+              nextEl.className = "job-details";
             }
           });
         }
@@ -277,12 +435,12 @@
                     throw new Error(`Failed to load résumé (${mdResponse.status})`);
                   }
                   const mdContent = await mdResponse.text();
-                  const spacedMdContent = addMarkdownSpacers(mdContent);
+                  const pdfMarkdown = prepareMarkdownForPdf(mdContent);
                   const pdfContainer = document.createElement("div");
                   pdfContainer.className = "resume-pdf";
                   pdfContainer.style.position = "absolute";
                   pdfContainer.style.left = "-9999px";
-                  pdfContainer.innerHTML = marked.parse(spacedMdContent);
+                  pdfContainer.innerHTML = marked.parse(pdfMarkdown);
                   buildResumeLayout(pdfContainer, { sectionClassName: "resume-section" });
                   applyResumeEnhancements(pdfContainer, { forPdf: true });
 
@@ -305,22 +463,22 @@
 
                   const fullName = (pdfContainer.querySelector("h1")?.textContent || "Resume").trim();
                   const pdfScale = 1.6;
+                  const pageWidth = 8.5;
+                  const pageHeight = 11;
+                  const margin = 0.5;
+                  const usableHeight = pageHeight - margin * 2;
+                  const imgWidth = pageWidth - margin * 2;
+                  const maxPages = 2;
 
-                  const breakTargets = Array.from(
-                    pdfContainer.querySelectorAll(".resume-header, .resume-section, .resume-footer")
-                  ).map((element) => ({
-                    top: element.offsetTop,
-                    bottom: element.offsetTop + element.offsetHeight,
-                  }));
-                  
-                  const canvas = await html2canvas(pdfContainer, {
-                    scale: pdfScale,
-                    useCORS: true,
-                    logging: false,
-                    backgroundColor: "#ffffff",
+                  const canvas = await fitPdfToPages(pdfContainer, {
+                    pdfScale,
+                    usableHeight,
+                    imgWidth,
+                    maxPages,
                   });
 
-                  const imgData = canvas.toDataURL("image/png");
+                  const resolvedPagePixelHeight = (usableHeight / imgWidth) * canvas.width;
+
                   const { jsPDF } = window.jspdf;
                   const pdf = new jsPDF({
                     orientation: "portrait",
@@ -328,56 +486,40 @@
                     format: "letter",
                   });
 
-                  const pageWidth = 8.5;
-                  const pageHeight = 11;
-                  const margin = 0.5;
-                  const usableHeight = pageHeight - margin * 2;
-                  const imgWidth = pageWidth - margin * 2;
-                  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                  const pageBreaks = computePdfPageBreaks(
+                    canvas.height,
+                    resolvedPagePixelHeight,
+                    collectPdfBreakPoints(pdfContainer),
+                    pdfScale
+                  );
 
-                  const pagePixelHeight = (usableHeight / imgWidth) * canvas.width;
+                  const sliceStarts = [...pageBreaks.filter((pos) => pos >= 0 && pos < canvas.height)];
+                  if (sliceStarts[sliceStarts.length - 1] !== canvas.height) {
+                    sliceStarts.push(canvas.height);
+                  }
 
-                  const pageBreaks = [];
-                  let currentPageBottom = pagePixelHeight;
-                  const minSegmentHeight = 64 * pdfScale;
-
-                  breakTargets.forEach(({ top, bottom }) => {
-                    const scaledTop = top * pdfScale;
-                    const scaledBottom = bottom * pdfScale;
-                    if (scaledBottom > currentPageBottom) {
-                      const lastBreak = pageBreaks.length ? pageBreaks[pageBreaks.length - 1] : 0;
-                      if (scaledTop - lastBreak > minSegmentHeight) {
-                        pageBreaks.push(scaledTop);
-                        currentPageBottom = scaledTop + pagePixelHeight;
-                      }
-                    }
-                  });
-
-                  const sliceStarts = [0, ...pageBreaks.filter((pos) => pos > 0 && pos < canvas.height)];
+                  if (sliceStarts.length - 1 > maxPages) {
+                    sliceStarts.length = 0;
+                    sliceStarts.push(0, canvas.height / maxPages, canvas.height);
+                  }
 
                   let pageIndex = 0;
-                  for (let i = 0; i < sliceStarts.length; i += 1) {
-                    let start = sliceStarts[i];
-                    const end = i + 1 < sliceStarts.length ? sliceStarts[i + 1] : canvas.height;
-                    let remaining = end - start;
-
-                    while (remaining > 0) {
-                      const heightToUse = Math.min(remaining, pagePixelHeight);
-                      const croppedCanvas = document.createElement("canvas");
-                      croppedCanvas.width = canvas.width;
-                      croppedCanvas.height = heightToUse;
-                      const ctx = croppedCanvas.getContext("2d");
-                      ctx.drawImage(canvas, 0, start, canvas.width, heightToUse, 0, 0, canvas.width, heightToUse);
-                      const croppedImgData = croppedCanvas.toDataURL("image/png");
-                      const croppedImgHeight = (heightToUse * imgWidth) / canvas.width;
-                      if (pageIndex > 0) {
-                        pdf.addPage();
-                      }
-                      pdf.addImage(croppedImgData, "PNG", margin, margin, imgWidth, croppedImgHeight);
-                      start += heightToUse;
-                      remaining -= heightToUse;
-                      pageIndex += 1;
+                  for (let i = 0; i < sliceStarts.length - 1; i += 1) {
+                    const start = sliceStarts[i];
+                    const end = sliceStarts[i + 1];
+                    const heightToUse = end - start;
+                    const croppedCanvas = document.createElement("canvas");
+                    croppedCanvas.width = canvas.width;
+                    croppedCanvas.height = heightToUse;
+                    const ctx = croppedCanvas.getContext("2d");
+                    ctx.drawImage(canvas, 0, start, canvas.width, heightToUse, 0, 0, canvas.width, heightToUse);
+                    const croppedImgData = croppedCanvas.toDataURL("image/png");
+                    const croppedImgHeight = (heightToUse * imgWidth) / canvas.width;
+                    if (pageIndex > 0) {
+                      pdf.addPage();
                     }
+                    pdf.addImage(croppedImgData, "PNG", margin, margin, imgWidth, croppedImgHeight);
+                    pageIndex += 1;
                   }
 
                   pdf.save(`${fullName.replace(/\s+/g, "-")}-Resume.pdf`);
