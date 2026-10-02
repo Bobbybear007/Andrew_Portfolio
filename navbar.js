@@ -180,7 +180,7 @@
       { selector: 'a[href*="#contact"]', path: prefix + 'index.html#contact' },
       { selector: 'a[href*="resume.html"], a[href*="#resume"]', path: prefix + 'assets/resumes/resume.html' },
       { selector: 'a[href$="index.html"]', path: prefix + 'index.html' },
-      { selector: 'a[href*="projects.html"]', path: prefix + 'projects.html' }
+      { selector: 'a[href*="projects.html"]', path: prefix + 'work/' }
     ];
 
     const scopes = [nav, mobile].filter(Boolean);
@@ -192,19 +192,56 @@
     }
   }
 
+  function relabelWorkLinks(){
+    const scopes = [document.querySelector('header nav'), document.getElementById('mobile-menu')].filter(Boolean);
+    for (const scope of scopes) {
+      scope.querySelectorAll('a[href*="work/"]').forEach(a => {
+        if (/^\s*projects\s*$/i.test(a.textContent)) a.textContent = 'Work';
+      });
+    }
+  }
+
+  // Some pages ship the hamburger button without a matching #mobile-menu; build
+  // one from the desktop nav so the mobile navigation never dead-ends.
+  function ensureMobileMenu(){
+    const header = document.getElementById('header');
+    const btn = document.getElementById('mobile-menu-button');
+    if (!header || !btn) return;
+    if (document.getElementById('mobile-menu')) return;
+    const desktopNav = header.querySelector('nav');
+    const menu = document.createElement('div');
+    menu.id = 'mobile-menu';
+    menu.className = 'hidden md:hidden px-6 pb-4';
+    if (desktopNav) {
+      desktopNav.querySelectorAll(':scope > a').forEach(a => {
+        const clone = a.cloneNode(true);
+        const href = clone.getAttribute('href') || '';
+        clone.className = /#contact/.test(href)
+          ? 'block mt-2 text-center bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg'
+          : 'block py-2 hover:text-[#00D4FF]';
+        menu.appendChild(clone);
+      });
+    }
+    btn.parentElement.parentElement.appendChild(menu);
+  }
+
   function setupMobileMenu(){
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
     if (!btn || !menu) return;
-    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> menu.classList.add('hidden')));
+    const sync = () => btn.setAttribute('aria-expanded', menu.classList.contains('hidden') ? 'false' : 'true');
+    sync();
+    btn.addEventListener('click', ()=> { menu.classList.toggle('hidden'); sync(); });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> { menu.classList.add('hidden'); sync(); }));
   }
 
   function init(){
-  ensureIconLibrary();
-  augmentNav();
+    ensureIconLibrary();
+    ensureMobileMenu();
+    augmentNav();
     const prefix = computeBasePrefix();
     normalizeLinks(prefix);
+    relabelWorkLinks();
     setupMobileMenu();
   }
 

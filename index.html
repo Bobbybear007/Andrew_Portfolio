@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work/work.css">
 </head>
 <body class="antialiased">
     <canvas id="particle-canvas"></canvas>
@@ -47,7 +48,7 @@
                 </p>
                
                 <div class="mt-10">
-                    <a href="#projects" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    <a href="#work" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
                         View My Work
                     </a>
                 </div>
@@ -89,61 +90,15 @@
             </div>
         </section>
 
-        <section id="projects" class="py-20 lg:py-32 bg-[#0E0E1E]">
+        <section id="work" class="py-20 lg:py-32 bg-[#0E0E1E]">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-12 section-title-underline">Featured Work</h2>
 
-                <div class="flex flex-wrap justify-center gap-8">
-                    
-                    <a href="projects/star-trek-ue5/star-trek-ue5.html" class="project-card glass-effect rounded-2xl overflow-hidden group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
-                        <div class="relative">
-                            <img src="assets/images/ststuff/StarTrekThumb.jpg" alt="Star Trek in Unreal Engine" class="w-full h-auto transition-transform duration-300">
-                            <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center opacity-0 transition-opacity duration-300">
-                                <h3 class="text-2xl font-bold">Star Trek in Unreal Engine</h3>
-                                <p class="mt-2 text-gray-300">Explore the work of creating my own Star Trek Sets, blending Starfleet design with Unreal Engine 5's cutting-edge technology.</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold">Star Trek in Unreal Engine</h4>
-                            <p class="text-gray-400">Unreal Engine 5, 3D Art</p>
-                        </div>
-                    </a>
+                <div id="homepage-work"></div>
 
-                    
-                    <a href="projects/mr-brown.html" class="project-card glass-effect rounded-2xl overflow-hidden group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
-                        <div class="relative">
-                            <img src="assets/images/MrB/MrB.jpg" alt="Mr. Brown's Smuggle Run: Game Jam Entry" class="w-full h-auto transition-transform duration-300">
-                            <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center opacity-0 transition-opacity duration-300">
-                                <h3 class="text-2xl font-bold">Mr. Brown's Smuggle Run: Game Jam Entry</h3>
-                                <p class="mt-2 text-gray-300">A stealth game where you smuggle contraband into prisons while evading security.</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold">Mr. Brown's Smuggle Run: Game Jam Entry</h4>
-                            <p class="text-gray-400">Game Development, Game Jam, Godot</p>
-                        </div>
-                    </a>
-                    
-                    <a href="projects/Nebula/nebula-project.html" class="project-card glass-effect rounded-2xl overflow-hidden group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
-                        <div class="relative">
-                            <img src="assets/images/Nebula/NebulaBanner.svg" alt="Nebula" class="w-full h-auto transition-transform duration-300">
-                            <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-center opacity-0 transition-opacity duration-300">
-                                <h3 class="text-2xl font-bold">Nebula</h3>
-                                <p class="mt-2 text-gray-300">A custom Electron based Web Browser</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold">Nebula</h4>
-                            <p class="text-gray-400">Web Development</p>
-                        </div>
-                    </a>
-                </div>
-
-               
-
-                <div class="mt-12 text-center">
-                    <a href="projects.html" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
-                        See All Projects
+                <div class="homepage-work-footer mt-12 text-center">
+                    <a href="work/" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                        View all work
                     </a>
                 </div>
             </div>
@@ -179,5 +134,7 @@
         <script src="navbar.js" defer></script>
         <script src="footer.js" defer></script>
         <script src="script.js" defer></script>
+        <script src="work-data.js"></script>
+        <script src="work.js"></script>
 </body>
 </html>
