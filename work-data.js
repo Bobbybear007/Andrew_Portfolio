@@ -54,7 +54,7 @@
       endYear: 'Present',
       technologies: ['C++', 'F4SE', 'CommonLibF4', 'GameNetworkingSockets'],
       disciplines: ['Networking', 'Gameplay Systems', 'UI/UX', 'Tooling', 'Project Direction'],
-      thumbnail: '',
+      thumbnail: 'https://staticdelivery.nexusmods.com/mods/1151/images/headers/107542_1785567447.jpg',
       hero: '',
       featured: true,
       archived: false,

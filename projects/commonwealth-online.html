@@ -203,6 +203,25 @@
             word-break: break-word;
         }
 
+        .co-inline-shot {
+            margin: 2rem 0 0;
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            background: var(--bg-alt);
+        }
+        .co-inline-shot img {
+            display: block;
+            width: 100%;
+            max-height: 30rem;
+            object-fit: cover;
+        }
+        .co-inline-shot figcaption {
+            padding: 0.75rem 1rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
         @media (max-width: 640px) {
             .co-subnav ul { padding: 0.85rem 0; }
         }
@@ -313,6 +332,10 @@
                     multiplayer safely with engine internals that were never written to be replicated.
                 </p>
             </div>
+            <figure class="co-inline-shot">
+                <img src="https://commonwealth-online.com/assets/images/TwoPlayers.webp" alt="Two Commonwealth Online players standing together in the wasteland" loading="lazy" decoding="async">
+                <figcaption>Remote player proxies sharing the Commonwealth in a multiplayer session.</figcaption>
+            </figure>
         </div>
     </section>
 
@@ -462,6 +485,10 @@
                          and managing those actors, driving them from network data and cleaning them up when players
                         disconnect.
                     </p>
+                    <figure class="co-inline-shot">
+                        <img src="https://commonwealth-online.com/assets/images/EquippedRifle.webp" alt="Commonwealth Online remote player aiming a laser musket" loading="lazy" decoding="async">
+                        <figcaption>Equipment and player state are replicated onto remote player actors.</figcaption>
+                    </figure>
                 </div>
 
             </div>
@@ -518,6 +545,10 @@
                     underneath was never designed to be networked.
                 </p>
             </div>
+            <figure class="co-inline-shot">
+                <img src="https://commonwealth-online.com/assets/images/server-browser-direct-connect.webp" alt="Commonwealth Online Direct Connect server browser" loading="lazy" decoding="async">
+                <figcaption>The server browser connects players to a Commonwealth Online session.</figcaption>
+            </figure>
         </div>
     </section>
 
@@ -540,10 +571,10 @@
                 </p>
             </div>
 
-            <div class="co-shot-note mt-8">
-                Screenshots of the multiplayer menus are not included yet. Images will be dropped into
-                <code>../assets/images/CommonwealthOnline/</code> once they are available.
-            </div>
+            <figure class="co-inline-shot mt-8">
+                <img src="https://commonwealth-online.com/assets/images/EquippedPistol.webp" alt="Commonwealth Online remote player holding a 10mm pistol" loading="lazy" decoding="async">
+                <figcaption>In-game multiplayer presentation alongside replicated player equipment.</figcaption>
+            </figure>
 
             <!-- Multiplayer UI gallery. Enable once screenshots exist.
             <div class="image-gallery-grid">
@@ -679,19 +710,15 @@
     <section id="gallery" class="max-w-5xl mx-auto px-6 py-24">
         <h2 class="text-3xl font-bold mb-6">Project Gallery</h2>
         <p class="co-shot-note">
-            Screenshots for Commonwealth Online are not available yet. Drop them into
-            <code>../assets/images/CommonwealthOnline/</code> as <code>CO1.png</code>, <code>CO2.png</code>,
-             <code>CO3.png</code> and <code>CO4.png</code>, then uncomment the gallery below. Images are commented out
-            for now so the page never shows broken-image icons.
+            Gameplay and interface screenshots supplied by the Commonwealth Online project. Images are loaded from the
+            <a href="https://commonwealth-online.com/media" target="_blank" rel="noopener noreferrer">official media gallery</a>.
         </p>
 
         <div class="image-gallery-grid">
-            <!--
-            <img src="../assets/images/CommonwealthOnline/CO1.png" alt="Commonwealth Online, multiple players together" class="clickable-image">
-            <img src="../assets/images/CommonwealthOnline/CO2.png" alt="Commonwealth Online, multiplayer menus" class="clickable-image">
-            <img src="../assets/images/CommonwealthOnline/CO3.png" alt="Commonwealth Online, server software" class="clickable-image">
-            <img src="../assets/images/CommonwealthOnline/CO4.png" alt="Commonwealth Online, development and debug interfaces" class="clickable-image">
-            -->
+            <img src="https://commonwealth-online.com/assets/images/TwoPlayers.webp" alt="Two Commonwealth Online players standing together in the wasteland" class="clickable-image" loading="lazy" decoding="async">
+            <img src="https://commonwealth-online.com/assets/images/EquippedRifle.webp" alt="Commonwealth Online remote player aiming a laser musket" class="clickable-image" loading="lazy" decoding="async">
+            <img src="https://commonwealth-online.com/assets/images/server-browser-direct-connect.webp" alt="Commonwealth Online Direct Connect server browser" class="clickable-image" loading="lazy" decoding="async">
+            <img src="https://commonwealth-online.com/assets/images/EquippedPistol.webp" alt="Commonwealth Online remote player holding a 10mm pistol" class="clickable-image" loading="lazy" decoding="async">
         </div>
     </section>
 
