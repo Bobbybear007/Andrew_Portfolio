@@ -10,10 +10,10 @@ Game Designer and technical creative with experience across level design, UI and
 
 ## Work History
 
-### 3D Artist / Programmer, Patriam Studios
-#### Indie game development team · Remote, Wellington, New Zealand · Apr 2026 – Present
+### Environment & Technical Artist, Patriam Studios
+#### Indie game development team · Internship · Remote, Wellington, New Zealand · Apr 2026 – Present
 
-Contributing to Patriam: The Saga of Roljar, a third-person action RPG, with a focus on level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement, and gameplay scripting support. Work includes building immersive environments, creating and integrating environmental assets, and supporting technical implementation where needed.
+Contributing to Patriam: The Saga of Roljar, a third-person action RPG, with a focus on level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement, and gameplay scripting support. Creating unique stylized fantasy locations with a wide range of unique features, building immersive environments, creating and integrating environmental assets, and supporting technical implementation where needed.
 
 ### Project Lead, Commonwealth Online (Mod)
 #### Independent mod project · Remote, New Zealand · Jun 2026 – Present
