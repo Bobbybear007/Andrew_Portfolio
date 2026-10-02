@@ -51,7 +51,8 @@ img.clickable-image { border: 1px solid var(--border); border-radius: 0.5rem; ma
 /* ---- Shared case-study layout ---------------------------------------- */
 
 .cs-breadcrumb {
-  max-width: 1100px;
+  /* Match the max-w-5xl container used by the standalone project heroes. */
+  max-width: 64rem;
   margin: 0 auto;
   padding: 1.5rem 1.5rem 0;
   color: var(--muted);
