@@ -1,7 +1,7 @@
 /**
  * work.js
  * Renders the Work landing page, its filters, and the homepage featured strip
- * from the shared WorkData model. Safe to include on any page — it only wires
+ * from the shared WorkData model. Safe to include on any page. It only wires
  * up the elements it finds.
  */
 (function () {

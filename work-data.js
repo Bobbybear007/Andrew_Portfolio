@@ -4,7 +4,7 @@
  *
  * This is intentionally framework-free (plain objects + small helpers) so the
  * static site can grow without another redesign. To add new work, append an
- * object to WORK_ITEMS — the landing page, homepage and case-study template all
+ * object to WORK_ITEMS. The landing page, homepage and case-study template all
  * read from the same source.
  *
  * Only verified information from the existing site / résumé is populated.
@@ -52,23 +52,24 @@
       status: 'In Development',
       startYear: 2026,
       endYear: 'Present',
-      technologies: ['C++', 'F4SE', 'Python'],
+      technologies: ['C++', 'F4SE', 'CommonLibF4', 'GameNetworkingSockets'],
       disciplines: ['Networking', 'Gameplay Systems', 'UI/UX', 'Tooling', 'Project Direction'],
       thumbnail: '',
       hero: '',
       featured: true,
       archived: false,
-      href: 'work/case-study.html?slug=commonwealth-online',
+      href: 'projects/commonwealth-online.html',
       links: [],
       overview:
         'Commonwealth Online is a multiplayer mod for Fallout 4 focused on preserving the single-player experience while adding online co-op functionality. It is an independent mod project built to let players experience the Commonwealth together.',
-      roleNote:
-        'I lead development of Commonwealth Online. I am responsible for project direction, gameplay systems, networking design, UI and UX design, technical planning, and modding workflows.',
+      // Left empty: the dedicated Commonwealth Online page carries a fuller,
+      // structured "My Role" section that project.js should not duplicate.
+      roleNote: '',
       contributions: [
         {
           title: 'Gameplay & Networking',
           body:
-            'Developing core systems using C++, F4SE, Python, and custom tooling, including player synchronisation, server-client communication, and remote player representation.'
+            'Developing core systems using C++, F4SE, Python and custom tooling, including player synchronisation, server-client communication and remote player representation.'
         },
         {
           title: 'Tooling & Testing',
@@ -78,7 +79,7 @@
         {
           title: 'UI/UX & Direction',
           body:
-            'Responsible for UI and UX design, technical planning, and overall project direction.'
+            'Responsible for UI and UX design, technical planning and overall project direction.'
         }
       ],
       technicalDetails: [],
@@ -118,17 +119,17 @@
       overview:
         'Patriam: The Saga of Roljar is a third-person action RPG in development at Patriam Studios, an independent game development team.',
       roleNote:
-        'I contribute to a larger production as Environment & Technical Artist, working on the level and environment side of the project — creating unique stylized fantasy locations, building immersive environments, creating and integrating environmental assets, and supporting technical implementation where needed.',
+        'I contribute to the level and environment side of the project as an Environment & Technical Artist. I create stylized fantasy locations, build immersive environments, integrate environmental assets and support the technical implementation where needed.',
       contributions: [
         {
           title: 'Level & Environment Design',
           body:
-            'Creating unique stylized fantasy locations with a wide range of unique features and building immersive environments.'
+            'Creating stylized fantasy locations with distinctive features and building immersive environments.'
         },
         {
           title: '3D Art & Implementation',
           body:
-            '3D asset creation, basic texturing, material setup, and procedural foliage placement, plus gameplay scripting support.'
+            '3D asset creation, basic texturing, material setup and procedural foliage placement, plus gameplay scripting support.'
         }
       ],
       technicalDetails: [],
@@ -200,7 +201,7 @@
     {
       title: 'Olympus Game Studios',
       slug: 'olympus-game-studios',
-      summary: 'An independent studio focused on building original tools, engines, and narrative-driven game experiences.',
+      summary: 'An independent studio focused on building original tools, engines and narrative-driven game experiences.',
       type: 'Studio',
       medium: '',
       context: 'Studio',
@@ -218,14 +219,14 @@
       href: 'projects/olympus/olympus-game-studio.html',
       links: [{ label: 'Olympus site', url: 'https://www.olympusgames.dev/' }],
       overview:
-        'Olympus Game Studios is an independent game and technology studio focused on building original tools, engines, and narrative-driven experiences.',
+        'Olympus Game Studios is an independent game and technology studio focused on building original tools, engines and narrative-driven experiences.',
       roleNote:
-        'I co-founded Olympus and contribute across game design, level design, UI and UX, and internal tools — supporting creative direction and collaborating with designers, programmers, and artists.',
+        'I co-founded Olympus and contribute across game design, level design, UI and UX and internal tools. I also support creative direction and work with designers, programmers and artists.',
       contributions: [
         {
           title: 'Studio & Creative Direction',
           body:
-            'Supporting creative direction and collaborating with designers, programmers, and artists across the studio\'s projects.'
+            'Supporting creative direction and collaborating with designers, programmers and artists across the studio\'s projects.'
         },
         {
           title: 'Tools & Editor Workflows',
@@ -242,7 +243,7 @@
     {
       title: 'Hephaestus Engine',
       slug: 'hephaestus-engine',
-      summary: 'A custom C++ game engine and editor built from the ground up, focused on performance, modern rendering, and bespoke tooling.',
+      summary: 'A custom C++ game engine and editor built from the ground up, focused on performance, modern rendering and bespoke tooling.',
       type: 'Engine',
       medium: '',
       context: 'Studio',
@@ -260,7 +261,7 @@
       href: 'projects/olympus/hephaestus.html',
       links: [{ label: 'Hephaestus page', url: 'https://www.olympusgames.dev/hephaestus.html' }],
       overview:
-        'Hephaestus is a custom C++ game engine built from the ground up, focused on performance, modern rendering, and bespoke tooling.',
+        'Hephaestus is a custom C++ game engine built from the ground up, focused on performance, modern rendering and bespoke tooling.',
       roleNote:
         'I contribute to Hephaestus from a designer-focused perspective, supporting editor workflows and usability rather than engine architecture.',
       contributions: [],
@@ -273,7 +274,7 @@
     {
       title: 'Atlas',
       slug: 'atlas',
-      summary: 'Internal planning and collaboration tools used by Olympus to manage projects, documentation, and development workflows.',
+      summary: 'Internal planning and collaboration tools used by Olympus to manage projects, documentation and development workflows.',
       type: 'Tool',
       medium: '',
       context: 'Studio',
@@ -291,7 +292,7 @@
       href: 'projects/olympus/atlas.html',
       links: [],
       overview:
-        'Atlas is a private internal platform that centralises planning, coordination, and knowledge across active projects — a shared operational backbone for long-running work.',
+        'Atlas is a private internal platform that centralises planning, coordination and knowledge across active projects. It acts as a shared backbone for long-running work.',
       roleNote: '',
       contributions: [],
       technicalDetails: [],
@@ -321,7 +322,7 @@
       href: 'projects/star-trek-ue5/star-trek-ue5.html',
       links: [],
       overview:
-        'A personal environment design project recreating the bridges and command centres of Starfleet vessels in Unreal Engine 5, focused on detailed modelling, dynamic lighting, and immersive textures.',
+        'A personal environment design project recreating Starfleet bridges and command centres in Unreal Engine 5. I focused on detailed modelling, dynamic lighting and immersive textures.',
       roleNote: '',
       contributions: [],
       technicalDetails: [],
@@ -475,7 +476,7 @@
       overview:
         'A large-scale Fallout mod that began as Fallout: Boardwalk and grew into a multi-project initiative with an interconnected storyline. Development has since ended.',
       roleNote:
-        'I was Lead Designer and Project Lead. As well as building levels, I taught, guided, and managed the level design team, acting as the bridge between writers, concept artists, and project leads on one side and the level designers on the other.',
+        'I was Lead Designer and Project Lead. As well as building levels, I taught, guided and managed the level design team. I acted as the bridge between writers, concept artists and project leads on one side and the level designers on the other.',
       contributions: [],
       technicalDetails: [],
       gallery: [],
@@ -486,7 +487,7 @@
     {
       title: 'Fallout: Music City',
       slug: 'fallout-music-city',
-      summary: 'A Fallout mod set in a post-apocalyptic Nashville with hand-crafted dungeons, environmental storytelling, and immersive interiors.',
+      summary: 'A Fallout mod set in a post-apocalyptic Nashville with hand-crafted dungeons, environmental storytelling and immersive interiors.',
       type: 'Mod',
       medium: '',
       context: 'Collaborative',
@@ -506,7 +507,7 @@
       overview:
         'A Fallout mod reimagining Nashville as a wasteland frontier, blending Southern culture with Fallout\'s post-apocalyptic tone. Development has since ended.',
       roleNote:
-        'I joined as a junior level designer and served as project lead. I designed locations including the Abandoned Hospital, Hatch Bunker, The Death Depths, and The Hole.',
+        'I joined as a junior level designer and served as project lead. I designed locations including the Abandoned Hospital, Hatch Bunker, The Death Depths and The Hole.',
       contributions: [],
       technicalDetails: [],
       gallery: [],
@@ -577,7 +578,7 @@
     {
       title: 'Nebula Browser',
       slug: 'nebula-browser',
-      summary: 'A desktop web browser designed for SteamOS, Steam Deck, and controller-first navigation.',
+      summary: 'A desktop web browser designed for SteamOS, Steam Deck and controller-first navigation.',
       type: 'Software',
       medium: 'Web',
       context: 'Open Source',
@@ -598,9 +599,9 @@
         { label: 'GitHub', url: 'https://github.com/NebulaZMG/NebulaBrowser' }
       ],
       overview:
-        'A purpose-built web browser designed from the ground up for SteamOS, Steam Deck, and controller-first interaction, built for performance and couch-friendly use.',
+        'A purpose-built web browser designed from the ground up for SteamOS, Steam Deck and controller-first interaction, built for performance and couch-friendly use.',
       roleNote:
-        'I work on core application development and feature implementation, UI/UX design for controller navigation, and community management of the open-source repository.',
+        'I work on core application development and feature implementation, UI/UX design for controller navigation and community management of the open-source repository.',
       contributions: [],
       technicalDetails: [],
       gallery: [],
@@ -632,7 +633,7 @@
         { label: 'GitHub', url: 'https://github.com/The-Nebula-Project-ZMG' }
       ],
       overview:
-        'An umbrella initiative building modern, controller-friendly desktop applications unified by shared design systems, input handling, and a commitment to performance and accessibility.',
+        'An umbrella initiative building modern, controller-friendly desktop applications unified by shared design systems, input handling and a commitment to performance and accessibility.',
       roleNote: '',
       contributions: [],
       technicalDetails: [],

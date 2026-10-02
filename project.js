@@ -85,7 +85,7 @@
       '<span aria-hidden="true">/</span><span aria-current="page">' + esc(item.title) + '</span>';
     main.insertBefore(crumb, main.firstChild);
 
-    // 2. Metadata panel — append to the hero's quick-facts row when present.
+    // 2. Metadata panel. Append to the hero's quick-facts row when present.
     var meta = [
       metaCell('Type', Data.typesOf(item).join(' \u00b7 ')),
       metaCell('Context', item.context),
@@ -108,7 +108,7 @@
       }
     }
 
-    // 3. My Role — separated from the overall project description.
+    // 3. My Role. Keep it separate from the overall project description.
     if (item.roleNote) {
       var role = document.createElement('section');
       role.className = 'case-study-section cs-role';

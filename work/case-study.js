@@ -117,7 +117,7 @@
     // Overview
     out.push(section('overview', 'Overview', item.overview ? '<div class="cs-prose">' + prose(item.overview) + '</div>' : ''));
 
-    // My role — kept visually distinct from the overall project.
+    // My role is kept visually distinct from the overall project.
     if (item.roleNote) {
       out.push(
         '<section class="case-study-section cs-role" id="my-role">' +
@@ -206,7 +206,7 @@
       desc.setAttribute('name', 'description');
       document.head.appendChild(desc);
     }
-    desc.setAttribute('content', item.summary || item.title + ' — work by Andrew Zambazos.');
+    desc.setAttribute('content', item.summary || item.title + ' - work by Andrew Zambazos.');
   }
 
   function init() {

@@ -6,29 +6,29 @@ Game Designer · Wellington, New Zealand
 
 ## Profile
 
-Game Designer and technical creative with experience across level design, UI and UX, game systems, modding workflows, and engine tooling. Experienced with Unreal Engine, Unity, Godot, the Bethesda Creation Engine, and custom tools, with a strong focus on building immersive playable experiences and practical workflows. My work spans independent game projects, mod development, technical design, and collaborative creative production.
+Game Designer and technical creative with experience across level design, UI and UX, game systems, modding workflows and engine tooling. Experienced with Unreal Engine, Unity, Godot, the Bethesda Creation Engine and custom tools, with a focus on building immersive playable experiences and practical workflows. My work spans independent game projects, mod development, technical design and collaborative creative production.
 
 ## Work History
 
 ### Environment & Technical Artist, Patriam Studios
 #### Indie game development team · Internship · Remote, Wellington, New Zealand · Apr 2026 – Present
 
-Contributing to Patriam: The Saga of Roljar, a third-person action RPG, with a focus on level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement, and gameplay scripting support. Creating unique stylized fantasy locations with a wide range of unique features, building immersive environments, creating and integrating environmental assets, and supporting technical implementation where needed.
+Contributing to Patriam: The Saga of Roljar, a third-person action RPG, with a focus on level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement and gameplay scripting support. Creating stylized fantasy locations, building immersive environments, integrating environmental assets and supporting technical implementation where needed.
 
 ### Project Lead, Commonwealth Online (Mod)
 #### Independent mod project · Remote, New Zealand · Jun 2026 – Present
 
-Leading development of Commonwealth Online, a multiplayer mod for Fallout 4 focused on preserving the single-player experience while adding online co-op functionality. Responsible for project direction, gameplay systems, networking design, UI and UX design, technical planning, and modding workflows. Developing core systems using C++, F4SE, Python, and custom tooling, including player synchronisation, server-client communication, remote player representation, and developer testing tools.
+Leading development of Commonwealth Online, a multiplayer mod for Fallout 4 focused on preserving the single-player experience while adding online co-op functionality. Responsible for project direction, gameplay systems, networking design, UI and UX design, technical planning and modding workflows. Developing core systems using C++, F4SE, Python and custom tooling, including player synchronisation, server-client communication, remote player representation and developer testing tools.
 
 ### Co-founder and Technical Lead, Olympus Game Studios
 #### Independent game development team · Remote, New Zealand · 2023 – Present
 
-Co-founded Olympus Game Studios as an independent game development team and contribute across game design, level design, UI and UX, and internal tools. Work includes supporting creative direction, collaborating with designers, programmers, and artists, and contributing to editor workflows and usability for the Hephaestus Engine from a designer-focused perspective.
+Co-founded Olympus Game Studios as an independent game development team and contribute across game design, level design, UI and UX and internal tools. Work includes supporting creative direction, collaborating with designers, programmers and artists and contributing to editor workflows and usability for the Hephaestus Engine from a designer-focused perspective.
 
 ### Lead Designer, Fallout Wastelands (Mod)
 #### Independent mod project · Remote, New Zealand · Jun 2021 – 2024
 
-Coordinate and lead a team of level designers to create immersive environments within the Fallout universe. Plan and design levels alongside writers and artists, focusing on environmental storytelling, gameplay flow, and the technical constraints of the Bethesda Creation Engine.
+Coordinate and lead a team of level designers to create immersive environments within the Fallout universe. Plan and design levels alongside writers and artists, focusing on environmental storytelling, gameplay flow and the technical constraints of the Bethesda Creation Engine.
 
 ## Education
 
