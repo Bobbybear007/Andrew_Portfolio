@@ -37,8 +37,8 @@
       .toUpperCase();
   }
 
-  function media(item, className, eager) {
-    var src = item.thumbnail ? Data.asset(item.thumbnail) : '';
+  function media(item, className, eager, image) {
+    var src = image ? Data.asset(image) : (item.thumbnail ? Data.asset(item.thumbnail) : '');
     var alt = esc(item.title);
     var loading = eager ? 'eager' : 'lazy';
     if (src) {
@@ -108,7 +108,7 @@
       (item.stub ? '<p class="work-note">' + esc(Data.stubNote) + '</p>' : '') +
       (href ? '<span class="work-cta">View project<span class="work-cta-arrow" aria-hidden="true">\u2192</span></span>' : '');
     var inner =
-      '<div class="work-featured-media">' + media(item, 'work-media', true) + overlay + '</div>' +
+      '<div class="work-featured-media">' + media(item, 'work-media', true, item.featuredImage) + overlay + '</div>' +
       '<div class="work-featured-body">' + body + '</div>';
 
     if (href) {

@@ -54,7 +54,11 @@
       endYear: 'Present',
       technologies: ['C++', 'F4SE', 'CommonLibF4', 'GameNetworkingSockets'],
       disciplines: ['Networking', 'Gameplay Systems', 'UI/UX', 'Tooling', 'Project Direction'],
-      thumbnail: 'https://staticdelivery.nexusmods.com/mods/1151/images/headers/107542_1785567447.jpg',
+      thumbnail: 'assets/images/CommonwealthOnline/COBanner.png',
+      // In-game player screenshot used for the homepage featured card. The
+      // banner thumbnail above carries the project wordmark, which would
+      // otherwise read as a second title behind the featured card's overlay.
+      featuredImage: 'assets/images/CommonwealthOnline/UserOptcron-2.webp',
       hero: '',
       featured: true,
       archived: false,
