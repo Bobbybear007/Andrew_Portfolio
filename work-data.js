@@ -95,7 +95,7 @@
     {
       title: 'Patriam: The Saga of Roljar',
       slug: 'patriam-saga-of-roljar',
-      summary: 'A third-person action RPG in development at Patriam Studios.',
+      summary: "A narrative-driven third-person action RPG in development at Patriam Studios, set during the Grey Rebellion of the studio's original fantasy universe.",
       type: 'Game',
       medium: '',
       context: 'Collaborative',
@@ -104,7 +104,7 @@
       status: 'In Development',
       startYear: 2026,
       endYear: 'Present',
-      technologies: [],
+      technologies: ['Unreal Engine 5', 'Blender'],
       disciplines: [
         'Level Design',
         'Environment Art',
@@ -112,32 +112,69 @@
         'Texturing',
         'Materials',
         'Procedural Foliage',
-        'Gameplay Scripting'
+        'Gameplay Scripting',
+        'Technical Art'
       ],
-      thumbnail: '',
-      hero: '',
+      thumbnail: 'assets/images/Patriam/Forest2.png',
+      hero: 'assets/images/Patriam/Forest2.png',
       featured: false,
       archived: false,
       href: 'work/case-study.html?slug=patriam-saga-of-roljar',
-      links: [],
+      links: [{ label: 'Studio site', url: 'https://patriamstudios.com/' }],
       overview:
-        'Patriam: The Saga of Roljar is a third-person action RPG in development at Patriam Studios, an independent game development team.',
+        'Patriam Studios is an independent New Zealand game studio with an international remote team, built around a long-running original setting called The World of Patriam. The team has been telling stories in that world since 2018 through a Hearts of Iron IV mod and several Minecraft roleplay projects, before forming the studio around a standalone game.\n\n' +
+        "Patriam: The Saga of Roljar is the studio's first standalone title, a narrative-driven third-person action RPG in development in Unreal Engine 5. It takes place during the First Norkinian Civil War, known as the Grey Rebellion, and follows Roljar of Sarin after his family is murdered during a failed coup. His pursuit of Kyrien Druokon, the lord responsible, grows into a journey through a civil war spanning multiple nations and cultures.\n\n" +
+        'The game is structured around that pursuit across five major lands, beginning in Norkinia and moving through Watol, Taienmar, Northern Kallonia and Aungmar. The setting stays a major focus, with distinct regions, political systems, religions, cultures, historical conflicts and empires. The same universe also supports Patriam: Edge of the World, a Minecraft Java roleplay and politics server where players establish kingdoms and can influence the history of the setting.',
       roleNote:
-        'I contribute to the level and environment side of the project as an Environment & Technical Artist. I create stylized fantasy locations, build immersive environments, integrate environmental assets and support the technical implementation where needed.',
+        'I joined Patriam Studios as an Environment & Technical Artist, contributing to the level and environment side of The Saga of Roljar. My work covers level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement and gameplay scripting support. I create stylized fantasy locations, build immersive environments, integrate environmental assets and support the technical implementation where needed.',
       contributions: [
         {
           title: 'Level & Environment Design',
           body:
-            'Creating stylized fantasy locations with distinctive features and building immersive environments.'
+            'Creating stylized fantasy locations with distinctive features and building immersive environments that fit the world of Patriam.'
         },
         {
-          title: '3D Art & Implementation',
+          title: '3D Art & Materials',
           body:
-            '3D asset creation, basic texturing, material setup and procedural foliage placement, plus gameplay scripting support.'
+            'Creating 3D environmental assets with basic texturing and material setup for use in Unreal Engine 5.'
+        },
+        {
+          title: 'Procedural Foliage & Technical Art',
+          body:
+            'Handling procedural foliage placement and technical art support, integrating environmental assets into the project pipeline.'
+        },
+        {
+          title: 'Gameplay Scripting Support',
+          body:
+            'Supporting the programming side with gameplay scripting where environment work needs to connect to game systems.'
         }
       ],
-      technicalDetails: [],
-      gallery: [],
+      technicalDetails: [
+        {
+          title: 'Engine & Pipeline',
+          body:
+            'Environment work is built in Unreal Engine 5, with 3D assets authored in Blender and brought in through the studio pipeline.'
+        },
+        {
+          title: 'Procedural Foliage',
+          body:
+            'Using procedural foliage placement to populate large forest and snow regions efficiently while keeping control over composition and density.'
+        },
+        {
+          title: 'Custom Billboard Foliage',
+          body:
+            'Building custom billboard foliage so distant vegetation stays cheap to render without losing the shape and colour of the environment.'
+        }
+      ],
+      gallery: [
+        { src: 'assets/images/Patriam/Forest1.png', alt: 'Stylized forest environment' },
+        { src: 'assets/images/Patriam/Forest2.png', alt: 'Forest environment detail' },
+        { src: 'assets/images/Patriam/Forest3.png', alt: 'Forest level vista' },
+        { src: 'assets/images/Patriam/Snow1.png', alt: 'Snow region environment' },
+        { src: 'assets/images/Patriam/Snow2.png', alt: 'Snow level design' },
+        { src: 'assets/images/Patriam/Snow3.png', alt: 'Snow landscape detail' },
+        { src: 'assets/images/Patriam/CustomBillboardFoliage.png', alt: 'Custom billboard foliage' }
+      ],
       credits: [],
       stub: false
     },
