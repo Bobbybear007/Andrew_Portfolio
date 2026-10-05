@@ -19,12 +19,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://andrewzambazos.com/work/case-study.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Legacy projects route (redirects to /work/) -->
   <url>
     <loc>https://andrewzambazos.com/projects.html</loc>
@@ -32,52 +26,25 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Work case studies -->
-  <url>
-    <loc>https://andrewzambazos.com/projects/commonwealth-online.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/fallout-wastelands.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/fallout-music-city.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/hideout.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/mr-brown.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/star-wars-ue5.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/stfu.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/c/whiteboard.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/c/inscribe.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/Nebula/nebula-browser.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/Nebula/nebula-project.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/olympus/atlas.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/olympus/hephaestus.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/olympus/olympus-game-studio.html</loc>
-  </url>
-  <url>
-    <loc>https://andrewzambazos.com/projects/star-trek-ue5/star-trek-ue5.html</loc>
-  </url>
+  <!-- Individual work pages -->
+  <url><loc>https://andrewzambazos.com/work/commonwealth-online/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/patriam/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/star-in-the-wind/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/garden/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/olympus/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/hephaestus/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/atlas/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/star-trek/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/star-wars/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/hideout/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/stfu/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/mr-brown/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/fallout-wastelands/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/fallout-music-city/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/inscribe/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/whiteboard/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/nebula-browser/</loc></url>
+  <url><loc>https://andrewzambazos.com/work/nebula/</loc></url>
 
   <!-- Resume / assets -->
   <url>

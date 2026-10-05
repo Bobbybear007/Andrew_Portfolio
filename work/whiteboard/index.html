@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whiteboard | Project Case Study | Andrew Zambazos</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../project.css">
+  <style>
+        .fact-chip {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-200">
+  <canvas id="particle-canvas"></canvas>
+  <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="../../index.html" class="text-2xl font-bold tracking-wider">AZ</a>
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="../../index.html#about" class="hover:text-[#00D4FF] transition-colors duration-300">About</a>
+        <a href="../../projects.html" class="hover:text-[#00D4FF] transition-colors duration-300 text-[#00D4FF]">Projects</a>
+        <a href="../../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
+        <a href="../../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-2xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+      <a href="../../index.html#about" class="block py-2 hover:text-[#00D4FF]">About</a>
+      <a href="../../projects.html" class="block py-2 hover:text-[#00D4FF] text-[#00D4FF]">Projects</a>
+      <a href="../../index.html#resume" class="block py-2 hover:text-[#00D4FF]">Résumé</a>
+      <a href="../../index.html#contact" class="block mt-2 text-center bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-40 md:pt-48">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center md:text-left mb-12">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Whiteboard</h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                A local-first planning tool with a limitless canvas for mapping out ideas. It is built to work offline and keep your files under your control.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                <a href="#features" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+                    View Features
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
+            <div class="fact-chip">
+                <span class="opacity-50">Type:</span> Productivity Tool
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Focus:</span> Offline-First Design
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Stack:</span> HTML / CSS / JavaScript
+            </div>
+            <div class="fact-chip">
+                <span class="opacity-50">Format:</span> Visual Canvas + Local Files
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Overview</h2>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    Whiteboard started because I wanted a planning tool that did not rely on cloud logins or subscriptions. Most modern tools are cloud-based or restrictive. Whiteboard keeps things local, so there is no account, storage limit or constant internet connection to worry about.
+                </p>
+                <p>
+                    You can move sticky notes, files, checklists and links around an infinite canvas. Projects can be saved to a USB stick or moved by file transfer just like any other document.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design & Development Section -->
+    <section class="case-study-section border-0 py-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Design & Development</h2>
+            <div class="space-y-8 text-gray-300">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Tech Stack</h3>
+                    <p class="leading-relaxed">
+                        Whiteboard uses vanilla HTML, CSS and JavaScript for fast load times and broad browser support. Workspaces use a JSON-based `.zpf` file format and the interface is built around quick drag-and-drop interactions without external libraries.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Canvas & Interaction</h3>
+                    <p class="leading-relaxed">
+                        A custom canvas and grid system provides a scrollable, zoomable workspace. You can position items, connect ideas and organise information visually instead of working through a hierarchy. The FileReader API handles opening project files locally.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-violet-400">Data Handling & Privacy</h3>
+                    <p class="leading-relaxed">
+                        Whiteboard stores nothing by default. Projects must be saved manually using the built-in export system, ensuring total user control. This makes it ideal for local workflows and privacy-conscious users who want to maintain complete ownership of their data without any cloud synchronization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-5xl mx-auto px-6 py-12">
+        <img src="../../assets/images/whiteboard/WhiteboardBanner.svg" alt="Whiteboard Development Process" class="clickable-image rounded-lg">
+    </section>
+
+    <section class="case-study-section">
+      <h2>Key Features</h2>
+      <div class="key-features">
+        <div class="feature">
+          <h3>Offline-Only</h3>
+          <p>Works entirely as a local application without cloud sync. You control your files, saved as local project files.</p>
+        </div>
+        <div class="feature">
+          <h3>Flexible Canvas</h3>
+          <p>Drag text boxes, to-do lists and images across an infinite canvas for brainstorming and mind maps.</p>
+        </div>
+        <div class="feature">
+          <h3>Manual Project Save & Load</h3>
+          <p>Users can save and reopen their boards manually using a .zpf file, no surprises.</p>
+        </div>
+        <div class="feature">
+          <h3>Portable</h3>
+          <p>Runs offline from any device. Just keep the app folder and your .zpf files on a USB or hard drive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-section">
+      <h2>Final Result</h2>
+      <p>Whiteboard is for creatives, developers, students and teams who want full ownership of their workspace and data. It is fast, flexible and works without an internet connection.</p>
+    </section>
+
+    <section class="image-gallery">
+      <h2>Project Image Gallery</h2>
+      <div class="image-gallery-grid">
+        <img src="../../assets/images/whiteboard/Whiteboard Editor.png" alt="Whiteboard Workspace" class="clickable-image">
+        <img src="../../assets/images/whiteboard/Whiteboard Editor To Do.png" alt="Whiteboard in use" class="clickable-image">
+      </div>
+    </section>
+
+    <div class="image-overlay" id="imageOverlay">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <span class="prev-btn" id="prevBtn">&#10094;</span>
+      <img src="" alt="Expanded Image" id="expandedImg">
+      <span class="next-btn" id="nextBtn">&#10095;</span>
+    </div>
+
+    <!-- Footer CTA -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-6">Explore More Projects</h2>
+            <a href="../../projects.html" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+                Back to Projects
+            </a>
+        </div>
+    </section>
+  </main>
+
+  <footer class="py-8 border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <p>&copy; 2025 Andrew Zambazos. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../navbar.js" defer></script>
+  <script src="../../footer.js" defer></script>
+  <script src="../../script.js" defer></script>
+  <script src="../../project.js"></script>
+</body>
+</html>

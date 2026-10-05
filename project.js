@@ -52,14 +52,21 @@
     document.head.appendChild(el);
   }
 
+  function normalizePath(path) {
+    return String(path || '')
+      .replace(/^\//, '')
+      .replace(/[?#].*$/, '')
+      .replace(/index\.html$/, '')
+      .replace(/\/+$/, '');
+  }
+
   function matchedItem(Data) {
-    if (!Data) return null;
-    var here = window.location.pathname.replace(/^\//, '');
+    if (!Data || document.getElementById('case-study-root')) return null;
+    var here = normalizePath(window.location.pathname);
     return Data.items.filter(function (item) {
-      // Skip external links and the dynamic template (handled by case-study.js).
-      if (!item.href || /^(https?:|#)/.test(item.href) || item.href.indexOf('?') !== -1) return false;
-      var clean = item.href.replace(/^\//, '');
-      return here === clean || here.slice(-clean.length) === clean;
+      if (!item.href || /^(https?:|#)/.test(item.href)) return false;
+      var clean = normalizePath(item.href);
+      return clean && (here === clean || here.slice(-clean.length) === clean);
     })[0] || null;
   }
 
