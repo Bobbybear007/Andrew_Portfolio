@@ -271,9 +271,9 @@
             'Supporting creative direction and collaborating with designers, programmers and artists across the studio\'s projects.'
         },
         {
-          title: 'Tools & Editor Workflows',
+          title: 'Hephaestus Engine',
           body:
-            'Contributing to editor workflows and usability for the Hephaestus Engine from a designer-focused perspective.'
+            'Creating and leading development of the Hephaestus Engine, including its architecture, runtime, editor, and tooling.'
         }
       ],
       technicalDetails: [],
@@ -285,17 +285,17 @@
     {
       title: 'Hephaestus Engine',
       slug: 'hephaestus-engine',
-      summary: 'A custom C++ game engine and editor built from the ground up, focused on performance, modern rendering and bespoke tooling.',
+      summary: 'A custom C++ game engine and editor in active development, created and built from the ground up as an integrated environment for making games.',
       type: 'Engine',
       medium: '',
       context: 'Studio',
-      role: 'Editor UX Contributor',
+      role: 'Creator & Lead Engine Architect',
       organisation: 'Olympus Game Studios',
-      status: 'In Development',
+      status: 'Active Development',
       startYear: '',
       endYear: 'Present',
-      technologies: ['C++'],
-      disciplines: ['Engine Development', 'Editor Tooling', 'UI/UX', 'Rendering'],
+      technologies: ['C++', 'Vulkan', 'Qt', 'Lua', 'FBX', 'GLB', 'GPU Skinning', 'Physics', 'MCP', 'Plugin API'],
+      disciplines: ['Engine Architecture', 'Rendering', 'Editor Development', 'Tooling'],
       thumbnail: 'assets/images/Olympus/HephaestusBanner.svg',
       hero: '',
       featured: true,
@@ -303,9 +303,8 @@
       href: 'work/hephaestus/',
       links: [{ label: 'Hephaestus page', url: 'https://www.olympusgames.dev/hephaestus.html' }],
       overview:
-        'Hephaestus is a custom C++ game engine built from the ground up, focused on performance, modern rendering and bespoke tooling.',
-      roleNote:
-        'I contribute to Hephaestus from a designer-focused perspective, supporting editor workflows and usability rather than engine architecture.',
+        'Hephaestus is a custom C++ game engine created and led by Andrew Zambazos. It is an actively developed runtime, rendering stack, editor, and tooling environment for building games.',
+      roleNote: '',
       contributions: [],
       technicalDetails: [],
       gallery: [],

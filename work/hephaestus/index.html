@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hephaestus Engine | Custom C++ Engine & Tooling</title>
+	<title>Hephaestus Engine | Custom C++ Game Engine</title>
+	<meta name="description" content="Hephaestus is a custom C++ game engine created and led by Andrew Zambazos. Active development of the runtime, Vulkan rendering path, Qt editor, character systems, plugin API, and automation framework.">
 
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,7 @@
 			background: rgba(17, 17, 40, 0.6);
 			backdrop-filter: blur(10px);
 			border: 1px solid rgba(255, 255, 255, 0.05);
-			transition: all 0.3s ease;
+			transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 		}
 		.engine-card:hover {
 			border-color: rgba(124, 58, 237, 0.3);
@@ -46,6 +47,180 @@
 			color: #7c3aed;
 			font-weight: bold;
 		}
+		.section-kicker {
+			text-transform: uppercase;
+			letter-spacing: 0.22em;
+			font-size: 0.72rem;
+			font-weight: 700;
+			color: #a78bfa;
+			margin-bottom: 0.75rem;
+		}
+		main section[id] { scroll-margin-top: 6.5rem; }
+		.hero-banner {
+			margin-top: 2.5rem;
+			border-radius: 1rem;
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			overflow: hidden;
+			background: #0a0a16;
+		}
+		.hero-banner img,
+		.shot img {
+			display: block;
+			width: 100%;
+			height: auto;
+			cursor: zoom-in;
+		}
+		.hero-banner figcaption,
+		.shot figcaption {
+			padding: 0.75rem 1rem 0.9rem;
+			color: #9ca3af;
+			font-size: 0.85rem;
+			line-height: 1.5;
+		}
+		.shot {
+			margin: 0;
+			border-radius: 1rem;
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			overflow: hidden;
+			background: #0a0a16;
+		}
+		.hero-banner img.clickable-image,
+		.shot img.clickable-image {
+			margin: 0;
+			border: 0;
+			border-radius: 0;
+		}
+		.arch-stack {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+		.arch-stack::before {
+			content: '';
+			position: absolute;
+			left: 0.45rem;
+			top: 1.4rem;
+			bottom: 1.4rem;
+			width: 2px;
+			background: linear-gradient(180deg, #7c3aed, #00D4FF);
+			opacity: 0.75;
+		}
+		.arch-stack li {
+			display: grid;
+			grid-template-columns: 1.1rem 1fr;
+			gap: 0.9rem;
+			margin: 0 0 0.75rem;
+		}
+		.arch-node {
+			width: 0.7rem;
+			height: 0.7rem;
+			margin-top: 1.35rem;
+			justify-self: center;
+			border-radius: 999px;
+			background: #7c3aed;
+			box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.18);
+			z-index: 1;
+		}
+		.arch-label {
+			font-size: 0.68rem;
+			font-weight: 700;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+			color: #a78bfa;
+		}
+		.pipeline {
+			list-style: none;
+			display: grid;
+			gap: 0.85rem;
+			margin: 0;
+			padding: 0;
+		}
+		.pipeline-5 {
+			grid-template-columns: 1fr;
+			gap: 0.55rem;
+			max-width: 40rem;
+		}
+		.pipeline-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+		.pipeline li {
+			position: relative;
+			background: rgba(17, 17, 40, 0.6);
+			border: 1px solid rgba(255, 255, 255, 0.06);
+			border-radius: 1rem;
+			padding: 1rem 0.9rem 1.05rem;
+		}
+		.pipeline-5 li {
+			display: flex;
+			align-items: center;
+			gap: 0.9rem;
+			padding: 0.85rem 1.1rem;
+		}
+		.pipeline-index {
+			display: block;
+			font-size: 0.68rem;
+			font-weight: 700;
+			letter-spacing: 0.14em;
+			color: #a78bfa;
+			margin-bottom: 0.35rem;
+		}
+		.pipeline-5 .pipeline-index { margin-bottom: 0; min-width: 1.6rem; }
+		.pipeline-5 h4 { margin: 0; }
+		.callout {
+			background: rgba(124, 58, 237, 0.07);
+			border-left: 3px solid #7c3aed;
+			border-radius: 0 1rem 1rem 0;
+			padding: 1.15rem 1.35rem;
+		}
+		.spec-grid {
+			display: flex;
+			flex-direction: column;
+			gap: 0.85rem;
+			margin: 0;
+		}
+		.spec-grid > div {
+			display: grid;
+			grid-template-columns: 9.5rem 1fr;
+			gap: 0.35rem 1.5rem;
+			align-items: baseline;
+		}
+		.spec-grid dt {
+			color: #a78bfa;
+			font-size: 0.72rem;
+			font-weight: 700;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+		}
+		.spec-grid dd { margin: 0; color: #d1d5db; line-height: 1.55; }
+		.tech-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.tech-tags li {
+			font-size: 0.75rem;
+			font-weight: 600;
+			color: #c4b5fd;
+			background: rgba(124, 58, 237, 0.1);
+			border: 1px solid rgba(124, 58, 237, 0.28);
+			border-radius: 999px;
+			padding: 0.35rem 0.75rem;
+		}
+		@media (max-width: 900px) {
+			.pipeline-4 { grid-template-columns: 1fr 1fr; }
+		}
+		@media (max-width: 640px) {
+			.pipeline-4 { grid-template-columns: 1fr; }
+		}
+		@media (max-width: 640px) {
+			.spec-grid > div { grid-template-columns: 1fr; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.engine-card { transition: none; }
+			.engine-card:hover { transform: none; }
+		}
 	</style>
 </head>
 <body class="antialiased text-gray-200">
@@ -60,150 +235,626 @@
 			<a href="../../index.html#resume" class="hover:text-[#00D4FF] transition-colors duration-300">Résumé</a>
 			<a href="../../index.html#contact" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
 		</nav>
-		<button id="mobile-menu-button" class="md:hidden text-2xl">
+		<button id="mobile-menu-button" class="md:hidden text-2xl" aria-label="Toggle menu" aria-expanded="false">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
 		</button>
 	</div>
 </header>
 
 <main class="pt-40 md:pt-48">
-	<!-- Hero Section -->
-	<section class="max-w-5xl mx-auto px-6 mb-24">
+	<section class="max-w-5xl mx-auto px-6 mb-20">
 		<div class="text-center md:text-left mb-12">
+			<p class="section-kicker">Custom C++ Game Engine</p>
 			<h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Hephaestus Engine</h1>
 			<p class="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
-				A custom C++ engine built from the ground up to study modern engine architecture, prioritize clarity, and create a direct relationship between creative intent and technical execution.
+				A game engine and development environment designed, architected, and implemented from the ground up for creating games.
 			</p>
 
 			<div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
-				<a href="https://www.olympusgames.dev/hephaestus.html" target="_blank" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+				<a href="https://www.olympusgames.dev/hephaestus.html" target="_blank" rel="noopener noreferrer" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
 					Visit the Hephaestus page
 				</a>
-				<a href="#pillars" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
-					Explore the core pillars
+				<a href="#architecture" class="border border-gray-700 hover:border-violet-500 hover:text-white text-gray-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg">
+					See the architecture
 				</a>
 			</div>
 		</div>
 
-		<!-- Quick Facts -->
 		<div class="flex flex-wrap gap-3 py-6 border-t border-b border-gray-800">
 			<div class="fact-chip">
 				<span class="opacity-50">Built:</span> Custom C++ Engine
 			</div>
 			<div class="fact-chip">
-				<span class="opacity-50">Focus:</span> Rendering + Tooling + Pipelines
+				<span class="opacity-50">Focus:</span> Runtime, Rendering &amp; Editor
 			</div>
 			<div class="fact-chip">
-				<span class="opacity-50">Role:</span> Engine Architect & Tools Dev
+				<span class="opacity-50">Role:</span> Creator &amp; Lead Engine Architect
 			</div>
 			<div class="fact-chip">
-				<span class="opacity-50">Status:</span> Active Iteration
+				<span class="opacity-50">Status:</span> Active Development
 			</div>
 		</div>
+
+		<figure class="hero-banner">
+			<img class="clickable-image" src="assets/EditorUI.png" alt="The Hephaestus editor, with the outliner, viewport, inspector, and asset browser open on a scene" decoding="async">
+			<figcaption>The editor workspace: outliner, viewport, inspector, and asset browser.</figcaption>
+		</figure>
 	</section>
 
-	<!-- Overview -->
-	<section class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
+	<section id="what" class="case-study-section border-0 py-20 bg-gradient-to-b from-[#0E0E1E] to-[#111128]">
 		<div class="max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-8">Why Hephaestus Exists</h2>
+			<p class="section-kicker">The project</p>
+			<h2 class="text-3xl font-bold mb-8">What is Hephaestus?</h2>
 			<div class="space-y-6 text-lg text-gray-300 leading-relaxed">
 				<p>
-					Hephaestus is a design first engine created as a personal exploration of how modern tools are built. The goal is not to hide complexity, but to understand it, organize it, and make the workflow feel direct and intentional.
+					Hephaestus is an actively developed game engine. It is written in C++ as a serious, extensible engine and development environment: a runtime, a renderer, an editor, an asset pipeline, and the workflows that join them.
 				</p>
 				<p>
-					It serves as both the technical foundation for Olympus Game Studios projects and a learning driven platform for exploring rendering, tooling, asset pipelines, and iteration speed with minimal abstraction.
+					The aim is one environment for making games. Scene editing, content import, scripting, debugging, packaging, and extension are designed as parts of the same system, so a project does not have to be assembled from disconnected libraries and tools. In that sense Hephaestus sits in the same category as Unreal, Unity, Godot, and modern proprietary studio engines. It is the technology foundation for Olympus Game Studios, and it is still being built. Substantial systems are already operational. Major areas of the engine continue to expand.
+				</p>
+				<p>
+					Research and experimentation are part of how the engine moves, especially in rendering and architecture. That work serves the engine, which is being built so games can be made in it.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Core Pillars -->
-	<section id="pillars" class="case-study-section border-0 py-24">
-		<h2 class="text-3xl font-bold mb-12 text-center md:text-left">Core Pillars</h2>
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			<div class="engine-card p-8 rounded-2xl">
-				<h3 class="text-xl font-bold mb-3">Clarity Over Abstraction</h3>
+	<section id="philosophy" class="case-study-section border-0 py-24">
+		<p class="section-kicker">How it is built</p>
+		<h2 class="text-3xl font-bold mb-12">Engineering Philosophy</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6">
+			<article class="engine-card p-8 rounded-2xl xl:col-span-2">
+				<h3 class="text-xl font-bold mb-3">Developer control without unnecessary friction</h3>
 				<p class="text-gray-400 text-sm leading-relaxed">
-					Systems are intentionally transparent. The engine prioritizes readable flows and explicit ownership so every feature can be understood, modified, and extended with confidence.
+					Developers should be able to understand and extend the engine. Ownership stays explicit, and common tasks should not require fighting opaque systems.
 				</p>
-			</div>
-			<div class="engine-card p-8 rounded-2xl">
-				<h3 class="text-xl font-bold mb-3">Editor Ergonomics</h3>
+			</article>
+			<article class="engine-card p-8 rounded-2xl xl:col-span-2">
+				<h3 class="text-xl font-bold mb-3">Powerful defaults, extensible architecture</h3>
 				<p class="text-gray-400 text-sm leading-relaxed">
-					Tooling is treated as a first class system. The editor focuses on fast iteration, approachable controls, and workflows tailored to the creative process.
+					Everyday workflows should work out of the box. Advanced work still has a path into lower-level systems when the defaults are not enough.
 				</p>
-			</div>
-			<div class="engine-card p-8 rounded-2xl">
-				<h3 class="text-xl font-bold mb-3">Experimental Workflows</h3>
+			</article>
+			<article class="engine-card p-8 rounded-2xl xl:col-span-2">
+				<h3 class="text-xl font-bold mb-3">Editor and runtime as one ecosystem</h3>
 				<p class="text-gray-400 text-sm leading-relaxed">
-					The engine is built to explore new ideas like custom render paths, asset pipelines, and world building tools that evolve alongside project needs.
+					Authoring, debugging, profiling, automation, and packaging belong to the same environment as the game that ships.
 				</p>
-			</div>
+			</article>
+			<article class="engine-card p-8 rounded-2xl xl:col-span-3">
+				<h3 class="text-xl font-bold mb-3">Modern workflows</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					Hephaestus is being designed around tools and techniques that were not available when many established engines set their core architecture, including structured automation for external tools and agents.
+				</p>
+			</article>
+			<article class="engine-card p-8 rounded-2xl xl:col-span-3">
+				<h3 class="text-xl font-bold mb-3">Performance and scalability</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">
+					Systems are designed with performance and future scale in mind from the start, including the renderer, the runtime, and the split between editor and packaged game.
+				</p>
+			</article>
 		</div>
 	</section>
 
-	<!-- Engine Architecture -->
-	<section class="case-study-section border-0 py-20 bg-[#111128]">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-10">Engine Architecture</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-				<div class="bullet-point">
-					<h4 class="font-bold text-white mb-2">Modular Runtime Core</h4>
-					<p class="text-gray-400 text-sm">A lightweight runtime with clear ownership boundaries, focused on performance and predictable behavior.</p>
-				</div>
-				<div class="bullet-point">
-					<h4 class="font-bold text-white mb-2">Separation of Editor + Runtime</h4>
-					<p class="text-gray-400 text-sm">Tools and runtime layers are kept distinct so shipping builds stay lean while editor workflows remain rich.</p>
-				</div>
-				<div class="bullet-point">
-					<h4 class="font-bold text-white mb-2">Iterative Rendering Stack</h4>
-					<p class="text-gray-400 text-sm">Rendering is designed to be evolvable, allowing targeted experiments without destabilizing the core.</p>
-				</div>
-				<div class="bullet-point">
-					<h4 class="font-bold text-white mb-2">Asset Centric Data Flow</h4>
-					<p class="text-gray-400 text-sm">Assets are treated as first class entities with versioned pipelines and fast reimport cycles.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Tooling & Workflow -->
-	<section class="case-study-section border-0 py-24">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-8">Tooling & Workflow</h2>
-			<div class="space-y-8 text-gray-300">
-				<div>
-					<h3 class="text-xl font-semibold mb-3 text-violet-400">Editor UX</h3>
-					<p class="leading-relaxed">
-						Hephaestus treats the editor as a creative cockpit. The UI focuses on direct manipulation, minimal friction, and fast context switching between world, assets, and runtime diagnostics.
-					</p>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-3 text-violet-400">Asset Pipelines</h3>
-					<p class="leading-relaxed">
-						The pipeline is built for reliability and iteration speed with clean import and reimport paths, deterministic outputs, and immediate feedback for designers.
-					</p>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-3 text-violet-400">Custom Tooling Layer</h3>
-					<p class="leading-relaxed">
-						Bespoke tools support experimental workflows: layout authoring, live scene inspection, and structured data panels tailored to each system.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Current Focus -->
-	<section class="case-study-section border-0 py-20 bg-gradient-to-t from-[#0E0E1E] to-[#111128]">
-		<div class="max-w-4xl mx-auto text-center md:text-left">
-			<h2 class="text-3xl font-bold mb-8">Current Focus</h2>
-			<p class="text-lg text-gray-300 mb-10 leading-relaxed">
-				The engine is currently evolving around renderer iteration, editor diagnostics, and a streamlined asset pipeline. Each system is built with the intent to teach, scale, and stay readable for future experimentation.
+	<section id="my-role" class="case-study-section cs-role border-0 py-20">
+		<p class="section-kicker">Andrew Zambazos</p>
+		<h2 class="text-3xl font-bold mb-8">My Role</h2>
+		<div class="max-w-4xl space-y-6 text-lg text-gray-300 leading-relaxed mb-10">
+			<p>
+				I created Hephaestus and I lead its development. My role is Creator &amp; Lead Engine Architect: I set the technical direction, design the architecture, and implement the major engine systems.
 			</p>
-			<div class="flex flex-wrap justify-center md:justify-start gap-6">
-				<a href="https://www.olympusgames.dev/hephaestus.html" target="_blank" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
-					Engine Updates
+			<p>
+				That covers both the runtime and the editor. I define how the subsystems interact, design the tooling and the development workflows around them, and research and prototype rendering and engine technology as the project grows. The long-term technical vision of the engine is part of the job.
+			</p>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Project creation</h3>
+				<p class="text-gray-400 text-sm">Initiated Hephaestus and continue to lead it as an ongoing engine project.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Technical direction</h3>
+				<p class="text-gray-400 text-sm">Define the architecture and the direction of the engine as systems are added.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Engine implementation</h3>
+				<p class="text-gray-400 text-sm">Design and implement major runtime, rendering, gameplay, and content systems.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Editor development</h3>
+				<p class="text-gray-400 text-sm">Build the desktop editor alongside the runtime, including its workflows and diagnostics.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Tooling and workflows</h3>
+				<p class="text-gray-400 text-sm">Design the asset pipeline, editor commands, and the day-to-day path from content to a running game.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Research and prototyping</h3>
+				<p class="text-gray-400 text-sm">Prototype rendering and engine technology, then fold what holds up into the architecture.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Subsystem design</h3>
+				<p class="text-gray-400 text-sm">Decide how runtime, editor, plugins, automation, and content systems talk to each other.</p>
+			</div>
+			<div class="bullet-point">
+				<h3 class="font-bold text-white mb-1">Long-term vision</h3>
+				<p class="text-gray-400 text-sm">Responsible for where Hephaestus is going as a game engine, beyond the systems already in place.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="architecture" class="case-study-section border-0 py-24 bg-[#111128]">
+		<p class="section-kicker">Structure</p>
+		<h2 class="text-3xl font-bold mb-6">Engine Architecture</h2>
+		<p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-10">
+			Hephaestus is organised in layers, with a deliberate split between the editor and the packaged runtime. The editor, automation, and plugins sit above a shared runtime, scene model, and renderer. Packaged games keep the editor behind them.
+		</p>
+
+		<ol class="arch-stack mb-16">
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 01</p>
+					<h3 class="text-lg font-bold mb-2">Editor</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">A Qt desktop editor for scenes, hierarchy, inspection, the viewport, assets, prefabs, play mode, and diagnostics.</p>
+				</div>
+			</li>
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 02</p>
+					<h3 class="text-lg font-bold mb-2">Automation</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">HephaestusAutomationCore and HephaestusMcpCore. External tools operate the editor through a structured API. Packaged-runtime automation is present only where it is explicitly enabled.</p>
+				</div>
+			</li>
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 03</p>
+					<h3 class="text-lg font-bold mb-2">Plugins</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">A versioned public Plugin API. Major editor and engine behaviour can be added without modifying the core.</p>
+				</div>
+			</li>
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 04</p>
+					<h3 class="text-lg font-bold mb-2">Gameplay</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">Lua scripting, input, physics integration and raycasting, and character and controller systems.</p>
+				</div>
+			</li>
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 05</p>
+					<h3 class="text-lg font-bold mb-2">Scene &amp; content</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">Entities and scenes, serialization, prefabs, asset management and importing, and content mounting.</p>
+				</div>
+			</li>
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 06</p>
+					<h3 class="text-lg font-bold mb-2">Rendering</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">An evolving Vulkan rendering path: materials, lighting, shadows, skeletal meshes, GPU skinning, and runtime UI.</p>
+				</div>
+			</li>
+			<li>
+				<span class="arch-node" aria-hidden="true"></span>
+				<div class="engine-card rounded-2xl p-5 md:p-6">
+					<p class="arch-label mb-1">Layer 07</p>
+					<h3 class="text-lg font-bold mb-2">Runtime</h3>
+					<p class="text-gray-400 text-sm leading-relaxed">A custom C++ runtime and a packaged game runtime, kept distinct from the editor.</p>
+				</div>
+			</li>
+		</ol>
+
+		<h3 class="text-2xl font-bold mb-6">Core systems</h3>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Custom C++ runtime</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">The engine’s own runtime, written for the game rather than borrowed as a framework around other libraries.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Entity and scene architecture</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Worlds are built from entities organised into scenes.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Runtime / editor separation</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Editor systems stay out of the packaged game.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Scene serialization</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Scenes save and load as engine data.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Prefab system</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Reusable objects with their own authoring workflow.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Asset management</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Importing and tracking the content the editor and runtime share.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Packaged game runtime</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">A runtime path for a packaged game, separate from the editor process.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Plugin architecture</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Extension points that keep new functionality out of the core.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Input</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">A dedicated input system for gameplay and tools.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Lua scripting</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Gameplay logic scripted in Lua against the engine.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Physics</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Physics integration and raycasting inside the runtime.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h4 class="font-bold mb-2">Characters and controllers</h4>
+				<p class="text-gray-400 text-sm leading-relaxed">Character setup connected through to runtime controller systems.</p>
+			</article>
+		</div>
+		<figure class="shot mt-10">
+			<img class="clickable-image" src="assets/ScriptingPhysics.gif" alt="A sphere moving through a stone corridor in a Hephaestus physics scene" loading="lazy" decoding="async">
+			<figcaption>A scripted physics scene running in the engine.</figcaption>
+		</figure>
+	</section>
+
+	<section id="rendering" class="case-study-section border-0 py-24">
+		<p class="section-kicker">Graphics</p>
+		<h2 class="text-3xl font-bold mb-6">Rendering</h2>
+		<p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-10">
+			Hephaestus has its own rendering architecture, including a Vulkan-based rendering path. The renderer is in active development. Current work covers the systems below. More advanced techniques are being designed into the architecture so they can be introduced over time.
+		</p>
+		<figure class="shot mb-10">
+			<img class="clickable-image" src="assets/HDRISky.png" alt="A stone column and terrain rendered under a cloudy HDRI sky in Hephaestus" loading="lazy" decoding="async">
+			<figcaption>A scene rendered under an HDRI sky.</figcaption>
+		</figure>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Vulkan rendering</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">A Vulkan path is part of the engine’s rendering stack and continues to evolve with it.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Materials, lighting, and shadows</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">Physically based materials, authored in a node graph, with lighting and shadows in the frame.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">GPU-driven infrastructure</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">GPU-driven rendering infrastructure, developed so the renderer can take on more of the frame.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Skeletal meshes</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">Skinned character rendering, including GPU skinning for animated meshes.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Editor rendering</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">Viewport rendering for the editor, including object identification for selection and tools.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Runtime UI</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">A dedicated UI rendering path for the game, separate from editor interface drawing.</p>
+			</article>
+		</div>
+		<figure class="shot mb-10">
+			<img class="clickable-image" src="assets/MaterialEditor.png" alt="The Hephaestus material editor, with a PBR node graph and a lit sphere preview" loading="lazy" decoding="async">
+			<figcaption>The material editor. A graph drives base color, metallic, and roughness, with a lit preview of the result.</figcaption>
+		</figure>
+		<div class="callout mb-14">
+			<h3 class="text-lg font-bold mb-2">Where the renderer is headed</h3>
+			<p class="text-gray-300 text-sm leading-relaxed">
+				The architecture is being designed so later rendering systems can land on the same foundation. That direction includes modern global illumination, ray tracing, improved reflections, and lighting that can scale. These are upcoming systems. They are part of the plan for the renderer, and they are still ahead of what the engine runs today.
+			</p>
+		</div>
+
+		<h3 class="text-2xl font-bold mb-4">HephaestusUI</h3>
+		<p class="text-gray-300 leading-relaxed max-w-4xl mb-8">
+			Runtime UI has its own pipeline. Widgets are laid out in a visual editor, with a hierarchy, a canvas, and an inspector, and an optional Lua controller on the interface. That authoring stays on the editor side of the runtime boundary, so game UI still draws through the runtime renderer.
+		</p>
+		<figure class="shot mb-8">
+			<img class="clickable-image" src="assets/hui-Editor.png" alt="The Hephaestus visual UI editor, showing a widget hierarchy, canvas, and inspector" loading="lazy" decoding="async">
+			<figcaption>The visual UI editor, laying out runtime widgets on a canvas.</figcaption>
+		</figure>
+		<ol class="pipeline pipeline-4" aria-label="HephaestusUI pipeline">
+			<li>
+				<span class="pipeline-index">01</span>
+				<h4 class="font-bold mb-1">Widget tree</h4>
+				<p class="text-gray-400 text-sm">The authored structure of the interface.</p>
+			</li>
+			<li>
+				<span class="pipeline-index">02</span>
+				<h4 class="font-bold mb-1">Layout</h4>
+				<p class="text-gray-400 text-sm">Resolves how widgets occupy the screen.</p>
+			</li>
+			<li>
+				<span class="pipeline-index">03</span>
+				<h4 class="font-bold mb-1">UI renderer</h4>
+				<p class="text-gray-400 text-sm">Turns the laid-out tree into draw data.</p>
+			</li>
+			<li>
+				<span class="pipeline-index">04</span>
+				<h4 class="font-bold mb-1">Render backend</h4>
+				<p class="text-gray-400 text-sm">A runtime path with Vulkan support.</p>
+			</li>
+		</ol>
+	</section>
+
+	<section id="editor" class="case-study-section border-0 py-24 bg-[#111128]">
+		<p class="section-kicker">Development environment</p>
+		<h2 class="text-3xl font-bold mb-6">Editor &amp; Tooling</h2>
+		<p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-10">
+			Hephaestus includes a custom desktop editor, built with Qt. It is a development environment for the engine, covering scene authoring, content, play mode, and diagnostics. Tooling is treated as engine architecture. The editor is designed with the runtime, and the workflows below are part of how games get made in Hephaestus.
+		</p>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Scene editing</h3>
+				<p class="text-gray-400 text-sm">Author worlds directly in the engine.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Hierarchy and outliner</h3>
+				<p class="text-gray-400 text-sm">Navigate the structure of a scene.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Inspector</h3>
+				<p class="text-gray-400 text-sm">Inspect and edit the selected object.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Viewport</h3>
+				<p class="text-gray-400 text-sm">View the scene through the editor camera.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Asset workflows</h3>
+				<p class="text-gray-400 text-sm">Bring content in and keep it connected to the project.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Prefab workflows</h3>
+				<p class="text-gray-400 text-sm">Build and reuse prefabricated objects.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Project settings</h3>
+				<p class="text-gray-400 text-sm">Configure the project from inside the editor.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Plugin management</h3>
+				<p class="text-gray-400 text-sm">Discover and manage extensions from the editor.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Character and asset importing</h3>
+				<p class="text-gray-400 text-sm">Import characters and other source assets into the pipeline.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Editor commands</h3>
+				<p class="text-gray-400 text-sm">Structured commands for editor operations.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Contextual tooling</h3>
+				<p class="text-gray-400 text-sm">Tools that follow the current selection and task.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Play mode</h3>
+				<p class="text-gray-400 text-sm">Run the game from the editor.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5 sm:col-span-2 lg:col-span-3">
+				<h3 class="font-bold mb-2">Runtime and editor diagnostics</h3>
+				<p class="text-gray-400 text-sm">Inspect what the editor and the running game are doing from the same environment.</p>
+			</article>
+		</div>
+	</section>
+
+	<section id="characters" class="case-study-section border-0 py-24">
+		<p class="section-kicker">Beyond static scenes</p>
+		<h2 class="text-3xl font-bold mb-6">Characters &amp; Animation</h2>
+		<p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-8">
+			Hephaestus renders and drives characters, not only static scenes. Skeletal animation, GPU skinning, character assets, and runtime controllers are part of the engine. Characters import from FBX and GLB, with canonical skeleton handling so compatible meshes can share one skeleton.
+		</p>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Skeletal animation</h3>
+				<p class="text-gray-400 text-sm">Animated skeletons evaluated for the character.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">GPU skinning</h3>
+				<p class="text-gray-400 text-sm">Skinning runs on the GPU from a shared bone palette.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">FBX and GLB import</h3>
+				<p class="text-gray-400 text-sm">Character source assets enter through the import pipeline.</p>
+			</article>
+			<article class="engine-card rounded-2xl p-5">
+				<h3 class="font-bold mb-2">Runtime controllers</h3>
+				<p class="text-gray-400 text-sm">Character presentation connected to controller systems.</p>
+			</article>
+		</div>
+
+		<h3 class="text-2xl font-bold mb-4">Multi-mesh characters</h3>
+		<p class="text-gray-300 leading-relaxed max-w-4xl mb-8">
+			A character can be several independently rendered pieces. Those pieces share one skeleton and one animation state. The pose is evaluated once, then uploaded as one GPU bone palette that every compatible mesh samples.
+		</p>
+		<ol class="pipeline pipeline-5" aria-label="Multi-mesh character architecture">
+			<li>
+				<span class="pipeline-index">01</span>
+				<h4 class="font-bold">One character</h4>
+			</li>
+			<li>
+				<span class="pipeline-index">02</span>
+				<h4 class="font-bold">One canonical skeleton</h4>
+			</li>
+			<li>
+				<span class="pipeline-index">03</span>
+				<h4 class="font-bold">Multiple skinned mesh parts</h4>
+			</li>
+			<li>
+				<span class="pipeline-index">04</span>
+				<h4 class="font-bold">One evaluated animation pose</h4>
+			</li>
+			<li>
+				<span class="pipeline-index">05</span>
+				<h4 class="font-bold">One shared GPU bone palette</h4>
+			</li>
+		</ol>
+	</section>
+
+	<section id="plugins" class="case-study-section border-0 py-24 bg-[#111128]">
+		<p class="section-kicker">Extension</p>
+		<h2 class="text-3xl font-bold mb-6">Plugin Architecture</h2>
+		<p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-8">
+			Hephaestus has a production-oriented plugin architecture. The goal is to let major engine and editor functionality be added, replaced, or specialised without modifying the engine core. Plugins are discovered and loaded, given controlled access to engine services, and isolated when they fail so one plugin does not take the editor down with it.
+		</p>
+		<p class="text-gray-400 text-sm uppercase tracking-widest font-bold mb-4">What plugins can extend</p>
+		<ul class="tech-tags">
+			<li>Versioned public Plugin API</li>
+			<li>Plugin discovery and loading</li>
+			<li>Controlled engine service access</li>
+			<li>Content mounting</li>
+			<li>Failure isolation</li>
+			<li>Plugin persistence</li>
+			<li>Editor commands</li>
+			<li>Custom menus and toolbars</li>
+			<li>Dock panels</li>
+			<li>Context actions</li>
+			<li>Custom asset types</li>
+			<li>Custom asset editors</li>
+			<li>Importers</li>
+			<li>Scene operations</li>
+			<li>Undo integration</li>
+			<li>Plugin settings</li>
+		</ul>
+	</section>
+
+	<section id="automation" class="case-study-section border-0 py-24">
+		<p class="section-kicker">External control</p>
+		<h2 class="text-3xl font-bold mb-6">Automation &amp; MCP</h2>
+		<div class="max-w-4xl space-y-6 text-lg text-gray-300 leading-relaxed mb-10">
+			<p>
+				Hephaestus is built so tools outside the editor can operate it. The underlying feature is a structured automation API. Development agents and other external tools use that API to inspect the project and carry out editor actions. MCP is one interface into the API, alongside the editor integration itself.
+			</p>
+			<p>
+				The architecture keeps those pieces separate, so editor automation and packaged-runtime automation are explicit choices.
+			</p>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">HephaestusAutomationCore</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">The shared automation layer that describes what external tools are allowed to do.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">HephaestusMcpCore</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">An MCP interface on top of that API, so agents can speak to the editor through a structured protocol.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Editor automation</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">Integration that lets external calls drive the desktop editor: scenes, assets, selection, the viewport, and play mode.</p>
+			</article>
+			<article class="engine-card p-6 rounded-2xl">
+				<h3 class="text-lg font-bold mb-2">Packaged-runtime automation</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">Automation against a packaged runtime, available only where it has been explicitly enabled.</p>
+			</article>
+		</div>
+		<p class="text-gray-400 text-sm uppercase tracking-widest font-bold mb-4">Currently exposed</p>
+		<ul class="tech-tags">
+			<li>Scene create, open, save, save-as</li>
+			<li>Asset discovery</li>
+			<li>Asset information</li>
+			<li>Import and reimport</li>
+			<li>Rename, move, trash, restore</li>
+			<li>Editor state</li>
+			<li>Editor selection</li>
+			<li>Viewport state</li>
+			<li>Viewport camera control</li>
+			<li>Entity framing</li>
+			<li>Viewport capture</li>
+			<li>Deterministic play stepping</li>
+			<li>Prefab operations</li>
+			<li>Log inspection</li>
+		</ul>
+	</section>
+
+	<section id="development" class="case-study-section border-0 py-20 bg-gradient-to-t from-[#0E0E1E] to-[#111128]">
+		<div class="max-w-4xl">
+			<p class="section-kicker">Status: Active Development</p>
+			<h2 class="text-3xl font-bold mb-6">Current Development</h2>
+			<div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+				<p>
+					Hephaestus is an ongoing engine project. The runtime, scene and asset pipeline, Vulkan rendering path, editor, character system, plugin API, and automation framework are already part of development. Substantial systems are operational, and major areas are still being expanded. The engine is short of a production-complete release.
+				</p>
+				<p>
+					The next depth is in the renderer and in the workflows around it. Global illumination, ray tracing, improved reflections, and scalable lighting are the direction the rendering architecture is being prepared for. Editor tooling, the character pipeline, and automation continue alongside that. Those rendering goals describe where the engine is going. They are systems still being introduced.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="technical" class="case-study-section border-0 py-24">
+		<p class="section-kicker">At a glance</p>
+		<h2 class="text-3xl font-bold mb-8">Technical Details</h2>
+		<dl class="spec-grid mb-10">
+			<div>
+				<dt>Runtime</dt>
+				<dd>Custom C++ runtime, packaged game runtime, runtime/editor separation</dd>
+			</div>
+			<div>
+				<dt>Rendering</dt>
+				<dd>Vulkan path, physically based materials, lighting, shadows, GPU-driven infrastructure, GPU skinning</dd>
+			</div>
+			<div>
+				<dt>Editor</dt>
+				<dd>Custom Qt desktop editor, play mode, diagnostics, asset and prefab workflows</dd>
+			</div>
+			<div>
+				<dt>Scripting</dt>
+				<dd>Lua</dd>
+			</div>
+			<div>
+				<dt>Characters</dt>
+				<dd>Skeletal animation, FBX and GLB import, canonical skeletons, multi-mesh characters</dd>
+			</div>
+			<div>
+				<dt>Physics</dt>
+				<dd>Physics integration and raycasting</dd>
+			</div>
+			<div>
+				<dt>UI</dt>
+				<dd>HephaestusUI runtime path with Vulkan support</dd>
+			</div>
+			<div>
+				<dt>Extension</dt>
+				<dd>Versioned Plugin API</dd>
+			</div>
+			<div>
+				<dt>Automation</dt>
+				<dd>Structured automation API, with MCP as one interface</dd>
+			</div>
+		</dl>
+		<ul class="tech-tags" aria-label="Technologies">
+			<li>C++</li>
+			<li>Vulkan</li>
+			<li>Qt</li>
+			<li>Lua</li>
+			<li>FBX</li>
+			<li>GLB</li>
+			<li>GPU Skinning</li>
+			<li>Physics</li>
+			<li>MCP</li>
+			<li>Custom Editor</li>
+			<li>Plugin API</li>
+		</ul>
+	</section>
+
+	<section class="max-w-5xl mx-auto px-6 py-24">
+		<div class="engine-card p-10 md:p-12 rounded-3xl text-center border border-violet-500/20">
+			<h2 class="text-3xl font-bold mb-4">A long-term engine project.</h2>
+			<p class="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+				Hephaestus is the work of designing and building an integrated engine: runtime, renderer, editor, content pipeline, characters, plugins, and automation.
+			</p>
+			<div class="flex flex-wrap justify-center gap-6">
+				<a href="https://www.olympusgames.dev/hephaestus.html" target="_blank" rel="noopener noreferrer" class="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">
+					Engine updates
 				</a>
 				<a href="../../projects.html" class="border border-gray-700 hover:border-gray-500 text-gray-300 font-bold py-3 px-10 rounded-lg transition-all duration-300">
 					Back to Projects
@@ -212,6 +863,13 @@
 		</div>
 	</section>
 </main>
+
+<div class="image-overlay" id="imageOverlay">
+	<span class="close-btn" id="closeBtn" aria-label="Close image">&times;</span>
+	<span class="prev-btn" id="prevBtn" aria-label="Previous image">&#10094;</span>
+	<img src="" alt="Expanded project image" id="expandedImg">
+	<span class="next-btn" id="nextBtn" aria-label="Next image">&#10095;</span>
+</div>
 
 <footer class="py-8 border-t border-gray-800">
 	<div class="container mx-auto px-6 text-center text-gray-500">

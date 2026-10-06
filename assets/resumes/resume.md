@@ -23,7 +23,7 @@ Leading development of Commonwealth Online, a multiplayer mod for Fallout 4 focu
 ### Co-founder and Technical Lead, Olympus Game Studios
 #### Independent game development team · Remote, New Zealand · 2023 – Present
 
-Co-founded Olympus Game Studios as an independent game development team and contribute across game design, level design, UI and UX and internal tools. Work includes supporting creative direction, collaborating with designers, programmers and artists and contributing to editor workflows and usability for the Hephaestus Engine from a designer-focused perspective.
+Co-founded Olympus Game Studios as an independent game development team and contribute across game design, level design, UI and UX and internal tools. Work includes supporting creative direction, collaborating with designers, programmers and artists, and creating and leading development of the Hephaestus Engine.
 
 ### Lead Designer, Fallout Wastelands (Mod)
 #### Independent mod project · Remote, New Zealand · Jun 2021 – 2024
