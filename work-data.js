@@ -4,8 +4,8 @@
  *
  * This is intentionally framework-free (plain objects + small helpers) so the
  * static site can grow without another redesign. To add new work, append an
- * object to WORK_ITEMS. The landing page, homepage and case-study template all
- * read from the same source.
+ * object to WORK_ITEMS. The landing page, homepage and individual work pages
+ * read from the same source. Each piece lives at work/<name>/index.html.
  *
  * Only verified information from the existing site / résumé is populated.
  * Fields with no verified value are left empty rather than invented.
@@ -14,7 +14,8 @@
   'use strict';
 
   // Pages set window.WORK_BASE before loading this file ('' at the root,
-  // '../' from inside /work/). All stored paths are site-root relative.
+  // '../' from /work/, '../../' from /work/<piece>/). All stored paths are
+  // site-root relative.
   var BASE = (typeof window !== 'undefined' && window.WORK_BASE) || '';
 
   function resolve(path) {
@@ -62,7 +63,7 @@
       hero: '',
       featured: true,
       archived: false,
-      href: 'projects/commonwealth-online.html',
+      href: 'work/commonwealth-online/',
       links: [],
       overview:
         'Commonwealth Online is a multiplayer mod for Fallout 4 focused on preserving the single-player experience while adding online co-op functionality. It is an independent mod project built to let players experience the Commonwealth together.',
@@ -95,7 +96,7 @@
     {
       title: 'Patriam: The Saga of Roljar',
       slug: 'patriam-saga-of-roljar',
-      summary: 'A third-person action RPG in development at Patriam Studios.',
+      summary: "A narrative-driven third-person action RPG in development at Patriam Studios, set during the Grey Rebellion of the studio's original fantasy universe.",
       type: 'Game',
       medium: '',
       context: 'Collaborative',
@@ -104,7 +105,7 @@
       status: 'In Development',
       startYear: 2026,
       endYear: 'Present',
-      technologies: [],
+      technologies: ['Unreal Engine 5', 'Blender'],
       disciplines: [
         'Level Design',
         'Environment Art',
@@ -112,32 +113,69 @@
         'Texturing',
         'Materials',
         'Procedural Foliage',
-        'Gameplay Scripting'
+        'Gameplay Scripting',
+        'Technical Art'
       ],
-      thumbnail: '',
-      hero: '',
+      thumbnail: 'assets/images/Patriam/Forest2.png',
+      hero: 'assets/images/Patriam/Forest2.png',
       featured: false,
       archived: false,
-      href: 'work/case-study.html?slug=patriam-saga-of-roljar',
-      links: [],
+      href: 'work/patriam/',
+      links: [{ label: 'Studio site', url: 'https://patriamstudios.com/' }],
       overview:
-        'Patriam: The Saga of Roljar is a third-person action RPG in development at Patriam Studios, an independent game development team.',
+        'Patriam Studios is an independent New Zealand game studio with an international remote team, built around a long-running original setting called The World of Patriam. The team has been telling stories in that world since 2018 through a Hearts of Iron IV mod and several Minecraft roleplay projects, before forming the studio around a standalone game.\n\n' +
+        "Patriam: The Saga of Roljar is the studio's first standalone title, a narrative-driven third-person action RPG in development in Unreal Engine 5. It takes place during the First Norkinian Civil War, known as the Grey Rebellion, and follows Roljar of Sarin after his family is murdered during a failed coup. His pursuit of Kyrien Druokon, the lord responsible, grows into a journey through a civil war spanning multiple nations and cultures.\n\n" +
+        'The game is structured around that pursuit across five major lands, beginning in Norkinia and moving through Watol, Taienmar, Northern Kallonia and Aungmar. The setting stays a major focus, with distinct regions, political systems, religions, cultures, historical conflicts and empires. The same universe also supports Patriam: Edge of the World, a Minecraft Java roleplay and politics server where players establish kingdoms and can influence the history of the setting.',
       roleNote:
-        'I contribute to the level and environment side of the project as an Environment & Technical Artist. I create stylized fantasy locations, build immersive environments, integrate environmental assets and support the technical implementation where needed.',
+        'I joined Patriam Studios as an Environment & Technical Artist, contributing to the level and environment side of The Saga of Roljar. My work covers level and environment design, 3D asset creation, basic texturing, material setup, procedural foliage placement and gameplay scripting support. I create stylized fantasy locations, build immersive environments, integrate environmental assets and support the technical implementation where needed.',
       contributions: [
         {
           title: 'Level & Environment Design',
           body:
-            'Creating stylized fantasy locations with distinctive features and building immersive environments.'
+            'Creating stylized fantasy locations with distinctive features and building immersive environments that fit the world of Patriam.'
         },
         {
-          title: '3D Art & Implementation',
+          title: '3D Art & Materials',
           body:
-            '3D asset creation, basic texturing, material setup and procedural foliage placement, plus gameplay scripting support.'
+            'Creating 3D environmental assets with basic texturing and material setup for use in Unreal Engine 5.'
+        },
+        {
+          title: 'Procedural Foliage & Technical Art',
+          body:
+            'Handling procedural foliage placement and technical art support, integrating environmental assets into the project pipeline.'
+        },
+        {
+          title: 'Gameplay Scripting Support',
+          body:
+            'Supporting the programming side with gameplay scripting where environment work needs to connect to game systems.'
         }
       ],
-      technicalDetails: [],
-      gallery: [],
+      technicalDetails: [
+        {
+          title: 'Engine & Pipeline',
+          body:
+            'Environment work is built in Unreal Engine 5, with 3D assets authored in Blender and brought in through the studio pipeline.'
+        },
+        {
+          title: 'Procedural Foliage',
+          body:
+            'Using procedural foliage placement to populate large forest and snow regions efficiently while keeping control over composition and density.'
+        },
+        {
+          title: 'Custom Billboard Foliage',
+          body:
+            'Building custom billboard foliage so distant vegetation stays cheap to render without losing the shape and colour of the environment.'
+        }
+      ],
+      gallery: [
+        { src: 'assets/images/Patriam/Forest1.png', alt: 'Stylized forest environment' },
+        { src: 'assets/images/Patriam/Forest2.png', alt: 'Forest environment detail' },
+        { src: 'assets/images/Patriam/Forest3.png', alt: 'Forest level vista' },
+        { src: 'assets/images/Patriam/Snow1.png', alt: 'Snow region environment' },
+        { src: 'assets/images/Patriam/Snow2.png', alt: 'Snow level design' },
+        { src: 'assets/images/Patriam/Snow3.png', alt: 'Snow landscape detail' },
+        { src: 'assets/images/Patriam/CustomBillboardFoliage.png', alt: 'Custom billboard foliage' }
+      ],
       credits: [],
       stub: false
     },
@@ -160,7 +198,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'work/case-study.html?slug=star-in-the-wind',
+      href: 'work/star-in-the-wind/',
       links: [],
       overview:
         'Star in the Wind is a third-year university film project that I contributed to as part of the production team.',
@@ -191,7 +229,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'work/case-study.html?slug=garden-opencommonwealth',
+      href: 'work/garden/',
       links: [],
       overview: '',
       roleNote: '',
@@ -220,7 +258,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/olympus/olympus-game-studio.html',
+      href: 'work/olympus/',
       links: [{ label: 'Olympus site', url: 'https://www.olympusgames.dev/' }],
       overview:
         'Olympus Game Studios is an independent game and technology studio focused on building original tools, engines and narrative-driven experiences.',
@@ -262,7 +300,7 @@
       hero: '',
       featured: true,
       archived: false,
-      href: 'projects/olympus/hephaestus.html',
+      href: 'work/hephaestus/',
       links: [{ label: 'Hephaestus page', url: 'https://www.olympusgames.dev/hephaestus.html' }],
       overview:
         'Hephaestus is a custom C++ game engine built from the ground up, focused on performance, modern rendering and bespoke tooling.',
@@ -293,7 +331,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/olympus/atlas.html',
+      href: 'work/atlas/',
       links: [],
       overview:
         'Atlas is a private internal platform that centralises planning, coordination and knowledge across active projects. It acts as a shared backbone for long-running work.',
@@ -323,7 +361,7 @@
       hero: 'assets/images/ststuff/Andromeda1.png',
       featured: true,
       archived: false,
-      href: 'projects/star-trek-ue5/star-trek-ue5.html',
+      href: 'work/star-trek/',
       links: [],
       overview:
         'A personal environment design project recreating Starfleet bridges and command centres in Unreal Engine 5. I focused on detailed modelling, dynamic lighting and immersive textures.',
@@ -353,7 +391,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/star-wars-ue5.html',
+      href: 'work/star-wars/',
       links: [],
       overview:
         'Bringing the design language of the Star Wars universe to life through a detailed corridor inspired by concept art from Star Wars Battlefront II.',
@@ -383,7 +421,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/hideout.html',
+      href: 'work/hideout/',
       links: [],
       overview:
         'A sprawling underground hideout built in Unreal Engine for Fortnite, showcasing UEFN\'s tools for crafting detailed, immersive environments.',
@@ -413,7 +451,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/stfu.html',
+      href: 'work/stfu/',
       links: [{ label: 'itch.io', url: 'https://beetruth.itch.io/the-special-time-fixing-unit' }],
       overview:
         'A puzzle-platformer developed for the Beginner\'s Jam Summer 2024, where players navigate environments by manipulating time and collaborating with past versions of themselves.',
@@ -444,7 +482,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/mr-brown.html',
+      href: 'work/mr-brown/',
       links: [],
       overview:
         'A stealth-action game developed for the Beginner\'s Jam Winter 2024, featuring pixel-art visuals and stealth mechanics built around avoiding increasingly sophisticated AI guards.',
@@ -475,7 +513,7 @@
       hero: '',
       featured: false,
       archived: true,
-      href: 'projects/fallout-wastelands.html',
+      href: 'work/fallout-wastelands/',
       links: [],
       overview:
         'A large-scale Fallout mod that began as Fallout: Boardwalk and grew into a multi-project initiative with an interconnected storyline. Development has since ended.',
@@ -506,7 +544,7 @@
       hero: '',
       featured: false,
       archived: true,
-      href: 'projects/fallout-music-city.html',
+      href: 'work/fallout-music-city/',
       links: [],
       overview:
         'A Fallout mod reimagining Nashville as a wasteland frontier, blending Southern culture with Fallout\'s post-apocalyptic tone. Development has since ended.',
@@ -537,7 +575,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/c/inscribe.html',
+      href: 'work/inscribe/',
       links: [{ label: 'Use Inscribe', url: 'https://inscribe.zambazosmedia.group' }],
       overview:
         'A minimal writing environment built as a fully client-side application, designed to encourage focus and full local control with no cloud dependency.',
@@ -567,7 +605,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/c/whiteboard.html',
+      href: 'work/whiteboard/',
       links: [],
       overview:
         'A custom productivity app providing a limitless visual canvas for planning and organising ideas, built with offline-first principles and full local control.',
@@ -597,7 +635,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/Nebula/nebula-browser.html',
+      href: 'work/nebula-browser/',
       links: [
         { label: 'Steam', url: 'https://store.steampowered.com/app/4290110/Nebula/' },
         { label: 'GitHub', url: 'https://github.com/NebulaZMG/NebulaBrowser' }
@@ -631,7 +669,7 @@
       hero: '',
       featured: false,
       archived: false,
-      href: 'projects/Nebula/nebula-project.html',
+      href: 'work/nebula/',
       links: [
         { label: 'Nebula site', url: 'https://nebula.zambazosmedia.group' },
         { label: 'GitHub', url: 'https://github.com/The-Nebula-Project-ZMG' }

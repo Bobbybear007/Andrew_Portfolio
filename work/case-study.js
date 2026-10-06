@@ -1,6 +1,7 @@
 /**
  * case-study.js
- * Renders the dynamic case-study template from ?slug= using WorkData.
+ * Renders a work page from WorkData. Each piece lives at work/<name>/index.html
+ * and sets window.CASE_STUDY_SLUG. The old ?slug= query still resolves.
  * Sections are only emitted when the underlying data exists, so stubs stay
  * honest rather than filling gaps with invented content.
  */
@@ -19,7 +20,12 @@
       .replace(/'/g, '&#39;');
   }
 
+  function workHome() {
+    return (typeof window.WORK_HOME === 'string' && window.WORK_HOME) || './';
+  }
+
   function slugFromUrl() {
+    if (window.CASE_STUDY_SLUG) return String(window.CASE_STUDY_SLUG);
     try {
       return new URLSearchParams(window.location.search).get('slug') || '';
     } catch (e) {
@@ -59,7 +65,7 @@
       '<section class="max-w-3xl mx-auto px-6 py-24 text-center">' +
         '<h1 class="text-4xl font-black uppercase tracking-tight mb-4">Work not found</h1>' +
         '<p class="text-gray-400 mb-8">This case study does not exist (yet).</p>' +
-        '<a href="./" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300">Back to all work</a>' +
+        '<a href="' + esc(workHome()) + '" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300">Back to all work</a>' +
       '</section>';
   }
 
@@ -72,7 +78,7 @@
     // Breadcrumb
     out.push(
       '<nav class="cs-breadcrumb max-w-5xl mx-auto px-6" aria-label="Breadcrumb">' +
-        '<a href="./">Work</a><span aria-hidden="true">/</span><span aria-current="page">' + esc(item.title) + '</span>' +
+        '<a href="' + esc(workHome()) + '">Work</a><span aria-hidden="true">/</span><span aria-current="page">' + esc(item.title) + '</span>' +
       '</nav>'
     );
 
@@ -193,7 +199,7 @@
       '<section class="max-w-5xl mx-auto px-6 py-24">' +
         '<div class="bg-violet-600/10 border border-violet-500/20 rounded-3xl p-12 text-center">' +
           '<h2 class="text-3xl font-bold mb-6">Explore more work</h2>' +
-          '<a href="./" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">Back to all work</a>' +
+          '<a href="' + esc(workHome()) + '" class="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-10 rounded-lg transition-all duration-300">Back to all work</a>' +
         '</div>' +
       '</section>'
     );
