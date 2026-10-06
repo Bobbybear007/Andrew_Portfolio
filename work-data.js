@@ -59,11 +59,11 @@
       technologies: ['C++', 'F4SE', 'CommonLibF4', 'GameNetworkingSockets'],
       disciplines: ['Networking', 'Gameplay Systems', 'UI/UX', 'Tooling', 'Project Direction'],
       thumbnail: 'assets/images/CommonwealthOnline/COBanner.png',
-      // In-game player screenshot used for the homepage featured card. The
-      // banner thumbnail above carries the project wordmark, which would
-      // otherwise read as a second title behind the featured card's overlay.
+      // In-game player screenshot. The banner thumbnail above carries the
+      // project wordmark, which would read as a second title behind the
+      // featured card and the work-page hero, so both use this shot instead.
       featuredImage: 'assets/images/CommonwealthOnline/UserOptcron-2.webp',
-      hero: '',
+      hero: 'assets/images/CommonwealthOnline/UserOptcron-2.webp',
       featured: true,
       archived: false,
       href: 'work/commonwealth-online/',

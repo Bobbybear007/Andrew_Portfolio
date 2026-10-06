@@ -147,6 +147,8 @@
       }
     });
 
+    applyWorkCover(main, item, prefix);
+
     // 5. Point old "Projects" links at the new Work route and refresh wording.
     // Only rewrite links to the old portfolio index, never links to individual
     // work pages that happen to live under /projects/.
@@ -157,6 +159,52 @@
     main.querySelectorAll('h2').forEach(function (h) {
       if (/explore more projects/i.test(h.textContent)) h.textContent = 'Explore more work';
     });
+  }
+
+  // ---- cover hero --------------------------------------------------------
+
+  function coverPath(item, prefix) {
+    var path = item.hero || item.thumbnail || '';
+    if (!path) return '';
+    if (/^(https?:)?\/\//.test(path) || /^(mailto:|tel:|#|\/)/.test(path)) return path;
+    return prefix + path;
+  }
+
+  function sizeWorkCover(main) {
+    var cover = main.querySelector('.work-page-cover');
+    if (!cover) return;
+    var hero = main.querySelector('.cs-hero') || main.querySelector('section');
+    if (!hero) return;
+    var banner = hero.querySelector('.hero-banner');
+
+    function place() {
+      var top = main.getBoundingClientRect().top;
+      var edge = banner ? banner.getBoundingClientRect().top : hero.getBoundingClientRect().bottom;
+      var height = edge - top;
+      if (height > 0) cover.style.height = height + 'px';
+    }
+
+    place();
+    if (window.ResizeObserver) {
+      var observer = new ResizeObserver(place);
+      observer.observe(hero);
+      if (banner) observer.observe(banner);
+    }
+    window.addEventListener('resize', place);
+    window.addEventListener('load', place);
+  }
+
+  function applyWorkCover(main, item, prefix) {
+    var url = coverPath(item, prefix);
+    if (!url || main.querySelector('.work-page-cover')) return;
+    var cover = document.createElement('div');
+    cover.className = 'work-page-cover';
+    cover.setAttribute('aria-hidden', 'true');
+    cover.innerHTML = '<img src="' + esc(url) + '" alt="" decoding="async" fetchpriority="high">';
+    main.insertBefore(cover, main.firstChild);
+    document.body.classList.add('has-work-cover');
+    main.classList.add('has-work-cover');
+    sizeWorkCover(main);
   }
 
   // ---- gallery -----------------------------------------------------------

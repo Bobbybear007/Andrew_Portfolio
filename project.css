@@ -69,6 +69,58 @@ img.clickable-image { border: 1px solid var(--border); border-radius: 0.5rem; ma
   margin: 0 auto;
   padding: 1.5rem;
 }
+
+/* Full-bleed cover behind the work-page hero, including the fixed header. */
+main.has-work-cover {
+  position: relative;
+}
+
+.work-page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.work-page-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border: 0;
+  border-radius: 0;
+}
+
+.work-page-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 14, 30, 0.46) 0%,
+    rgba(14, 14, 30, 0.28) 18%,
+    rgba(14, 14, 30, 0.55) 52%,
+    rgba(14, 14, 30, 0.86) 80%,
+    #0E0E1E 100%
+  );
+}
+
+main.has-work-cover > :not(.work-page-cover) {
+  position: relative;
+  z-index: 1;
+}
+
+body.has-work-cover #header.glass-effect {
+  background: rgba(14, 14, 30, 0.42);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
 .cs-eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.22em;
