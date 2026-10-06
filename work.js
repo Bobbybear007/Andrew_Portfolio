@@ -216,7 +216,11 @@
     var contextWrap = document.getElementById('work-contexts');
 
     if (typeWrap && !typeWrap.children.length) {
-      typeWrap.innerHTML = Data.filters.map(function (f) {
+      var typeFilters = Data.filters.filter(function (f) {
+        if (f.id === 'all' || !f.types) return true;
+        return Data.active().some(function (item) { return Data.matchesType(item, f.id); });
+      });
+      typeWrap.innerHTML = typeFilters.map(function (f) {
         return '<button type="button" class="work-filter' + (f.id === state.type ? ' is-active' : '') +
           '" data-group="type" data-value="' + esc(f.id) + '" aria-pressed="' +
           (f.id === state.type ? 'true' : 'false') + '">' + esc(f.label) + '</button>';
@@ -231,7 +235,11 @@
     }
 
     if (contextWrap && !contextWrap.children.length) {
-      contextWrap.innerHTML = Data.contexts.map(function (c) {
+      var contexts = Data.contexts.filter(function (c) {
+        if (c === 'All') return true;
+        return Data.active().some(function (item) { return item.context === c; });
+      });
+      contextWrap.innerHTML = contexts.map(function (c) {
         return '<button type="button" class="work-filter work-filter--ghost" data-group="context" data-value="' + esc(c) + '" aria-pressed="' +
           (c === state.context ? 'true' : 'false') + '">' + esc(c) + '</button>';
       }).join('');

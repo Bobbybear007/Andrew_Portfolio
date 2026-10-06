@@ -9,6 +9,9 @@
  *
  * Only verified information from the existing site / résumé is populated.
  * Fields with no verified value are left empty rather than invented.
+ *
+ * Set hidden: true to keep a piece in the data and at its own URL without
+ * listing it on the work page, homepage, or archive.
  */
 (function () {
   'use strict';
@@ -56,11 +59,11 @@
       technologies: ['C++', 'F4SE', 'CommonLibF4', 'GameNetworkingSockets'],
       disciplines: ['Networking', 'Gameplay Systems', 'UI/UX', 'Tooling', 'Project Direction'],
       thumbnail: 'assets/images/CommonwealthOnline/COBanner.png',
-      // In-game player screenshot used for the homepage featured card. The
-      // banner thumbnail above carries the project wordmark, which would
-      // otherwise read as a second title behind the featured card's overlay.
+      // In-game player screenshot. The banner thumbnail above carries the
+      // project wordmark, which would read as a second title behind the
+      // featured card and the work-page hero, so both use this shot instead.
       featuredImage: 'assets/images/CommonwealthOnline/UserOptcron-2.webp',
-      hero: '',
+      hero: 'assets/images/CommonwealthOnline/UserOptcron-2.webp',
       featured: true,
       archived: false,
       href: 'work/commonwealth-online/',
@@ -198,6 +201,7 @@
       hero: '',
       featured: false,
       archived: false,
+      hidden: true,
       href: 'work/star-in-the-wind/',
       links: [],
       overview:
@@ -229,6 +233,7 @@
       hero: '',
       featured: false,
       archived: false,
+      hidden: true,
       href: 'work/garden/',
       links: [],
       overview: '',
@@ -271,9 +276,9 @@
             'Supporting creative direction and collaborating with designers, programmers and artists across the studio\'s projects.'
         },
         {
-          title: 'Tools & Editor Workflows',
+          title: 'Hephaestus Engine',
           body:
-            'Contributing to editor workflows and usability for the Hephaestus Engine from a designer-focused perspective.'
+            'Creating and leading development of the Hephaestus Engine, including its architecture, runtime, editor, and tooling.'
         }
       ],
       technicalDetails: [],
@@ -285,27 +290,27 @@
     {
       title: 'Hephaestus Engine',
       slug: 'hephaestus-engine',
-      summary: 'A custom C++ game engine and editor built from the ground up, focused on performance, modern rendering and bespoke tooling.',
+      summary: 'A custom C++ game engine and editor in active development, created and built from the ground up as an integrated environment for making games.',
       type: 'Engine',
       medium: '',
       context: 'Studio',
-      role: 'Editor UX Contributor',
+      role: 'Creator & Lead Engine Architect',
       organisation: 'Olympus Game Studios',
-      status: 'In Development',
+      status: 'Active Development',
       startYear: '',
       endYear: 'Present',
-      technologies: ['C++'],
-      disciplines: ['Engine Development', 'Editor Tooling', 'UI/UX', 'Rendering'],
-      thumbnail: 'assets/images/Olympus/HephaestusBanner.svg',
-      hero: '',
+      technologies: ['C++', 'Vulkan', 'Qt', 'Lua', 'FBX', 'GLB', 'GPU Skinning', 'Physics', 'MCP', 'Plugin API'],
+      disciplines: ['Engine Architecture', 'Rendering', 'Editor Development', 'Tooling'],
+      thumbnail: 'work/hephaestus/assets/EditorUI.png',
+      featuredImage: 'work/hephaestus/assets/EditorUI.png',
+      hero: 'work/hephaestus/assets/EditorUI.png',
       featured: true,
       archived: false,
       href: 'work/hephaestus/',
       links: [{ label: 'Hephaestus page', url: 'https://www.olympusgames.dev/hephaestus.html' }],
       overview:
-        'Hephaestus is a custom C++ game engine built from the ground up, focused on performance, modern rendering and bespoke tooling.',
-      roleNote:
-        'I contribute to Hephaestus from a designer-focused perspective, supporting editor workflows and usability rather than engine architecture.',
+        'Hephaestus is a custom C++ game engine created and led by Andrew Zambazos. It is an actively developed runtime, rendering stack, editor, and tooling environment for building games.',
+      roleNote: '',
       contributions: [],
       technicalDetails: [],
       gallery: [],
@@ -723,7 +728,7 @@
   }
 
   function visible() {
-    return WORK_ITEMS.filter(function (i) { return !i.archived; });
+    return WORK_ITEMS.filter(function (i) { return !i.archived && !i.hidden; });
   }
 
   var api = {
@@ -745,7 +750,7 @@
       return typeof limit === 'number' ? list.slice(0, limit) : list;
     },
     active: function () { return visible(); },
-    archived: function () { return WORK_ITEMS.filter(function (i) { return i.archived; }).sort(byTitle); },
+    archived: function () { return WORK_ITEMS.filter(function (i) { return i.archived && !i.hidden; }).sort(byTitle); },
     getBySlug: function (slug) {
       return WORK_ITEMS.filter(function (i) { return i.slug === slug; })[0] || null;
     }

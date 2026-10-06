@@ -75,6 +75,16 @@
     var hero = item.hero ? Data.asset(item.hero) : (item.thumbnail ? Data.asset(item.thumbnail) : '');
     var out = [];
 
+    if (hero) {
+      document.body.classList.add('has-work-cover');
+      root.classList.add('has-work-cover');
+      out.push(
+        '<div class="work-page-cover" aria-hidden="true">' +
+          '<img src="' + esc(hero) + '" alt="" decoding="async" fetchpriority="high">' +
+        '</div>'
+      );
+    }
+
     // Breadcrumb
     out.push(
       '<nav class="cs-breadcrumb max-w-5xl mx-auto px-6" aria-label="Breadcrumb">' +
@@ -115,9 +125,6 @@
       chipList('Disciplines', item.disciplines) +
     '</div>');
 
-    if (hero) {
-      out.push('<figure class="cs-hero-media"><img src="' + esc(hero) + '" alt="' + esc(item.title) + '" decoding="async"></figure>');
-    }
     out.push('</section>');
 
     // Overview
@@ -205,6 +212,7 @@
     );
 
     root.innerHTML = out.join('');
+    if (hero) sizeWorkCover(root);
     document.title = item.title + ' | Andrew Zambazos';
     var desc = document.querySelector('meta[name="description"]');
     if (!desc) {
@@ -213,6 +221,26 @@
       document.head.appendChild(desc);
     }
     desc.setAttribute('content', item.summary || item.title + ' - work by Andrew Zambazos.');
+  }
+
+  function sizeWorkCover(main) {
+    var cover = main.querySelector('.work-page-cover');
+    var hero = main.querySelector('.cs-hero');
+    if (!cover || !hero) return;
+
+    function place() {
+      var top = main.getBoundingClientRect().top;
+      var bottom = hero.getBoundingClientRect().bottom;
+      var height = bottom - top;
+      if (height > 0) cover.style.height = height + 'px';
+    }
+
+    place();
+    if (window.ResizeObserver) {
+      var observer = new ResizeObserver(place);
+      observer.observe(hero);
+    }
+    window.addEventListener('resize', place);
   }
 
   function init() {
