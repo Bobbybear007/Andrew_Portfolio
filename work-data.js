@@ -9,6 +9,9 @@
  *
  * Only verified information from the existing site / résumé is populated.
  * Fields with no verified value are left empty rather than invented.
+ *
+ * Set hidden: true to keep a piece in the data and at its own URL without
+ * listing it on the work page, homepage, or archive.
  */
 (function () {
   'use strict';
@@ -198,6 +201,7 @@
       hero: '',
       featured: false,
       archived: false,
+      hidden: true,
       href: 'work/star-in-the-wind/',
       links: [],
       overview:
@@ -229,6 +233,7 @@
       hero: '',
       featured: false,
       archived: false,
+      hidden: true,
       href: 'work/garden/',
       links: [],
       overview: '',
@@ -723,7 +728,7 @@
   }
 
   function visible() {
-    return WORK_ITEMS.filter(function (i) { return !i.archived; });
+    return WORK_ITEMS.filter(function (i) { return !i.archived && !i.hidden; });
   }
 
   var api = {
@@ -745,7 +750,7 @@
       return typeof limit === 'number' ? list.slice(0, limit) : list;
     },
     active: function () { return visible(); },
-    archived: function () { return WORK_ITEMS.filter(function (i) { return i.archived; }).sort(byTitle); },
+    archived: function () { return WORK_ITEMS.filter(function (i) { return i.archived && !i.hidden; }).sort(byTitle); },
     getBySlug: function (slug) {
       return WORK_ITEMS.filter(function (i) { return i.slug === slug; })[0] || null;
     }
