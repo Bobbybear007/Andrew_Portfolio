@@ -55,7 +55,7 @@ BBb Tuba · Palmerston North, New Zealand · Apr 2022 – Present
 
 ### Feilding Brass Band
 
-BBb Tuba · Feilding, New Zealand · Aug 2024 – Present
+BBb Tuba · Feilding, New Zealand · Aug 2024 – Sep 2026
 
 ### Awatapu College Music Department
 
@@ -70,7 +70,7 @@ BBb Tuba · Palmerston North, New Zealand · Jul 2024 – Present
 
 ### Manawatu Concert Band
 
-BBb Tuba · Palmerston North, New Zealand · Jan 2025 – Jan 2026 (Guest - Aug 2026)
+BBb Tuba · Palmerston North, New Zealand · Jan 2025 – Present 
 
 ### New Zealand National Secondary Schools' Brass Band
 
